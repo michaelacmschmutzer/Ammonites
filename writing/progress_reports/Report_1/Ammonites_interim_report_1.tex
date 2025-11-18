@@ -1,0 +1,148 @@
+\documentclass[a4paper]{article}
+
+\usepackage{setspace}
+\usepackage[cmintegrals,cmbraces]{newtxmath}
+\usepackage[osf]{ebgaramond-maths}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{csvsimple}
+\usepackage[super]{nth}
+
+\usepackage[backend=biber,
+			style=apa]{biblatex}
+
+\hypersetup{colorlinks=false,
+			breaklinks=true}
+\graphicspath{ {/home/michael-schmutzer/Documents/Projects/Ammonites/results/} }
+\addbibresource{../../Ammonites.bib}
+
+\title{Ammonoid Extinction and Nautilid Survival: Project report 1}
+\date{\today}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\setlength\parindent{0pt}
+\onehalfspacing
+
+To begin with, Erin and I found it useful to try out the analysis on nautilid genera. This is the smallest dataset, making it simple to develop code that can then be used on the much larger ammonoid dataset. It also helps to build some intuition on the feasibility of various analyses I am planning to do. All results presented here are highly provisional and are likely to change as more data comes in and the analysis becomes more sophisticated.
+
+So far, I have gathered data on nautilid fossil occurrences (from PaleoDB only), hatchling sizes, and survival or extinction at the end-Cretaceous mass extinction. I find that the literature is somewhat ambivalent on which genera survived into the Palaeogene, that is to say, the evidence is unclear. For example, \textit{Angulithes} has Cenozoic entries in the PaleoDB whose descriptions date back to the 1890s or even 1865\footnote{PaleoDB collection 171538. It comes with a note that this material is lost.} and haven't been published since. The only other source I have found so far \parencite{garvieMolluscanMacrofaunaSeguin2013} describes a Palaeogene nautilid from Texas, but the author is not certain it belongs to the genus \textit{Angulithes}. I put a table in the supplementary materials (section \ref{si_survival}) that lists my interpretation of the evidence, indicates how certain I am, and the sources I drew on. Any advice would be much appreciated. 
+
+Furthermore, I would be thankful for any suggestions about the taxonomy of Cretaceous nautilids. Specifically, I appear to have entries in the PaleoDB of genera that are deemed synonyms (at least by some authors). What are your opinions on these:
+Is \textit{Deltoidonautilus} a synonym of \textit{Angulithes} \parencite{wilmsenLateCretaceousNautilids2000}?
+And is \textit{Palelialia} a synonym of \textit{Anglonautilus} \parencite{baudouinCretaceousNautiloidGenus2021}?
+
+\section*{Methods}
+
+\textbf{Data sources and cleaning.} Currently, all nautilid fossil occurrences derive from the PaleoDB and were downloaded on the \nth{9} of June 2025. We downloaded all Maastrichtian and Danian fossil occurrences using the url \url{http://paleobiodb.org/data1.2/occs/list.csv?datainfo&rowcount&interval=Maastrichtian,Danian&show=class,coords,ref}, and retained only cephalopod entries belonging to the orders Ammonitida, Nautilida, Ammonoidea, and Phylloceratida (the PaleoDB dataset did not contain any fossil occurrences belonging to the Lytoceratida). 
+To filter out fossil occurrences with poor taxonomic classification, we retained only those occurrences whose accepted rank is at the genus or species level. 
+We also reassigned the accepted rank of all occurrences from species to genus if the species name contained a punctuation mark as a sign of uncertainty. 
+Furthermore, we removed the genera \textit{Conchorhynchus}, which are cephalopod jaws \parencite{tanabeRhyncholitesConchorhynchsCalcified1980}, and \textit{Nautilus}, because its presence at the end of Cretaceous is controversial (see discussion in \cite{goedertMioceneNautilusMollusca2022}).
+
+Ammonoid fossil occurrence data come from either the PaleoDB or \textcite{flannery-sutherlandLateCretaceousAmmonoids2024}. Fossil occurrence data from \textcite{flannery-sutherlandLateCretaceousAmmonoids2024} underwent no further filtering, except for 66 occurrences that were not assigned to any order. We dropped these occurrences. Ammonoid occurrences obtained from the PaleoDB and not present in the \textcite{flannery-sutherlandLateCretaceousAmmonoids2024} dataset underwent the same filtering as the nautilid occurrence data. 
+
+Hatching sizes for 24 Cretaceous nautilid species were taken from \parencite{laptikhovskyEnvironmentalImpactEctocochleate2012}, the remaining five from \parencite{cichowolskiNautiloidGenusCymatoceras2003, malchykShellOrnamentSystematic2017, tajikaIntraInterspecificVariability2022, landmanNautilidNurseriesHatchlings2018}. Measurements from \textcite{laptikhovskyEnvironmentalImpactEctocochleate2012} were only included if the genus and species was identified with certainty. Where available, we drew on measurements from Cretaceous specimens. The only exception is the genus \textit{Paracenoceras}, as the only available measurement is from a Jurassic specimen \parencite{laptikhovskyEnvironmentalImpactEctocochleate2012}. 
+
+\textbf{Approximating the geographic distributions of Maastrichtian shelled cephalopods.}
+To approximately reconstruct the geographic distribution of nautilids in the Maastrichtian, we first estimated the geographic location of fossil occurrences during the Maastrichtian. We did so using plate tectonic simulations in GPlates through the R package rplates \parencite{kocsisRgplatesInterfaceGPlates2025, mullerGPlatesBuildingVirtual2018}. We reconstructed the geographic location at the median age of the fossil occurrences in the dataset (69.085 mya, interquartile range 1.135 my). Plate tectonic models vary in their output due to differences in their constitutive assumptions and the data they draw on \parencite{setonDeconstructingPlateTectonic2023}. Therefore, we used five plate tectonic models:
+Merdith \parencite{merdithExtendingFullplateTectonic2021},
+Torsvik and Cocks \parencite{torsvikEarthHistoryPalaeogeography2016},
+Golonka \parencite{wrightCommunitydrivenPaleogeographicReconstructions2013},
+Matthews 2016 \parencite{matthewsGlobalPlateBoundary2016}, and
+Paleomap \parencite{scotesePALEOMAPPaleoAtlasGPlates2020}.
+For the Torsvik and Cocks model \parencite{torsvikEarthHistoryPalaeogeography2016}, we used the palaeomagnetic reference frame. 
+
+Second, we approximated the geographic distribution of each nautilid genus by fitting a convex hull around the Maastrichtian locations of its fossil occurrences. We fitted convex hulls using the hull() function of the R package terra \parencite{hijmansTerraSpatialData2025}. Convex hulls were fitted for each genus and each plate tectonic model. All maps were plotted in ggplot2 \parencite{wickhamGgplot2ElegantGraphics2016} with Robinson projection.
+
+\section*{Results}
+
+\begin{figure}[t]
+\includegraphics[width=\textwidth]{/geographic_distributions/Nautilids_geographic_ranges.pdf}
+\caption{Geographic range sizes of Maastrichtian Nautilids estimated from fossil occurrences. To reconstruct the geographic location of fossil occurrences during the Maastrichtian, we used five different plate tectonic models:
+Merdith \parencite{merdithExtendingFullplateTectonic2021},
+Torsvik and Cocks \parencite{torsvikEarthHistoryPalaeogeography2016},
+Golonka \parencite{wrightCommunitydrivenPaleogeographicReconstructions2013},
+Matthews 2016 \parencite{matthewsGlobalPlateBoundary2016}, and
+Paleomap \parencite{scotesePALEOMAPPaleoAtlasGPlates2020}.
+The geographic range of each genus was approximated as a convex hull enclosing all fossil locations of the genus. The area of the resulting polygon is an approximation of the genus range. 
+For each genus, circles indicate the area estimated with each plate tectonic model, and red squares indicate the median area across models. Genera highlighted in red went extinct at the end of the Cretaceous.}
+\label{fig_georanges}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{/hatching_size/Nautilids_hatching_sizes.pdf}
+\caption{Hatching sizes in Cretaceous nautilids. Each circle indicates the hatching size of a species belonging to the genus named on the horizontal axis. Nautilid genera that went extinct at the end-Cretaceous mass extinction are marked in red, genera that had already gone extinct before the Maastrichtian are in blue, and surviving genera are in black.}
+\label{fig_hatching}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{/hatching_size/Nautilids_hatching_survival.pdf}
+\caption{Median hatching size per nautilid genus and survival at the end-Cretaceous mass extinction.}
+\label{fig_hatch_surv}
+\end{figure}
+
+We estimated the geographic range during the Maastrichtian for genera with fossil occurrences from at least three different locations. Currently, these are seven genera (figure \ref{fig_georanges}, see supplementary information section \ref{si_geo} for maps).
+
+Most tectonic models were not able to use all fossil occurrence data, except for the Golonka \parencite{wrightCommunitydrivenPaleogeographicReconstructions2013} and Paleomap \parencite{scotesePALEOMAPPaleoAtlasGPlates2020} models. As a result, the Torsvik and Cocks model \parencite{torsvikEarthHistoryPalaeogeography2016} could not compute a reconstruction for \textit{Deltoidonautilus}. 
+
+\textit{Eutrephoceras} consistently has the largest geographic distribution, with a median of $2.03\times10^{8}$ km$^{2}$ (interquartile range $3.18\times10^{7}$ km$^{2}$) across all plate rotation models. With a mere median $38.2$ km$^{2}$ (interquartile range $11.6$ km$^{2}$), the geographic distribution of \textit{Deltoidonautilus} is the smallest. In fact, it is improbably small. In the PaleoDB, entries for \textit{Deltoidonautilus} in the Maastrichtian come from only three locations on the north-eastern coast of the Arabian peninsula. In the Cenozoic, evidence for \textit{Deltoidonautilus} is much more geographically widespread. For example, fossil occurrences are reported from the Palaeogene in the Ukraine \parencite{dernovFirstRecordGenus2024} and the early Eocene in India \parencite{halderCenozoicFossilNautiloids2012}. There is no clear difference between the geographic distribution of genera that survived the end-Cretaceous mass extinction and the genera that did not (figure \ref{fig_georanges}).
+
+Hatching sizes among nautilids appear to be highly variable within genera (figure \ref{fig_hatching}), and again there is no clear evidence for any association between hatching size and survival. 
+Although, at a glance, the median hatching size of a genus does seems to imply that genera that survived the mass extinction hatched at smaller sizes (figure \ref{fig_hatch_surv}), this difference in median hatching size is not statistically significant (Wilcoxon rank-sum test, $W = 9, p = 0.4$). If this observation were true, it would appear to be inconsistent with the hypothesis that smaller hatching size in ammonoids predisposed them to extinction \parencite{laptikhovskyEnvironmentalImpactEctocochleate2012}, though that would be a very interesting observation if confirmed.
+
+More measurements of hatching sizes in other nautilid genera (e.g. \textit{Angulithes}) might help to confirm or disprove this observation. Furthermore, it has to be said that even for genera where hatching sizes are available these are heavily undersampled. This is most pressing for \textit{Cimomia}, \textit{Hercoglossa}, and especially \textit{Pseudocenoceras}, as all three contain only a single species for which hatching sizes have been measured (figure \ref{fig_hatching}). In the case of \textit{Pseudocenoceras}, the measurement comes from a Jurassic species. Measurements in just a few additional species could substantially change the median hatching size for these genera. 
+
+\printbibliography
+
+\appendix 
+
+\makeatletter
+\renewcommand \thesection{S\@arabic\c@section}
+\renewcommand\thetable{S\@arabic\c@table}
+\renewcommand \thefigure{S\@arabic\c@figure}
+\makeatother
+
+\section{Nautilid survival or extinction at the end-Cretaceous mass extinction}
+\label{si_survival}
+
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{l|l|l|X}
+   \textbf{Genus} & \textbf{Survival} & \textbf{Confidence} & \textbf{References} \\ 
+   \hline &		&		&		 
+   \csvreader[head to column names]{../../../data/nautilids_extinction_genus.csv}{}{%
+   \\\slshape\genus & \survival & \confidence & \references}
+\end{tabularx}
+\caption{Nautilid genus survival or extinction at the end of the Cretaceous. Genera that survived or went extinct during the end-Cretaceous mass extinction are marked with True and False, respectively. Genera marked with NA probably went extinct before the end of the Cretaceous. The genus \textit{Nautilus} is provisionally listed here but will be excluded from the analysis.}
+\label{tab_survival}
+\end{table}
+
+
+\section{Maastrichtian nautilid geographic ranges}
+\label{si_geo}
+
+The following maps show the geographic ranges of Maastrichtian nautilids, as approximated by a convex hull (red polygon) fitted around all fossil occurrences (black circles) of a given genus. Geographic locations shown here were reconstructed using the Paleomap plate tectonic model \parencite{scotesePALEOMAPPaleoAtlasGPlates2020}. 
+
+\begin{figure}
+\includegraphics[width=\textwidth]{/geographic_distributions/PALEOMAP_Anglonautilus_distribution.pdf}
+\includegraphics[width=\textwidth]{/geographic_distributions/PALEOMAP_Cimomia_distribution.pdf}
+\includegraphics[width=\textwidth]{/geographic_distributions/PALEOMAP_Cymatoceras_distribution.pdf}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{/geographic_distributions/PALEOMAP_Deltoidonautilus_distribution.pdf}
+\includegraphics[width=\textwidth]{/geographic_distributions/PALEOMAP_Epicymatoceras_distribution.pdf}
+\includegraphics[width=\textwidth]{/geographic_distributions/PALEOMAP_Eutrephoceras_distribution.pdf}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{/geographic_distributions/PALEOMAP_Pseudocenoceras_distribution.pdf}
+\end{figure}
+
+
+\end{document}

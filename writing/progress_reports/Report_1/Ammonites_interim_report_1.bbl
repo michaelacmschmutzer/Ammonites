@@ -1,0 +1,3207 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{baudouinCretaceousNautiloidGenus2021}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=0f6c98a27b34a35c102a279b31900887}{%
+           family={Baudouin},
+           familyi={B\bibinitperiod},
+           given={Cyril},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3096ee88234fae4339de2048b16eefa2}{%
+           family={Delanoy},
+           familyi={D\bibinitperiod},
+           given={Gérard},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=045d4294ee6b6936c99d278b857478b4}{%
+           family={Lehmann},
+           familyi={L\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8f082e5b2915003b015d2e65c0fb5f9f}{%
+           family={Frau},
+           familyi={F\bibinitperiod},
+           given={Camille},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e1bfc9c05c3618fdb16a4946e6fd967b}{%
+           family={Gonnet},
+           familyi={G\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9b08cd0a9edbe1b928e7ffc73f382c77}{%
+           family={Vermeulen},
+           familyi={V\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Association Carnets de Géologie, Madrid}%
+      }
+      \strng{namehash}{14d625fdf6389087797241b210ce244b}
+      \strng{fullhash}{04b83351fe75bb076f64d759939abcb6}
+      \strng{fullhashraw}{04b83351fe75bb076f64d759939abcb6}
+      \strng{bibnamehash}{04b83351fe75bb076f64d759939abcb6}
+      \strng{authorbibnamehash}{04b83351fe75bb076f64d759939abcb6}
+      \strng{authornamehash}{14d625fdf6389087797241b210ce244b}
+      \strng{authorfullhash}{04b83351fe75bb076f64d759939abcb6}
+      \strng{authorfullhashraw}{04b83351fe75bb076f64d759939abcb6}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The occurrence of the nautiloid genus Anglonautilus Spath in France was limited to the report of Anglonautilus dorsoplicatus (Wiedmann) from the Albian of Escragnolles (Alpes-Maritimes) and Anglonautilus sp. from the Aptian of Les Ferres (Alpes-Maritimes). Here we document the presence of the successive species Anglonautilus praeundulatus Lehmann et al., Anglonautilus undulatus (Sowerby) and Anglonautilus dorsoplicatus (Wiedmann) from the Cretaceous of France. The stratigraphic range of Anglonautilus Spath, hitherto unknown before Aptian times is extended downward to the Hauterivian. The Hauterivian species Nautilus begudensis Kilian \& Reboul, sometimes assigned to the genus Anglonautilus Spath, is revised and re-assigned to the genus Cymatoceras Hyatt.}
+      \field{day}{24}
+      \field{issn}{1634-0744}
+      \field{journaltitle}{Carnets Geol.}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{12}
+      \field{title}{The {{Cretaceous}} Nautiloid Genus {{Anglonautilus Spath}}, 1927, in {{France}}}
+      \field{urlday}{8}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{21}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{235\bibrangedash 263}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.2110/carnets.2021.2112
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/CUXEXMTB/Baudouin et al. - 2021 - The Cretaceous nautiloid genus Anglonautilus Spath, 1927, in France.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://paleopolis.rediris.es/cg/21/12/index.html
+      \endverb
+      \verb{url}
+      \verb http://paleopolis.rediris.es/cg/21/12/index.html
+      \endverb
+    \endentry
+    \entry{cichowolskiNautiloidGenusCymatoceras2003}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=916d9fa98a72171f92fc8f2f80fa6576}{%
+           family={Cichowolski},
+           familyi={C\bibinitperiod},
+           given={Marcela},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{fullhash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{fullhashraw}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{bibnamehash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{authorbibnamehash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{authornamehash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{authorfullhash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{authorfullhashraw}{916d9fa98a72171f92fc8f2f80fa6576}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Until now, Cretaceous nautiloids from Argentina have been studied only briefly. Here Cymatoceras is described in detail, based on specimens found in the Neuquén and Austral basins, located in west-central and southern Argentina, respectively. Those from the Neuquén Basin are of Valanginian–Barremian age and belong to a single species, Cymatoceras perstriatum (Steuer). Those from the Austral Basin range in age from Hauterivian to Campanian and represent the first record of Cymatoceras from this region. It is represented by a new species, Cymatoceras patagonicum from the Turonian, and by isolated specimens, which are assigned to this genus in open nomenclature, owing to their poor preservation state; their ages range from Early Hauterivian to Early Campanian.}
+      \field{day}{1}
+      \field{issn}{0195-6671}
+      \field{journaltitle}{Cretaceous Research}
+      \field{month}{8}
+      \field{number}{4}
+      \field{shortjournal}{Cretaceous Research}
+      \field{title}{The Nautiloid Genus {{{\mkbibemph{Cymatoceras}}}} from the {{Cretaceous}} of the {{Neuquén}} and {{Austral}} Basins, {{Argentina}}}
+      \field{urlday}{2}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{24}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{375\bibrangedash 390}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1016/S0195-6671(03)00050-8
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/WANCNM6J/Cichowolski - 2003 - The nautiloid genus Cymatoceras from the Cretaceous of the Neuquén and Austral basins, Argent.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/CJG4CSG6/S0195667103000508.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0195667103000508
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0195667103000508
+      \endverb
+      \keyw{Argentina,Austral Basin,Cretaceous,Nautiloids,Neuquén Basin}
+    \endentry
+    \entry{dernovFirstRecordGenus2024}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c1a1d6a0443f7a5ebd94d24a6b330367}{%
+           family={Dernov},
+           familyi={D\bibinitperiod},
+           given={V.\bibnamedelimi S.},
+           giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{fullhash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{fullhashraw}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{bibnamehash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{authorbibnamehash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{authornamehash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{authorfullhash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{authorfullhashraw}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The article describes a first record of a species of the genus Deltoidonautilus Spath, 1927 (D. cf. sowerbyi (Wetherell in Sowerby, 1843)) in the Palaeogene (Ypresian or lower Lutetian) deposits of the Crimean Peninsula, southern Ukraine. The data obtained expand the geographical distribution of this genus and complement the palaeontological characteristics of the Palaeogene succession of southern Ukraine.}
+      \field{issn}{2415-315X}
+      \field{issue}{2(45)}
+      \field{journaltitle}{Odesa National University Herald. Geography and Geology}
+      \field{langid}{ukrainian}
+      \field{number}{2(45)}
+      \field{title}{The First Record of the Genus Deltoidonautilus Spath, 1927 (nautilida: Cephalopoda) in the Palaeogene of the Crimean Peninsula, Ukraine}
+      \field{urlday}{2}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{29}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{139\bibrangedash 149}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.18524/2303-9914.2024.2(45).318037
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/NUNGWFLC/The First Record.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://visgeo.onu.edu.ua/article/view/318037
+      \endverb
+      \verb{url}
+      \verb http://visgeo.onu.edu.ua/article/view/318037
+      \endverb
+    \endentry
+    \entry{flannery-sutherlandLateCretaceousAmmonoids2024}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=8e5d32c363db7f84576ea9d7d05e8f40}{%
+           family={Flannery-Sutherland},
+           familyi={F\bibinithyphendelim S\bibinitperiod},
+           given={Joseph\bibnamedelima T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4da175bee13f59808a6fc6e924fd1d3f}{%
+           family={Crossan},
+           familyi={C\bibinitperiod},
+           given={Cameron\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b616d56d2b650f1ed7259f2fff608d16}{%
+           family={Myers},
+           familyi={M\bibinitperiod},
+           given={Corinne\bibnamedelima E.},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9df70212e3ad8698a19b517a211d5be3}{%
+           family={Hendy},
+           familyi={H\bibinitperiod},
+           given={Austin\bibnamedelimb J.\bibnamedelimi W.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=28b18cd509ac35c17c60245f3b9359b7}{%
+           family={Landman},
+           familyi={L\bibinitperiod},
+           given={Neil\bibnamedelima H.},
+           giveni={N\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b8394c26e4128e6e3f29d6d90d71a9f3}{%
+           family={Witts},
+           familyi={W\bibinitperiod},
+           given={James\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{8d5232cc309d309a379c38a5660704b5}
+      \strng{fullhash}{1c54a824da1f20ad154c081fea3e71f2}
+      \strng{fullhashraw}{1c54a824da1f20ad154c081fea3e71f2}
+      \strng{bibnamehash}{1c54a824da1f20ad154c081fea3e71f2}
+      \strng{authorbibnamehash}{1c54a824da1f20ad154c081fea3e71f2}
+      \strng{authornamehash}{8d5232cc309d309a379c38a5660704b5}
+      \strng{authorfullhash}{1c54a824da1f20ad154c081fea3e71f2}
+      \strng{authorfullhashraw}{1c54a824da1f20ad154c081fea3e71f2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Palaeontologists have long sought to explain the diversification of individual clades to whole biotas at global scales. Advances in our understanding of the spatial distribution of the fossil record through geological time, however, has demonstrated that global trends in biodiversity were a mosaic of regionally heterogeneous diversification processes. Drivers of diversification must presumably have also displayed regional variation to produce the spatial disparities observed in past taxonomic richness. Here, we analyse the fossil record of ammonoids, pelagic shelled cephalopods, through the Late Cretaceous, characterised by some palaeontologists as an interval of biotic decline prior to their total extinction at the Cretaceous-Paleogene boundary. We regionally subdivide this record to eliminate the impacts of spatial sampling biases and infer regional origination and extinction rates corrected for temporal sampling biases using Bayesian methods. We then model these rates using biotic and abiotic drivers commonly inferred to influence diversification. Ammonoid diversification dynamics and responses to this common set of diversity drivers were regionally heterogeneous, do not support ecological decline, and demonstrate that their global diversification signal is influenced by spatial disparities in sampling effort. These results call into question the feasibility of seeking drivers of diversity at global scales in the fossil record.}
+      \field{day}{27}
+      \field{issn}{2041-1723}
+      \field{journaltitle}{Nature Communications}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{1}
+      \field{shortjournal}{Nat Commun}
+      \field{title}{Late {{Cretaceous}} Ammonoids Show That Drivers of Diversification Are Regionally Heterogeneous}
+      \field{urlday}{10}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{volume}{15}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{5382}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41467-024-49462-z
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/NM47PHBU/Flannery-Sutherland et al. - 2024 - Late Cretaceous ammonoids show that drivers of div.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41467-024-49462-z
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41467-024-49462-z
+      \endverb
+      \keyw{Ecological modelling,Macroecology,Palaeoecology,Palaeontology}
+    \endentry
+    \entry{garvieMolluscanMacrofaunaSeguin2013}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=99460b86d6cd55577bc22a9d42027834}{%
+           family={Garvie},
+           familyi={G\bibinitperiod},
+           given={Christopher\bibnamedelima L},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{fullhash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{fullhashraw}{99460b86d6cd55577bc22a9d42027834}
+      \strng{bibnamehash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{authorbibnamehash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{authornamehash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{authorfullhash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{authorfullhashraw}{99460b86d6cd55577bc22a9d42027834}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Investigation of known Seguin localities led to the discovery of an overlooked diverse and abundant marine fauna in Solomon's Branch, a stream in Bastrop County, Texas. The fauna, a transported assemblage from a marine littoral environment, encompasses a mix of specimen types from large wave-worn individuals to the smallest unworn ornamented species. Following the discovery of this fauna, further field work was undertaken and other Seguin localities with different depositional environments were found and collections made from those sites. Finally, a further suite of specimens was examined within the Texas Natural Science Center, some from localities no longer in existence or now lost. The environment is transitional in character from the deeper water Midway to the nonmarine environment of the chiefly terrestrial Texas Wilcox deposits, and represents the last major marine transgression in this area prior to the Eocene. The fauna is a mix of that derived from early Paleocene and Cretaceous taxa as well as elements that appear to originate from western Africa, the Tethyan region, and the western coast of America. The inferred species' habitat includes a near-shore open marine element, a probable lagoonal component, and brackish water elements. From the 115 molluscan taxa recognized, six have not been recognized to date in sediments later than the Cretaceous, and 30 represent from the Eocene or later records. The following new gastropod genera and subgenera are proposed: Texaficus, Crassauris, Latirus (Levarlatirus), Praesurcula, and Apiotoma (Lavarotoma). The following new species and subspecies are described: Bivalvia: Calorhadia diminutia, Adrana seguinensis, Bornia solomonis, Mactra (Eomactra) piscinasina, Arcopagia (Arcopagia) solomonis, A. (Johnsonella) seguinensis; Gastropoda: Turritella mortoni crassa, Tylotrochus extremus, Teinostoma (Idioraphie) seguinensis, Cochliolepis (Tylaxis) palaeocenica, Solariorbis velarum, Natica (Carinacca) seguinensis, Polinices (Euspira) perspecta texana, Texmelanatria contracta, T. brevis, Loxotrema texana, Pseudoliva globosa, Cantharus seguinensis, Colwellia humerosa, C. nodulina, C. nodulina meta, Tritiaria? seguinensis, Metula reticulata, Latirus (Levarlatirus) undus, L. (Levarlatirus) textilis, Strepsidura cancellata, Texaficus obesus, Levifusus pagoda seguinensis, L. actuocarinata, Fulgurofusus grande, Palaeorhaphis palaeocenica, Volutocorbis olssoni gracilis, Eoancilla hordea, Caveola ostium, Clinuropsis yanceyi, C. tuberculata, Praesurcula palaeocenica, Coronia vallare, Eopleurotoma molineuxae, Tropisurcula? (Eodrillia) cingula, Apiotoma (Lavarotoma) alva, Crassauris seguinensis, Pyramidella (Syrnola) bilineata, Turbonilla (Chemnitzia) obliqueata, Odostoma (Doliella) deprimere, Cylichna (Cylichnopsis) bicarinata, Mnestia ovata, Retusa (Cylichnina) bastropensis; Cephalopoda: Cimomia contraria, Angulithes? palaeocenica. Other changes in taxonomic assignment include: the genus Lisbonia is moved from the Nassariidae to the Buccinidae; the genus Palaeorhaphis is moved from the Mitridae to the Fasciolariidae; the genus Fictoacteon is made a subgenus of Eoacteon; Baluchicardia wilcoxensis replaces Venericardia wilcoxensis; Cochlodesma howei replaces Periploma howei; Pachymelania penrosei replaces Cerithium penrosei; Lisbonia pauper replaces Pseudoliva ostrarupis pauper; Pleuroploca plummeri replaces Fasciolaria? plummeri; Fulgurofusus perobliquus replaces aff. Falsifusus perobliquus; Eoancilla mediavia replaces Ancilla mediavia; Apiotoma (Lavarotoma) capex replaces "Pleurotoma" capex; the genus Ancillarina should be used in place of Ancilla for several U. S. and European Eocene species; the genus Coronia is discussed and several species of that genus in the U. S. Gulf Coast are reassigned to Gemmula; the genus Protosurcula is moved from the Borsoniinae to the Cochlespirinae. Neotypes are designated for Turritella polysticha and Pseudoliva ostrarupis.}
+      \field{journaltitle}{Bulletins of American Paleontology}
+      \field{langid}{english}
+      \field{number}{384}
+      \field{title}{The Molluscan Macrofauna of the Seguin Formation ({{Upper Paleocene}}) in Central {{Texas}}}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/MPS6NHDK/Garvie - 386. new eocene Mollusca froM The collecTions of The Texas naTural science cenTer.pdf
+      \endverb
+    \endentry
+    \entry{goedertMioceneNautilusMollusca2022}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=afa48ab0b2807c6826e64b46d3268232}{%
+           family={Goedert},
+           familyi={G\bibinitperiod},
+           given={James\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a66ac8c1c22321645a9c880c42e6b3d1}{%
+           family={Kiel},
+           familyi={K\bibinitperiod},
+           given={Steffen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cb010d47c9669a35f2a64c8051cb7e0d}{%
+           family={Tsai},
+           familyi={T\bibinitperiod},
+           given={Cheng-Hsiu},
+           giveni={C\bibinithyphendelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b1c129486c46e8736d6fb130cb85d203}
+      \strng{fullhash}{aab3870944b5794136d3b5368af2b2e2}
+      \strng{fullhashraw}{aab3870944b5794136d3b5368af2b2e2}
+      \strng{bibnamehash}{aab3870944b5794136d3b5368af2b2e2}
+      \strng{authorbibnamehash}{aab3870944b5794136d3b5368af2b2e2}
+      \strng{authornamehash}{b1c129486c46e8736d6fb130cb85d203}
+      \strng{authorfullhash}{aab3870944b5794136d3b5368af2b2e2}
+      \strng{authorfullhashraw}{aab3870944b5794136d3b5368af2b2e2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The fossil record of the cephalopod genus Nautilus has been obscured because a few influential taxonomists during the 20th Century decided that fossils similar to Nautilus were instead other genera. We now recognize fossils once classified as species of other genera as species of Nautilus. This includes fossils from Miocene rocks of Taiwan that were previously described as Kummelonautilus taiwanum but herein recognized instead as being the northernmost Neogene record of Nautilus in the Indo-Pacific region. The name is corrected to Nautilus taiwanus, and now known to occur in two formations in central Taiwan, the early Miocene Shihmentsun and early to middle Miocene Houdongkeng formations. Miocene fossils from Indonesia that were placed in other genera are now considered to represent Nautilus as they were originally assigned, in addition to several Miocene species from Australia, which provide the southernmost Neogene fossil record for the genus. Some of these Indo-Pacific fossils may represent the same species, but more specimens are needed to determine the amount of variability within these Neogene taxa.}
+      \field{issn}{1440-1738}
+      \field{journaltitle}{Island Arc}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{title}{Miocene {{Nautilus}} ({{Mollusca}}, {{Cephalopoda}}) from {{Taiwan}}, and a Review of the {{Indo-Pacific}} Fossil Record of {{Nautilus}}}
+      \field{urlday}{8}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{31}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{e12442}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1111/iar.12442
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/CG4S7SQP/Goedert et al. - 2022 - Miocene Nautilus (Mollusca, Cephalopoda) from Taiwan, and a review of the Indo-Pacific fossil record.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/J5R8EPCQ/iar.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/iar.12442
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/iar.12442
+      \endverb
+      \keyw{fossil,Indo-Pacific,Miocene,Nautilus,Taiwan}
+    \endentry
+    \entry{halderCenozoicFossilNautiloids2012}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3b7f244e2e987d0459721b527bf58b1b}{%
+           family={Halder},
+           familyi={H\bibinitperiod},
+           given={Kalyan},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{fullhash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{fullhashraw}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{bibnamehash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{authorbibnamehash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{authornamehash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{authorfullhash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{authorfullhashraw}{3b7f244e2e987d0459721b527bf58b1b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Cenozoic marine succession of Kutch, India, is rich in benthic molluscs and other invertebrates, but nautiloids are very scanty. Three nautiloid species, with two being new, are reported here: Deltoidonautilus vredenburgi n. sp. from the Early Eocene Naredi Formation, Cimomia forbesi (d’Archiac and Haime, 1854) from the Middle Eocene Harudi Formation, and Aturia gujaratensis n. sp. from the Early Miocene Khari Nadi and Chhasra formations. Taphonomic and sedimentary features reveal that the Eocene nautiloids were parautochthonous whereas the Miocene species might have been transported post-mortally for some distance. Palaeobiogeographic distribution of the Cenozoic nautiloids of the Indian subcontinent and other parts of the world reveals that though the genera are pandemic the species are often endemic to a basin or a province. Specific endemism and pattern of broad faunal similarity of nautiloids among different provinces within the Tethys Realm (sensu Harzhauser et al., 2002) mimic those of the benthic molluscs during the Palaeogene.}
+      \field{day}{1}
+      \field{issn}{1871-174X}
+      \field{journaltitle}{Palaeoworld}
+      \field{month}{6}
+      \field{number}{2}
+      \field{shortjournal}{Palaeoworld}
+      \field{title}{Cenozoic Fossil Nautiloids ({{Cephalopoda}}) from {{Kutch}}, Western {{India}}}
+      \field{urlday}{17}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{21}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{116\bibrangedash 130}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/j.palwor.2012.05.004
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/VJZY4GCG/Halder - 2012 - Cenozoic fossil nautiloids (Cephalopoda) from Kutch, western India.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/3KESGZTX/S1871174X12000261.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1871174X12000261
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1871174X12000261
+      \endverb
+      \keyw{Aturidae,Cenozoic,Hercoglossidae,Kutch,Nautiloidea}
+    \endentry
+    \entry{hijmansTerraSpatialData2025}{software}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9b0a2427b5a45d44474b8316d0d9aad7}{%
+           family={Hijmans},
+           familyi={H\bibinitperiod},
+           given={Robert\bibnamedelima J},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{fullhash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{fullhashraw}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{bibnamehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{authorbibnamehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{authornamehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{authorfullhash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{authorfullhashraw}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Terra: {{Spatial Data Analysis}}}
+      \field{version}{1.8-62}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/rspatial/terra
+      \endverb
+      \verb{url}
+      \verb https://github.com/rspatial/terra
+      \endverb
+    \endentry
+    \entry{kocsisRgplatesInterfaceGPlates2025}{software}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=8b18d384773657ef80431227f8d6eb7e}{%
+           family={Kocsis},
+           familyi={K\bibinitperiod},
+           given={Adam\bibnamedelima T.},
+           giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2ddabcff824123565f6f61f8bf91386a}{%
+           family={Raja},
+           familyi={R\bibinitperiod},
+           given={Nussaïbah\bibnamedelima B.},
+           giveni={N\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6ef75d37726da5e07c340403462517be}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=242087507ba1deb8caa2a7ac606b8537}{%
+           family={Dowding},
+           familyi={D\bibinitperiod},
+           given={Elizabeth\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {Zenodo}%
+      }
+      \strng{namehash}{6f2258a2a29f599a588874e04c1328e4}
+      \strng{fullhash}{6af093e20210f16615d49251f6ae6984}
+      \strng{fullhashraw}{6af093e20210f16615d49251f6ae6984}
+      \strng{bibnamehash}{6af093e20210f16615d49251f6ae6984}
+      \strng{authorbibnamehash}{6af093e20210f16615d49251f6ae6984}
+      \strng{authornamehash}{6f2258a2a29f599a588874e04c1328e4}
+      \strng{authorfullhash}{6af093e20210f16615d49251f6ae6984}
+      \strng{authorfullhashraw}{6af093e20210f16615d49251f6ae6984}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{See dedicated website at https://gplates.github.io/rgplates/. The repository includes two files: .zip: project work files (incl. website and testing data for offline methods) .tar.gz: R package source}
+      \field{day}{26}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shorttitle}{Rgplates}
+      \field{title}{Rgplates: {{R Interface}} for the {{GPlates Web Service}} and {{Desktop Application}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.5281/zenodo.15286150
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/LB6T6RKV/15286150.html
+      \endverb
+      \verb{urlraw}
+      \verb https://zenodo.org/records/15286150
+      \endverb
+      \verb{url}
+      \verb https://zenodo.org/records/15286150
+      \endverb
+      \keyw{plates,R,tectonic reconstruction}
+    \endentry
+    \entry{landmanNautilidNurseriesHatchlings2018}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=28b18cd509ac35c17c60245f3b9359b7}{%
+           family={Landman},
+           familyi={L\bibinitperiod},
+           given={Neil\bibnamedelima H.},
+           giveni={N\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66a552a78c29f29e30665b02aad1f741}{%
+           family={Grier},
+           familyi={G\bibinitperiod},
+           given={James\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb9aed4e0b7cc6ba8e045dd095335be6}{%
+           family={Cochran},
+           familyi={C\bibinitperiod},
+           given={J.\bibnamedelimi Kirk},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8779ca96b03bbd68e426e9df56874b8}{%
+           family={Grier},
+           familyi={G\bibinitperiod},
+           given={Joyce\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b41a1fda91e3fa3ab8f9d5c2df54490d}{%
+           family={Petersen},
+           familyi={P\bibinitperiod},
+           given={Jack\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9f0b054f772011e86db1f6335444f830}{%
+           family={Towbin},
+           familyi={T\bibinitperiod},
+           given={W.\bibnamedelimi Henry},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{2545c43a6fa0f05db8c26943999d857f}
+      \strng{fullhash}{5a81a53d964199c064564407c936b9bd}
+      \strng{fullhashraw}{5a81a53d964199c064564407c936b9bd}
+      \strng{bibnamehash}{5a81a53d964199c064564407c936b9bd}
+      \strng{authorbibnamehash}{5a81a53d964199c064564407c936b9bd}
+      \strng{authornamehash}{2545c43a6fa0f05db8c26943999d857f}
+      \strng{authorfullhash}{5a81a53d964199c064564407c936b9bd}
+      \strng{authorfullhashraw}{5a81a53d964199c064564407c936b9bd}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The nautilid Eutrephoceras dekayi (Morton 1834) is relatively abundant in the lower Maastrichtian (Upper Cretaceous) Pierre Shale of east‐central Montana. We analysed the morphology, size frequency distribution, and isotope composition of a large collection of 220 well‐preserved specimens including hatchlings, juveniles and adults. The newly hatched shell is approximately 14~mm in diameter with a body chamber one‐third whorl in angular length terminating in the nepionic constriction. Internally, the embryonic shell contains five septa. Juveniles are abundant and comprise two‐thirds of the sample whereas sub‐adults, defined by the incipient flattening of the venter, are rare. Adults comprise approximately one‐third of the sample and average 100~mm in diameter. The co‐occurrence of newly hatched shells, small juveniles and adults suggests that the eggs were laid in the same area in which the hatchlings developed. Based on the excellent preservation of the juveniles, we conclude that they did not float into the area after death, but lived in the region, implying that this area served as a nursery for young animals. The calculated temperatures of the embryonic shells are similar to those of the post‐embryonic shells and generally range from 16 to 18~°C. Upon hatching, the nautilids probably followed a demersal mode of life and lived in well‐oxygenated water ≤50~m deep. An examination of lethal injuries (puncture holes) suggests that all ontogenetic stages were equally vulnerable to predation. The proximity of the site to the Sheridan Delta suggests that the specimens were smothered by sudden pulses of sediment transported into the area by major storms. Keywords Embryonic size Eutrephoceras isotopes nautilids ontogeny Pierre Shale Upper Cretaceous Western Interior Seaway}
+      \field{issn}{0024-1164}
+      \field{journaltitle}{Lethaia}
+      \field{month}{1}
+      \field{number}{1}
+      \field{shorttitle}{Nautilid Nurseries}
+      \field{title}{Nautilid Nurseries: Hatchlings and Juveniles of {{Eutrephoceras}} Dekayi from the Lower {{Maastrichtian}} ({{Upper Cretaceous}}) {{Pierre Shale}} of East‐central {{Montana}}}
+      \field{urlday}{28}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{51}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{48\bibrangedash 74}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1111/let.12222
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/YJJZ8WE3/Landman et al. - 2018 - Nautilid nurseries hatchlings and juveniles of Eu.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.idunn.no/doi/10.1111/let.12222
+      \endverb
+      \verb{url}
+      \verb https://www.idunn.no/doi/10.1111/let.12222
+      \endverb
+      \keyw{Embryonic size,Eutrephoceras,isotopes,nautilids,ontogeny,Pierre Shale,Upper Cretaceous,Western Interior Seaway}
+    \endentry
+    \entry{laptikhovskyEnvironmentalImpactEctocochleate2012}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=7a40dfb59343a7a7bc792b68ae6d192b}{%
+           family={Laptikhovsky},
+           familyi={L\bibinitperiod},
+           given={V.L.},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d2ae7a4446db819e7a125f99e2b42cc8}{%
+           family={Rogov},
+           familyi={R\bibinitperiod},
+           given={M.A.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cfb877a45707db9570e638421a6e6dd1}{%
+           family={Nikolaeva},
+           familyi={N\bibinitperiod},
+           given={S.E.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=165b966b8c036e613bdb3ca53ac693ca}{%
+           family={Arkhipkin},
+           familyi={A\bibinitperiod},
+           given={A.I.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c4f822518f71a68371aaea78a060a55b}
+      \strng{fullhash}{2e695aff0cfc3ea6b54b4a9333681017}
+      \strng{fullhashraw}{2e695aff0cfc3ea6b54b4a9333681017}
+      \strng{bibnamehash}{2e695aff0cfc3ea6b54b4a9333681017}
+      \strng{authorbibnamehash}{2e695aff0cfc3ea6b54b4a9333681017}
+      \strng{authornamehash}{c4f822518f71a68371aaea78a060a55b}
+      \strng{authorfullhash}{2e695aff0cfc3ea6b54b4a9333681017}
+      \strng{authorfullhashraw}{2e695aff0cfc3ea6b54b4a9333681017}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{6}
+      \field{issn}{1802-8225, 1214-1119}
+      \field{journaltitle}{Bulletin of Geosciences}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{shortjournal}{Bull. Geosci.}
+      \field{title}{Environmental Impact on Ectocochleate Cephalopod Reproductive Strategies and the Evolutionary Significance of Cephalopod Egg Size}
+      \field{urlday}{28}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{83\bibrangedash 94}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.3140/bull.geosci.1351
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/JV3RJJRX/Laptikhovsky et al. - 2012 - Environmental impact on ectocochleate cephalopod r.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.geology.cz/bulletin/contents/art1351
+      \endverb
+      \verb{url}
+      \verb http://www.geology.cz/bulletin/contents/art1351
+      \endverb
+    \endentry
+    \entry{malchykShellOrnamentSystematic2017}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=40ebc55f44857bd0f37fe30cd727add7}{%
+           family={Malchyk},
+           familyi={M\bibinitperiod},
+           given={Oksana},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc663d2f345f8107bdd97f0700f8e1a1}{%
+           family={Machalski},
+           familyi={M\bibinitperiod},
+           given={Marcin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=06f5763a861de0ae508f370468d76f02}{%
+           family={Waksmundzki},
+           familyi={W\bibinitperiod},
+           given={Bogusław},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=61e894eb531b7cb59088a0a1665d9d8f}{%
+           family={Duda},
+           familyi={D\bibinitperiod},
+           given={Maciej},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{be4bc27d03c3e51149d8e2e55ac177ed}
+      \strng{fullhash}{7cbb813302fc5e7eef7af9125793e2f7}
+      \strng{fullhashraw}{7cbb813302fc5e7eef7af9125793e2f7}
+      \strng{bibnamehash}{7cbb813302fc5e7eef7af9125793e2f7}
+      \strng{authorbibnamehash}{7cbb813302fc5e7eef7af9125793e2f7}
+      \strng{authornamehash}{be4bc27d03c3e51149d8e2e55ac177ed}
+      \strng{authorfullhash}{7cbb813302fc5e7eef7af9125793e2f7}
+      \strng{authorfullhashraw}{7cbb813302fc5e7eef7af9125793e2f7}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The fossil record of Nautilida in carbonate facies is skewed towards moulds (steinkerns) in various states of preservation, which complicates assessment of the original shell ornament of many taxa. As a remarkable exception, moulds of Epicymatoceras vaelsense from upper Campanian and lower Maastrichtian (Upper Cretaceous) siliceous limestones (opoka) in Poland retain details of the original shell ornament, allowing conclusions on the original structure of the shell wall, systematic position and hatching size of this nautilid to be drawn. Both external and internal moulds are present in the material studied, which are referred to as taphomorph 1 and 2, respectively. Based on morphology and inferred taphonomy, it is proposed that the external ribbing of E. vaelsense was originally composed of overlapping, tile-shaped lamellae of the outer prismatic layer, a character recently suggested to be a synapomorphy for the cymatoceratid clade. The diameter of the embryonic conch of E. vaelsense is estimated to have been around 30~mm, which is near the maximum range of hatching size recorded for Cretaceous and younger nautilids. On the basis of the inferred shell structure of E.~vaelsense, it is speculated that living individuals of this nautilid were covered by a dense periostracal cover similar to that of Recent Allonautilus scrobiculatus. This study demonstrates that nautilid moulds may provide a better source of palaeontological data than conventionally accepted.}
+      \field{day}{1}
+      \field{issn}{0195-6671}
+      \field{journaltitle}{Cretaceous Research}
+      \field{month}{12}
+      \field{shortjournal}{Cretaceous Research}
+      \field{shorttitle}{Shell Ornament, Systematic Position and Hatching Size of {{{\mkbibemph{Epicymatoceras}}}}{\mkbibemph{ Vaelsense}} ({{Nautilida}})}
+      \field{title}{Shell Ornament, Systematic Position and Hatching Size of {{{\mkbibemph{Epicymatoceras}}}}{\mkbibemph{ Vaelsense}} ({{Nautilida}}): {{New}} Insights Based on Specimens in Mould Preservation from the {{Upper Cretaceous}} of {{Poland}}}
+      \field{urlday}{1}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{80}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.cretres.2017.08.006
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/VH74BXTT/Malchyk et al. - 2017 - Shell ornament, systematic position and hatching size of Epicymatoceras vaelsense (Nautilida).pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/ULVMNPG6/S0195667117302604.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0195667117302604
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0195667117302604
+      \endverb
+      \keyw{Campanian,Central Europe,Cephalopoda,Fossilisation,Maastrichtian,Taphonomy}
+    \endentry
+    \entry{matthewsGlobalPlateBoundary2016}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=a0cf1905f773c88c2c9c47e145ed08e9}{%
+           family={Matthews},
+           familyi={M\bibinitperiod},
+           given={Kara\bibnamedelima J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c0aa2dd1be08f40e4b8b9c2699961512}{%
+           family={Maloney},
+           familyi={M\bibinitperiod},
+           given={Kayla\bibnamedelima T.},
+           giveni={K\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=af12f7549cbb5abf15b14ab7a1d5690a}{%
+           family={Zahirovic},
+           familyi={Z\bibinitperiod},
+           given={Sabin},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6137f0416ef93f769c8093bb425fa991}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Simon\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=39865d1c47d2b7a6136b51448098f96c}{%
+           family={Seton},
+           familyi={S\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=56f5de3c5f33e14e82e6a4b637f3f853}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={R.\bibnamedelimi Dietmar},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5089452b1a237d7654046aef657273ac}
+      \strng{fullhash}{baa5426a9b646d69a3aa68a067a2afa1}
+      \strng{fullhashraw}{baa5426a9b646d69a3aa68a067a2afa1}
+      \strng{bibnamehash}{baa5426a9b646d69a3aa68a067a2afa1}
+      \strng{authorbibnamehash}{baa5426a9b646d69a3aa68a067a2afa1}
+      \strng{authornamehash}{5089452b1a237d7654046aef657273ac}
+      \strng{authorfullhash}{baa5426a9b646d69a3aa68a067a2afa1}
+      \strng{authorfullhashraw}{baa5426a9b646d69a3aa68a067a2afa1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Many aspects of deep-time Earth System models, including mantle convection, paleoclimatology, paleobiogeography and the deep Earth carbon cycle, require high-resolution plate motion models that include the evolution of the mosaic of plate boundaries through time. We present the first continuous late Paleozoic to present-day global plate model with evolving plate boundaries, building on and extending two previously published models for the late Paleozoic (410–250Ma) and Mesozoic-Cenozoic (230–0Ma). We ensure continuity during the 250–230Ma transition period between the two models, update the absolute reference frame of the Mesozoic-Cenozoic model and add a new Paleozoic reconstruction for the Baltica-derived Alexander Terrane, now accreted to western North America. This 410–0Ma open access model provides a framework for deep-time whole Earth modelling and acts as a base for future extensions and refinement. We analyse the model in terms of the number of plates, predicted plate size distribution, plate and continental root mean square (RMS) speeds, plate velocities and trench migration through time. Overall model trends share many similarities to those for recent times, which we use as a first order benchmark against which to compare the model and identify targets for future model refinement. Except for during the period \textasciitilde 260–160Ma, the number of plates (16–46) and ratio of “large” plates (≥107.5km2) to smaller plates (\textasciitilde 2.7–6.6) are fairly similar to present-day values (46 and 6.6, respectively), with lower values occurring during late Paleozoic assembly and growth of Pangea. This temporal pattern may also reflect difficulties in reconstructing small, now subducted oceanic plates further back in time, as well as whether a supercontinent is assembling or breaking up. During the \textasciitilde 260–160Ma timeframe the model reaches a minima in the number of plates, in contrast to what we would expect during initial Pangea breakup and thus highlighting the need for refinement of the relative plate motion model. Continental and plate RMS speeds show an overall increase backwards through time from \textasciitilde 200 to 365Ma, reaching a peak at 365Ma of {$>$}14 and {$>$}16cm/yr, respectively, compared to \textasciitilde 3 and \textasciitilde 5cm/yr, respectively, at present-day. The median value of trench motion remains close to, yet above 0cm/yr for most of the model timeframe, with a dominance in positive values reflecting a prevalence of trench retreat over advance. Trench advance speeds are excessive during the 370–160Ma period, reaching more than four times that observed at present-day. Extended periods of trench advance and global continental and plate RMS speeds that far exceed present-day values warrant further investigation. Future work should test whether alternative absolute reference frames or relative motions would mitigate these high speeds, while still being consistent with geologic and geophysical observations, or alternatively focus on identifying potential driving mechanisms to account for such rapid motions.}
+      \field{day}{1}
+      \field{issn}{0921-8181}
+      \field{journaltitle}{Global and Planetary Change}
+      \field{month}{11}
+      \field{shortjournal}{Global and Planetary Change}
+      \field{title}{Global Plate Boundary Evolution and Kinematics since the Late {{Paleozoic}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{146}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{226\bibrangedash 250}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1016/j.gloplacha.2016.10.002
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/HLUFJU9G/Matthews et al. - 2016 - Global plate boundary evolution and kinematics since the late Paleozoic.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/4PRA9RPN/S0921818116302417.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0921818116302417
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0921818116302417
+      \endverb
+      \keyw{Alexander Terrane,Paleozoic,Pangea,Panthalassa,Plate reconstruction,Subduction}
+    \endentry
+    \entry{merdithExtendingFullplateTectonic2021}{article}{}{}
+      \name{author}{11}{}{%
+        {{un=0,uniquepart=base,hash=b8bcb30a1347cd38b08e56dc1d1106dc}{%
+           family={Merdith},
+           familyi={M\bibinitperiod},
+           given={Andrew\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6137f0416ef93f769c8093bb425fa991}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Simon\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a589d4c1b6d2658a638c143899b2c557}{%
+           family={Collins},
+           familyi={C\bibinitperiod},
+           given={Alan\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4d64ebd2fe95ec9d8d64d8ff75c33ac4}{%
+           family={Tetley},
+           familyi={T\bibinitperiod},
+           given={Michael\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f1e7623c69a0f3b78e716b0e2f30ac32}{%
+           family={Mulder},
+           familyi={M\bibinitperiod},
+           given={Jacob\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=47ee1e24d31e056b0adcb7aa78e4479e}{%
+           family={Blades},
+           familyi={B\bibinitperiod},
+           given={Morgan\bibnamedelima L.},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ca669f0cb040412d9169789e79bfcb80}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e315670bebd803be56a16731e956307e}{%
+           family={Armistead},
+           familyi={A\bibinitperiod},
+           given={Sheree\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef4238cce44c194cec970f8d4eb8e92b}{%
+           family={Cannon},
+           familyi={C\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=af12f7549cbb5abf15b14ab7a1d5690a}{%
+           family={Zahirovic},
+           familyi={Z\bibinitperiod},
+           given={Sabin},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=56f5de3c5f33e14e82e6a4b637f3f853}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={R.\bibnamedelimi Dietmar},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ec9f36e2a3cfe34c7cb50bdaa19796c3}
+      \strng{fullhash}{6a0ea428546f75537d0533215db03cae}
+      \strng{fullhashraw}{6a0ea428546f75537d0533215db03cae}
+      \strng{bibnamehash}{6a0ea428546f75537d0533215db03cae}
+      \strng{authorbibnamehash}{6a0ea428546f75537d0533215db03cae}
+      \strng{authornamehash}{ec9f36e2a3cfe34c7cb50bdaa19796c3}
+      \strng{authorfullhash}{6a0ea428546f75537d0533215db03cae}
+      \strng{authorfullhashraw}{6a0ea428546f75537d0533215db03cae}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Recent progress in plate tectonic reconstructions has seen models move beyond the classical idea of continental drift by attempting to reconstruct the full evolving configuration of tectonic plates and plate boundaries. A particular problem for the Neoproterozoic and Cambrian is that many existing interpretations of geological and palaeomagnetic data have remained disconnected from younger, better-constrained periods in Earth history. An important test of deep time reconstructions is therefore to demonstrate the continuous kinematic viability of tectonic motions across multiple supercontinent cycles. We present, for the first time, a continuous full-plate model spanning 1 Ga to the present-day, that includes a revised and improved model for the Neoproterozoic–Cambrian (1000–520 Ma) that connects with models of the Phanerozoic, thereby opening up pre-Gondwana times for quantitative analysis and further regional refinements. In this contribution, we first summarise methodological approaches to full-plate modelling and review the existing full-plate models in order to select appropriate models that produce a single continuous model. Our model is presented in a palaeomagnetic reference frame, with a newly-derived apparent polar wander path for Gondwana from 540 to 320 Ma, and a global apparent polar wander path from 320 to 0 Ma. We stress, though while we have used palaeomagnetic data when available, the model is also geologically constrained, based on preserved data from past-plate boundaries. This study is intended as a first step in the direction of a detailed and self-consistent tectonic reconstruction for the last billion years of Earth history, and our model files are released to facilitate community development.}
+      \field{day}{1}
+      \field{issn}{0012-8252}
+      \field{journaltitle}{Earth-Science Reviews}
+      \field{month}{3}
+      \field{shortjournal}{Earth-Science Reviews}
+      \field{shorttitle}{Extending Full-Plate Tectonic Models into Deep Time}
+      \field{title}{Extending Full-Plate Tectonic Models into Deep Time: {{Linking}} the {{Neoproterozoic}} and the {{Phanerozoic}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{214}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{103477}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.earscirev.2020.103477
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/IJRV4DRH/Merdith et al. - 2021 - Extending full-plate tectonic models into deep time Linking the Neoproterozoic and the Phanerozoic.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/TI87KU4M/S0012825220305237.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0012825220305237
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0012825220305237
+      \endverb
+      \keyw{Gondwana,Neoproterozoic,Palaeogeography,Plate tectonics,Rodinia}
+    \endentry
+    \entry{mullerGPlatesBuildingVirtual2018}{article}{}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=56f5de3c5f33e14e82e6a4b637f3f853}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={R.\bibnamedelimi Dietmar},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef4238cce44c194cec970f8d4eb8e92b}{%
+           family={Cannon},
+           familyi={C\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ee57faae00595f7267097ff450907d44}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Xiaodong},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f8e34b2c9932e4c5c3c92b3765c99e2d}{%
+           family={Watson},
+           familyi={W\bibinitperiod},
+           given={Robin\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6b032d6702118dc0ebfb7080474e1627}{%
+           family={Gurnis},
+           familyi={G\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6ef75d37726da5e07c340403462517be}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6cf804b513b8833b8bf231b4dea76bf}{%
+           family={Pfaffelmoser},
+           familyi={P\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=39865d1c47d2b7a6136b51448098f96c}{%
+           family={Seton},
+           familyi={S\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5b9dbc5b1f12061571b76caba471f03b}{%
+           family={Russell},
+           familyi={R\bibinitperiod},
+           given={Samuel\bibnamedelimb H.\bibnamedelimi J.},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=af12f7549cbb5abf15b14ab7a1d5690a}{%
+           family={Zahirovic},
+           familyi={Z\bibinitperiod},
+           given={Sabin},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1edae5fbfd03a649df2dd9b5961585e0}
+      \strng{fullhash}{905cd657c14a847c5175d76bd1489f00}
+      \strng{fullhashraw}{905cd657c14a847c5175d76bd1489f00}
+      \strng{bibnamehash}{905cd657c14a847c5175d76bd1489f00}
+      \strng{authorbibnamehash}{905cd657c14a847c5175d76bd1489f00}
+      \strng{authornamehash}{1edae5fbfd03a649df2dd9b5961585e0}
+      \strng{authorfullhash}{905cd657c14a847c5175d76bd1489f00}
+      \strng{authorfullhashraw}{905cd657c14a847c5175d76bd1489f00}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{GPlates is an open-source, cross-platform plate tectonic geographic information system, enabling the interactive manipulation of plate-tectonic reconstructions and the visualization of geodata through geological time. GPlates allows the building of topological plate models representing the mosaic of evolving plate boundary networks through time, useful for computing plate velocity fields as surface boundary conditions for mantle convection models and for investigating physical and chemical exchanges of material between the surface and the deep Earth along tectonic plate boundaries. The ability of GPlates to visualize subsurface 3-D scalar fields together with traditional geological surface data enables researchers to analyze their relationships through geological time in a common plate tectonic reference frame. To achieve this, a hierarchical cube map framework is used for rendering reconstructed surface raster data to support the rendering of subsurface 3-D scalar fields using graphics-hardware-accelerated ray-tracing techniques. GPlates enables the construction of plate deformation zones—regions combining extension, compression, and shearing that accommodate the relative motion between rigid blocks. Users can explore how strain rates, stretching/shortening factors, and crustal thickness evolve through space and time and interactively update the kinematics associated with deformation. Where data sets described by geometries (points, lines, or polygons) fall within deformation regions, the deformation can be applied to these geometries. Together, these tools allow users to build virtual Earth models that quantitatively describe continental assembly, fragmentation and dispersal and are interoperable with many other mapping and modeling tools, enabling applications in tectonics, geodynamics, basin evolution, orogenesis, deep Earth resource exploration, paleobiology, paleoceanography, and paleoclimate.}
+      \field{issn}{1525-2027}
+      \field{journaltitle}{Geochemistry, Geophysics, Geosystems}
+      \field{langid}{english}
+      \field{number}{7}
+      \field{shorttitle}{{{GPlates}}}
+      \field{title}{{{GPlates}}: {{Building}} a {{Virtual Earth Through Deep Time}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{19}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2243\bibrangedash 2261}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1029/2018GC007584
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/7VI8JJ5C/Müller et al. - 2018 - GPlates Building a Virtual Earth Through Deep Time.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/LU2NHQA4/2018GC007584.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1029/2018GC007584
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1029/2018GC007584
+      \endverb
+      \keyw{geodynamics,geographic information system,paleogeography,plate deformation,plate tectonics,virtual globe}
+    \endentry
+    \entry{scotesePALEOMAPPaleoAtlasGPlates2020}{software}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9b48e865ac35f746291e7cd31b48ad74}{%
+           family={Scotese},
+           familyi={S\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{fullhash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{fullhashraw}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{bibnamehash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{authorbibnamehash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{authornamehash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{authorfullhash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{authorfullhashraw}{9b48e865ac35f746291e7cd31b48ad74}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{month}{2}
+      \field{title}{{{PALEOMAP PaleoAtlas}} for {{GPlates}} – {{EarthByte}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/DVHJND44/paleomap-paleoatlas-for-gplates.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.earthbyte.org/paleomap-paleoatlas-for-gplates/
+      \endverb
+      \verb{url}
+      \verb https://www.earthbyte.org/paleomap-paleoatlas-for-gplates/
+      \endverb
+    \endentry
+    \entry{setonDeconstructingPlateTectonic2023}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=39865d1c47d2b7a6136b51448098f96c}{%
+           family={Seton},
+           familyi={S\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6137f0416ef93f769c8093bb425fa991}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Simon\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc193ac9319f9086c388c141ca43bb58}{%
+           family={Domeier},
+           familyi={D\bibinitperiod},
+           given={Mathew},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a589d4c1b6d2658a638c143899b2c557}{%
+           family={Collins},
+           familyi={C\bibinitperiod},
+           given={Alan\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3c03aba8d8cad99076199d73cbb208c2}{%
+           family={Sigloch},
+           familyi={S\bibinitperiod},
+           given={Karin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{5cfbbf7237910e0ed739d8d039c4e6ce}
+      \strng{fullhash}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \strng{fullhashraw}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \strng{bibnamehash}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \strng{authorbibnamehash}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \strng{authornamehash}{5cfbbf7237910e0ed739d8d039c4e6ce}
+      \strng{authorfullhash}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \strng{authorfullhashraw}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The evolving mosaic of tectonic plates across the surface of the Earth sets boundary conditions for the evolution of biotic and abiotic processes and helps shape the dynamics of its interior. Reconstructing plate tectonics back through time allows scientists from a range of disciplines (such as palaeobiology, palaeoclimate, geodynamics and seismology) to investigate Earth evolution through these spatiotemporal dimensions. However, the variety and complexity of plate reconstructions can lead to some of their limitations being overlooked. In this Technical Review, we discuss the domain-specific knowledge underpinning modern quantitative plate reconstructions and convey a set of principles on how to use (but not abuse) the software or results. Open-source plate tectonic reconstruction software, like GPlates, has led to a major shift in working practices, handing non-specialists the tools to develop and integrate reconstructions based on their own datasets and expertise. However, there is no ‘one-size-fits-all’ and users need to understand what data and underlying assumptions go into making different, sometimes competing reconstruction models. It is therefore essential to consider the many ways reconstructions simplify reality when interpreting them to avoid circular reasoning. Although many aspects of deep-time reconstructions remain unresolved, future work on intercomparisons between models and uncertainty quantification is an essential pathway towards next-generation plate reconstructions.}
+      \field{issn}{2662-138X}
+      \field{journaltitle}{Nature Reviews Earth \& Environment}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shortjournal}{Nat Rev Earth Environ}
+      \field{title}{Deconstructing Plate Tectonic Reconstructions}
+      \field{urlday}{20}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{4}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{185\bibrangedash 204}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1038/s43017-022-00384-8
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/C2I7N22A/Seton et al. - 2023 - Deconstructing plate tectonic reconstructions.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s43017-022-00384-8
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s43017-022-00384-8
+      \endverb
+      \keyw{Geodynamics,Geology,Geophysics,Tectonics}
+    \endentry
+    \entry{tajikaIntraInterspecificVariability2022}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=4d62cf71a84375ec630aa195aa7fdf9d}{%
+           family={Tajika},
+           familyi={T\bibinitperiod},
+           given={Amane},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=28b18cd509ac35c17c60245f3b9359b7}{%
+           family={Landman},
+           familyi={L\bibinitperiod},
+           given={Neil\bibnamedelima H.},
+           giveni={N\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=270d3e8b430263399235da8947010a52}{%
+           family={Slovacek},
+           familyi={S\bibinitperiod},
+           given={Mariah},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3ad9314f1c40eecfdb45786703b71b7}{%
+           family={Nishida},
+           familyi={N\bibinitperiod},
+           given={Kozue},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8de00b52449d7d6bbf709af666df1730}{%
+           family={Morita},
+           familyi={M\bibinitperiod},
+           given={Wataru},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b8394c26e4128e6e3f29d6d90d71a9f3}{%
+           family={Witts},
+           familyi={W\bibinitperiod},
+           given={James\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Scandinavian University Press}%
+      }
+      \strng{namehash}{13258ea316f2c015c4c1ec7cc54a7fea}
+      \strng{fullhash}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \strng{fullhashraw}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \strng{bibnamehash}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \strng{authorbibnamehash}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \strng{authornamehash}{13258ea316f2c015c4c1ec7cc54a7fea}
+      \strng{authorfullhash}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \strng{authorfullhashraw}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Hatching size has been considered of great importance in the evolution of externally shelled cephalopods. However, our knowledge of how hatching size varies in response to biotic and abiotic factors is largely lacking. We present a comprehensive overview of hatching size in all known species of modern nautilids (225 specimens, representing eight species). Hatching size ranges from 22 to 33 mm, with the smallest hatchlings in Nautilus pompilius suluensis and the largest hatchlings in Nautilus belauensis. There is no significant difference in hatching size between males and females in the same species. In addition, hatching size does not affect the morphology of the embryonic shell; smaller hatchlings are identical in morphology to larger hatchlings in the same species. Although information pertaining to temperature and duration of embryonic development are limited, we conclude that there is no clear correlation between hatching size and the temperature at which embryonic development takes place. In contrast, there is a weak correlation between hatching size and the duration of embryonic development. In the Late Cretaceous nautilid Eutrephoceras for which data on hatching size are available, species in colder climates exhibit a larger hatching size than those in more temperate climates. A comparison of hatching size and adult size among modern nautilid species reveals a positive correlation, largely driven by N. pompilius suluensis, at one end of the spectrum, and N. belauensis, at the other. This relationship may be rooted in parental care strategy and/or predation pressure. Keywords Cephalopods nautiloids evolution development ecology body size}
+      \field{day}{13}
+      \field{issn}{0024-1164}
+      \field{journaltitle}{Lethaia}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{Intra- and Interspecific Variability in Offspring Size in Nautilids}
+      \field{urlday}{11}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{55}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 17}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.18261/let.55.3.1
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/5Y5CGPBL/Tajika et al. - 2022 - Intra- and interspecific variability in offspring .pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.idunn.no/doi/full/10.18261/let.55.3.1
+      \endverb
+      \verb{url}
+      \verb https://www.idunn.no/doi/full/10.18261/let.55.3.1
+      \endverb
+      \keyw{body size,Cephalopods,development,ecology,evolution,nautiloids}
+    \endentry
+    \entry{tanabeRhyncholitesConchorhynchsCalcified1980}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=673d8dbfddd0bfe0204d038a14a60596}{%
+           family={Tanabe},
+           familyi={T\bibinitperiod},
+           given={Kazushige},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=86ef310222cfbe8f170cca702fd1adb8}{%
+           family={Fukuda},
+           familyi={F\bibinitperiod},
+           given={Yoshio},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42d0487525cbb868fb9642676f68bfb4}{%
+           family={Kanie},
+           familyi={K\bibinitperiod},
+           given={Yasumitsu},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c9317c6f04ea5749f785e7efc2e90e7c}{%
+           family={Lehmann},
+           familyi={L\bibinitperiod},
+           given={Ulrich},
+           giveni={U\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{0559b8d901298251a3d330d2659dba24}
+      \strng{fullhash}{3ced1d57236aee969aee21c004aa3148}
+      \strng{fullhashraw}{3ced1d57236aee969aee21c004aa3148}
+      \strng{bibnamehash}{3ced1d57236aee969aee21c004aa3148}
+      \strng{authorbibnamehash}{3ced1d57236aee969aee21c004aa3148}
+      \strng{authornamehash}{0559b8d901298251a3d330d2659dba24}
+      \strng{authorfullhash}{3ced1d57236aee969aee21c004aa3148}
+      \strng{authorfullhashraw}{3ced1d57236aee969aee21c004aa3148}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Conspicuous calcareous coverings are present in the anterior region of 17 fossil jaws from late Cretaceous rocks of Hokkaido (Japan) and Sakhalin (U.S.S.R.). The jaws were preserved in calcareous nodules either in situ in body chambers of ammonites or in close association with identifiable ammonite conch remains. From the morphologic similarity between in situ and isolated jaws, they may be attributed to Tetragonites glabrus, Gaudryceras tenuiliratum, G. denseplicatum, G. sp., and Neophylloceras subramosum. The jaw apparatus of these species is composed of two three‐dimensional black walls of carbonate apatite, which might be a diagenetic replacement of chitinous material. The calcareous coverings in both upper and lower jaws closely resemble those of upper (rhyncholite) and lower (conchorhynch) jaws of modern Nautilus as well as rhyncholite and conchorhynch fossils in their gross morphology, microstructure, and chemical composition. Calcified remains of cephalopod jaws known as rhyncholites and conchorhynchs have been reported from late Paleozoic to Recent. The present discovery of ammonoid rhyncholites and conchorhynchs suggests that at least some previously known late Paleozoic and Mesozoic counterparts belong to the Ammonoidea. The essential similarity of jaw elements of some Late Cretaceous ammonites and modern Nautilus gives reliable information on the feeding habits of the former. The sharp and thick ammonoid rhyncholites and conchorhynchs may have had a special function for cutting up food, similar to those of Nautilus. Keywords Ammonoidea morphology functional morphology rhyncholites conchorhynchs Late Cretaceous Hokkaido Sakhalin}
+      \field{issn}{0024-1164}
+      \field{journaltitle}{Lethaia}
+      \field{month}{4}
+      \field{number}{2}
+      \field{title}{Rhyncholites and Conchorhynchs as Calcified Jaw Elements in Some Late {{Cretaceous}} Ammonites}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{13}
+      \field{year}{1980}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{157\bibrangedash 168}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1111/j.1502-3931.1980.tb01046.x
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/Q7ZCAV9C/Tanabe et al. - 1980 - Rhyncholites and conchorhynchs as calcified jaw elements in some late Cretaceous ammonites.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.scup.com/doi/10.1111/j.1502-3931.1980.tb01046.x
+      \endverb
+      \verb{url}
+      \verb https://www.scup.com/doi/10.1111/j.1502-3931.1980.tb01046.x
+      \endverb
+      \keyw{Ammonoidea,conchorhynchs,functional,Hokkaido,Late Cretaceous,morphology,rhyncholites,Sakhalin}
+    \endentry
+    \entry{torsvikEarthHistoryPalaeogeography2016}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8a6fd3efaf35edc614f7250b5fa068e9}{%
+           family={Torsvik},
+           familyi={T\bibinitperiod},
+           given={Trond\bibnamedelima H.},
+           giveni={T\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa617c2767e10d094724ea78c667e008}{%
+           family={Cocks},
+           familyi={C\bibinitperiod},
+           given={L.\bibnamedelimi Robin\bibnamedelima M.},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{fullhash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{fullhashraw}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{bibnamehash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{authorbibnamehash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{authornamehash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{authorfullhash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{authorfullhashraw}{0918b847e8d302471e09c4d68b2253e4}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Using full-colour palaeogeographical maps from the Cambrian to the present, this interdisciplinary volume explains how plate motions and surface volcanism are linked to processes in the Earth's mantle, and to climate change and the evolution of the Earth's biota. These new and very detailed maps provide a complete and integrated Phanerozoic story of palaeogeography. They illustrate the development of all the major mountain-building orogenies. Old lands, seas, ice caps, volcanic regions, reefs, and coal beds are highlighted on the maps, as well as faunal and floral provinces. Many other original diagrams show sections from the Earth's core, through the mantle, and up to the lithosphere, and how Large Igneous Provinces are generated, helping to understand how plates have appeared, moved, and vanished through time. Supplementary resources are available online, making this an invaluable reference for researchers, graduate students, professional geoscientists and anyone interested in the geological history of the Earth.}
+      \field{isbn}{978-1-107-10532-4}
+      \field{title}{Earth {{History}} and {{Palaeogeography}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1017/9781316225523
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/6JXCCEDC/076D4FCFCEE4CAE6F8EF3B449594DD50.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.cambridge.org/core/books/earth-history-and-palaeogeography/076D4FCFCEE4CAE6F8EF3B449594DD50
+      \endverb
+      \verb{url}
+      \verb https://www.cambridge.org/core/books/earth-history-and-palaeogeography/076D4FCFCEE4CAE6F8EF3B449594DD50
+      \endverb
+    \endentry
+    \entry{wickhamGgplot2ElegantGraphics2016}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1d0f6977ce2d043e298a59a1cd75b7ef}{%
+           family={Wickham},
+           familyi={W\bibinitperiod},
+           given={Hadley},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag New York}%
+      }
+      \strng{namehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{fullhash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{fullhashraw}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{bibnamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{authorbibnamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{authornamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{authorfullhash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{authorfullhashraw}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-319-24277-4}
+      \field{title}{Ggplot2: {{Elegant Graphics}} for {{Data Analysis}}}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ggplot2.tidyverse.org
+      \endverb
+      \verb{url}
+      \verb https://ggplot2.tidyverse.org
+      \endverb
+    \endentry
+    \entry{wilmsenLateCretaceousNautilids2000}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=40abbab0247e3d4d9ddc76a597c7c831}{%
+           family={Wilmsen},
+           familyi={W\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{fullhash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{fullhashraw}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{bibnamehash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{authorbibnamehash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{authornamehash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{authorfullhash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{authorfullhashraw}{40abbab0247e3d4d9ddc76a597c7c831}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Nautilids do not occur throughout the Upper Cretaceous succession in northern Cantabria. Although relatively~rare, they preferentially occur in condensed transgressive horizons. Nine species belonging to the genera~Angulithes MONTFORT, 1808, Eutrephoceras HYATT, 1894, and Pseudocenoceras SPATH, 1927 are recorded.~A. westphalicus (SCHLÜTER, 1872) and E. cf. justum (BLANFORD, 1861) are reported for the first time from the~Iberian Peninsula. The diagnosis of A. vascogoticus WIEDMANN, 1960 is emended.The Cenomanian was characterized by a relative abundance of nautilids of the genus Angulithes which display~a major radiative event, evolving relatively short-lived species. This development was probably related to the~“Cenomanian transgression“. Compared to co-occurring ammonite faunas, Angulithes inhabited deeper and~more distal environments. A possible transitional form, connecting the two genera Angulithes and~Deltocymatoceras KUMMEL, 1956 (?Turonian, Coniacian - Santonian), is recorded from the Mid-/Late~Cenomanian. The Turonian to Campanian succession is dominated by long-ranging nautilids of the genus~Eutrephoceras.}
+      \field{issue}{1}
+      \field{journaltitle}{Acta Geologica Polonica}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{title}{Late {{Cretaceous}} Nautilids from Northern {{Cantabria}}, {{Spain}}}
+      \field{urlday}{17}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{50}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{29\bibrangedash 43}
+      \range{pages}{15}
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/7NU88KPR/Wilmsen - 2000 - Late Cretaceous nautilids from northern Cantabria, Spain.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://geojournals.pgi.gov.pl/agp/article/view/9628
+      \endverb
+      \verb{url}
+      \verb https://geojournals.pgi.gov.pl/agp/article/view/9628
+      \endverb
+      \keyw{Late Cretaceous,Nautilids,Spain,Taxonomy}
+    \endentry
+    \entry{wrightCommunitydrivenPaleogeographicReconstructions2013}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=a88942d17b21b72db849d585b18f564d}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=57e61e6f9ad7ea39ca543ce1d4695149}{%
+           family={Zahirovic},
+           familyi={Z\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c2bd83ee641d42e1faaca59f72dac28c}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={R.\bibnamedelimi D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e55673b3960991120cf1f5df09252258}{%
+           family={Seton},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Copernicus GmbH}%
+      }
+      \strng{namehash}{732cfc683691a5fe6ca4545dcbe1a4e7}
+      \strng{fullhash}{44312072c80d5774ceb9b64898745627}
+      \strng{fullhashraw}{44312072c80d5774ceb9b64898745627}
+      \strng{bibnamehash}{44312072c80d5774ceb9b64898745627}
+      \strng{authorbibnamehash}{44312072c80d5774ceb9b64898745627}
+      \strng{authornamehash}{732cfc683691a5fe6ca4545dcbe1a4e7}
+      \strng{authorfullhash}{44312072c80d5774ceb9b64898745627}
+      \strng{authorfullhashraw}{44312072c80d5774ceb9b64898745627}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{A variety of paleogeographic reconstructions have been published, with applications ranging from paleoclimate, ocean circulation and faunal radiation models to resource exploration; yet their uncertainties remain difficult to assess as they are generally presented as low-resolution static maps. We present a methodology for ground-truthing the digital Palaeogeographic Atlas of Australia by linking the GPlates plate reconstruction tool to the global Paleobiology Database and a Phanerozoic plate motion model. We develop a spatio-temporal data mining workflow to validate the Phanerozoic Palaeogeographic Atlas of Australia with paleoenvironments derived from fossil data. While there is general agreement between fossil data and the paleogeographic model, the methodology highlights key inconsistencies. The Early Devonian paleogeographic model of southeastern Australia insufficiently describes the Emsian inundation that may be refined using biofacies distributions. Additionally, the paleogeographic model and fossil data can be used to strengthen numerical models, such as the dynamic topography and the associated inundation of eastern Australia during the Cretaceous. Although paleobiology data provide constraints only for paleoenvironments with high preservation potential of organisms, our approach enables the use of additional proxy data to generate improved paleogeographic reconstructions.}
+      \field{day}{7}
+      \field{issn}{1726-4170}
+      \field{journaltitle}{Biogeosciences}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shorttitle}{Towards Community-Driven Paleogeographic Reconstructions}
+      \field{title}{Towards Community-Driven Paleogeographic Reconstructions: Integrating Open-Access Paleogeographic and Paleobiology Data with Plate Tectonics}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{10}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1529\bibrangedash 1541}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.5194/bg-10-1529-2013
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/2CK9X33E/Wright et al. - 2013 - Towards community-driven paleogeographic reconstructions integrating open-access paleogeographic an.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://bg.copernicus.org/articles/10/1529/2013/
+      \endverb
+      \verb{url}
+      \verb https://bg.copernicus.org/articles/10/1529/2013/
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{baudouinCretaceousNautiloidGenus2021}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=0f6c98a27b34a35c102a279b31900887}{%
+           family={Baudouin},
+           familyi={B\bibinitperiod},
+           given={Cyril},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3096ee88234fae4339de2048b16eefa2}{%
+           family={Delanoy},
+           familyi={D\bibinitperiod},
+           given={Gérard},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=045d4294ee6b6936c99d278b857478b4}{%
+           family={Lehmann},
+           familyi={L\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8f082e5b2915003b015d2e65c0fb5f9f}{%
+           family={Frau},
+           familyi={F\bibinitperiod},
+           given={Camille},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e1bfc9c05c3618fdb16a4946e6fd967b}{%
+           family={Gonnet},
+           familyi={G\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9b08cd0a9edbe1b928e7ffc73f382c77}{%
+           family={Vermeulen},
+           familyi={V\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Association Carnets de Géologie, Madrid}%
+      }
+      \strng{namehash}{14d625fdf6389087797241b210ce244b}
+      \strng{fullhash}{04b83351fe75bb076f64d759939abcb6}
+      \strng{fullhashraw}{04b83351fe75bb076f64d759939abcb6}
+      \strng{bibnamehash}{04b83351fe75bb076f64d759939abcb6}
+      \strng{authorbibnamehash}{04b83351fe75bb076f64d759939abcb6}
+      \strng{authornamehash}{14d625fdf6389087797241b210ce244b}
+      \strng{authorfullhash}{04b83351fe75bb076f64d759939abcb6}
+      \strng{authorfullhashraw}{04b83351fe75bb076f64d759939abcb6}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The occurrence of the nautiloid genus Anglonautilus Spath in France was limited to the report of Anglonautilus dorsoplicatus (Wiedmann) from the Albian of Escragnolles (Alpes-Maritimes) and Anglonautilus sp. from the Aptian of Les Ferres (Alpes-Maritimes). Here we document the presence of the successive species Anglonautilus praeundulatus Lehmann et al., Anglonautilus undulatus (Sowerby) and Anglonautilus dorsoplicatus (Wiedmann) from the Cretaceous of France. The stratigraphic range of Anglonautilus Spath, hitherto unknown before Aptian times is extended downward to the Hauterivian. The Hauterivian species Nautilus begudensis Kilian \& Reboul, sometimes assigned to the genus Anglonautilus Spath, is revised and re-assigned to the genus Cymatoceras Hyatt.}
+      \field{day}{24}
+      \field{issn}{1634-0744}
+      \field{journaltitle}{Carnets Geol.}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{12}
+      \field{title}{The {{Cretaceous}} Nautiloid Genus {{Anglonautilus Spath}}, 1927, in {{France}}}
+      \field{urlday}{8}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{21}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{235\bibrangedash 263}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.2110/carnets.2021.2112
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/CUXEXMTB/Baudouin et al. - 2021 - The Cretaceous nautiloid genus Anglonautilus Spath, 1927, in France.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://paleopolis.rediris.es/cg/21/12/index.html
+      \endverb
+      \verb{url}
+      \verb http://paleopolis.rediris.es/cg/21/12/index.html
+      \endverb
+    \endentry
+    \entry{cichowolskiNautiloidGenusCymatoceras2003}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=916d9fa98a72171f92fc8f2f80fa6576}{%
+           family={Cichowolski},
+           familyi={C\bibinitperiod},
+           given={Marcela},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{fullhash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{fullhashraw}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{bibnamehash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{authorbibnamehash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{authornamehash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{authorfullhash}{916d9fa98a72171f92fc8f2f80fa6576}
+      \strng{authorfullhashraw}{916d9fa98a72171f92fc8f2f80fa6576}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Until now, Cretaceous nautiloids from Argentina have been studied only briefly. Here Cymatoceras is described in detail, based on specimens found in the Neuquén and Austral basins, located in west-central and southern Argentina, respectively. Those from the Neuquén Basin are of Valanginian–Barremian age and belong to a single species, Cymatoceras perstriatum (Steuer). Those from the Austral Basin range in age from Hauterivian to Campanian and represent the first record of Cymatoceras from this region. It is represented by a new species, Cymatoceras patagonicum from the Turonian, and by isolated specimens, which are assigned to this genus in open nomenclature, owing to their poor preservation state; their ages range from Early Hauterivian to Early Campanian.}
+      \field{day}{1}
+      \field{issn}{0195-6671}
+      \field{journaltitle}{Cretaceous Research}
+      \field{month}{8}
+      \field{number}{4}
+      \field{shortjournal}{Cretaceous Research}
+      \field{title}{The Nautiloid Genus {{{\mkbibemph{Cymatoceras}}}} from the {{Cretaceous}} of the {{Neuquén}} and {{Austral}} Basins, {{Argentina}}}
+      \field{urlday}{2}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{24}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{375\bibrangedash 390}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1016/S0195-6671(03)00050-8
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/WANCNM6J/Cichowolski - 2003 - The nautiloid genus Cymatoceras from the Cretaceous of the Neuquén and Austral basins, Argent.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/CJG4CSG6/S0195667103000508.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0195667103000508
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0195667103000508
+      \endverb
+      \keyw{Argentina,Austral Basin,Cretaceous,Nautiloids,Neuquén Basin}
+    \endentry
+    \entry{dernovFirstRecordGenus2024}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c1a1d6a0443f7a5ebd94d24a6b330367}{%
+           family={Dernov},
+           familyi={D\bibinitperiod},
+           given={V.\bibnamedelimi S.},
+           giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{fullhash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{fullhashraw}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{bibnamehash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{authorbibnamehash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{authornamehash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{authorfullhash}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \strng{authorfullhashraw}{c1a1d6a0443f7a5ebd94d24a6b330367}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The article describes a first record of a species of the genus Deltoidonautilus Spath, 1927 (D. cf. sowerbyi (Wetherell in Sowerby, 1843)) in the Palaeogene (Ypresian or lower Lutetian) deposits of the Crimean Peninsula, southern Ukraine. The data obtained expand the geographical distribution of this genus and complement the palaeontological characteristics of the Palaeogene succession of southern Ukraine.}
+      \field{issn}{2415-315X}
+      \field{issue}{2(45)}
+      \field{journaltitle}{Odesa National University Herald. Geography and Geology}
+      \field{langid}{ukrainian}
+      \field{number}{2(45)}
+      \field{title}{The First Record of the Genus Deltoidonautilus Spath, 1927 (nautilida: Cephalopoda) in the Palaeogene of the Crimean Peninsula, Ukraine}
+      \field{urlday}{2}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{29}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{139\bibrangedash 149}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.18524/2303-9914.2024.2(45).318037
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/NUNGWFLC/The First Record.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://visgeo.onu.edu.ua/article/view/318037
+      \endverb
+      \verb{url}
+      \verb http://visgeo.onu.edu.ua/article/view/318037
+      \endverb
+    \endentry
+    \entry{flannery-sutherlandLateCretaceousAmmonoids2024}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=8e5d32c363db7f84576ea9d7d05e8f40}{%
+           family={Flannery-Sutherland},
+           familyi={F\bibinithyphendelim S\bibinitperiod},
+           given={Joseph\bibnamedelima T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4da175bee13f59808a6fc6e924fd1d3f}{%
+           family={Crossan},
+           familyi={C\bibinitperiod},
+           given={Cameron\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b616d56d2b650f1ed7259f2fff608d16}{%
+           family={Myers},
+           familyi={M\bibinitperiod},
+           given={Corinne\bibnamedelima E.},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9df70212e3ad8698a19b517a211d5be3}{%
+           family={Hendy},
+           familyi={H\bibinitperiod},
+           given={Austin\bibnamedelimb J.\bibnamedelimi W.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=28b18cd509ac35c17c60245f3b9359b7}{%
+           family={Landman},
+           familyi={L\bibinitperiod},
+           given={Neil\bibnamedelima H.},
+           giveni={N\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b8394c26e4128e6e3f29d6d90d71a9f3}{%
+           family={Witts},
+           familyi={W\bibinitperiod},
+           given={James\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{8d5232cc309d309a379c38a5660704b5}
+      \strng{fullhash}{1c54a824da1f20ad154c081fea3e71f2}
+      \strng{fullhashraw}{1c54a824da1f20ad154c081fea3e71f2}
+      \strng{bibnamehash}{1c54a824da1f20ad154c081fea3e71f2}
+      \strng{authorbibnamehash}{1c54a824da1f20ad154c081fea3e71f2}
+      \strng{authornamehash}{8d5232cc309d309a379c38a5660704b5}
+      \strng{authorfullhash}{1c54a824da1f20ad154c081fea3e71f2}
+      \strng{authorfullhashraw}{1c54a824da1f20ad154c081fea3e71f2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Palaeontologists have long sought to explain the diversification of individual clades to whole biotas at global scales. Advances in our understanding of the spatial distribution of the fossil record through geological time, however, has demonstrated that global trends in biodiversity were a mosaic of regionally heterogeneous diversification processes. Drivers of diversification must presumably have also displayed regional variation to produce the spatial disparities observed in past taxonomic richness. Here, we analyse the fossil record of ammonoids, pelagic shelled cephalopods, through the Late Cretaceous, characterised by some palaeontologists as an interval of biotic decline prior to their total extinction at the Cretaceous-Paleogene boundary. We regionally subdivide this record to eliminate the impacts of spatial sampling biases and infer regional origination and extinction rates corrected for temporal sampling biases using Bayesian methods. We then model these rates using biotic and abiotic drivers commonly inferred to influence diversification. Ammonoid diversification dynamics and responses to this common set of diversity drivers were regionally heterogeneous, do not support ecological decline, and demonstrate that their global diversification signal is influenced by spatial disparities in sampling effort. These results call into question the feasibility of seeking drivers of diversity at global scales in the fossil record.}
+      \field{day}{27}
+      \field{issn}{2041-1723}
+      \field{journaltitle}{Nature Communications}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{1}
+      \field{shortjournal}{Nat Commun}
+      \field{title}{Late {{Cretaceous}} Ammonoids Show That Drivers of Diversification Are Regionally Heterogeneous}
+      \field{urlday}{10}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{volume}{15}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{5382}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41467-024-49462-z
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/NM47PHBU/Flannery-Sutherland et al. - 2024 - Late Cretaceous ammonoids show that drivers of div.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41467-024-49462-z
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41467-024-49462-z
+      \endverb
+      \keyw{Ecological modelling,Macroecology,Palaeoecology,Palaeontology}
+    \endentry
+    \entry{garvieMolluscanMacrofaunaSeguin2013}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=99460b86d6cd55577bc22a9d42027834}{%
+           family={Garvie},
+           familyi={G\bibinitperiod},
+           given={Christopher\bibnamedelima L},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{fullhash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{fullhashraw}{99460b86d6cd55577bc22a9d42027834}
+      \strng{bibnamehash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{authorbibnamehash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{authornamehash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{authorfullhash}{99460b86d6cd55577bc22a9d42027834}
+      \strng{authorfullhashraw}{99460b86d6cd55577bc22a9d42027834}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Investigation of known Seguin localities led to the discovery of an overlooked diverse and abundant marine fauna in Solomon's Branch, a stream in Bastrop County, Texas. The fauna, a transported assemblage from a marine littoral environment, encompasses a mix of specimen types from large wave-worn individuals to the smallest unworn ornamented species. Following the discovery of this fauna, further field work was undertaken and other Seguin localities with different depositional environments were found and collections made from those sites. Finally, a further suite of specimens was examined within the Texas Natural Science Center, some from localities no longer in existence or now lost. The environment is transitional in character from the deeper water Midway to the nonmarine environment of the chiefly terrestrial Texas Wilcox deposits, and represents the last major marine transgression in this area prior to the Eocene. The fauna is a mix of that derived from early Paleocene and Cretaceous taxa as well as elements that appear to originate from western Africa, the Tethyan region, and the western coast of America. The inferred species' habitat includes a near-shore open marine element, a probable lagoonal component, and brackish water elements. From the 115 molluscan taxa recognized, six have not been recognized to date in sediments later than the Cretaceous, and 30 represent from the Eocene or later records. The following new gastropod genera and subgenera are proposed: Texaficus, Crassauris, Latirus (Levarlatirus), Praesurcula, and Apiotoma (Lavarotoma). The following new species and subspecies are described: Bivalvia: Calorhadia diminutia, Adrana seguinensis, Bornia solomonis, Mactra (Eomactra) piscinasina, Arcopagia (Arcopagia) solomonis, A. (Johnsonella) seguinensis; Gastropoda: Turritella mortoni crassa, Tylotrochus extremus, Teinostoma (Idioraphie) seguinensis, Cochliolepis (Tylaxis) palaeocenica, Solariorbis velarum, Natica (Carinacca) seguinensis, Polinices (Euspira) perspecta texana, Texmelanatria contracta, T. brevis, Loxotrema texana, Pseudoliva globosa, Cantharus seguinensis, Colwellia humerosa, C. nodulina, C. nodulina meta, Tritiaria? seguinensis, Metula reticulata, Latirus (Levarlatirus) undus, L. (Levarlatirus) textilis, Strepsidura cancellata, Texaficus obesus, Levifusus pagoda seguinensis, L. actuocarinata, Fulgurofusus grande, Palaeorhaphis palaeocenica, Volutocorbis olssoni gracilis, Eoancilla hordea, Caveola ostium, Clinuropsis yanceyi, C. tuberculata, Praesurcula palaeocenica, Coronia vallare, Eopleurotoma molineuxae, Tropisurcula? (Eodrillia) cingula, Apiotoma (Lavarotoma) alva, Crassauris seguinensis, Pyramidella (Syrnola) bilineata, Turbonilla (Chemnitzia) obliqueata, Odostoma (Doliella) deprimere, Cylichna (Cylichnopsis) bicarinata, Mnestia ovata, Retusa (Cylichnina) bastropensis; Cephalopoda: Cimomia contraria, Angulithes? palaeocenica. Other changes in taxonomic assignment include: the genus Lisbonia is moved from the Nassariidae to the Buccinidae; the genus Palaeorhaphis is moved from the Mitridae to the Fasciolariidae; the genus Fictoacteon is made a subgenus of Eoacteon; Baluchicardia wilcoxensis replaces Venericardia wilcoxensis; Cochlodesma howei replaces Periploma howei; Pachymelania penrosei replaces Cerithium penrosei; Lisbonia pauper replaces Pseudoliva ostrarupis pauper; Pleuroploca plummeri replaces Fasciolaria? plummeri; Fulgurofusus perobliquus replaces aff. Falsifusus perobliquus; Eoancilla mediavia replaces Ancilla mediavia; Apiotoma (Lavarotoma) capex replaces "Pleurotoma" capex; the genus Ancillarina should be used in place of Ancilla for several U. S. and European Eocene species; the genus Coronia is discussed and several species of that genus in the U. S. Gulf Coast are reassigned to Gemmula; the genus Protosurcula is moved from the Borsoniinae to the Cochlespirinae. Neotypes are designated for Turritella polysticha and Pseudoliva ostrarupis.}
+      \field{journaltitle}{Bulletins of American Paleontology}
+      \field{langid}{english}
+      \field{number}{384}
+      \field{title}{The Molluscan Macrofauna of the Seguin Formation ({{Upper Paleocene}}) in Central {{Texas}}}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/MPS6NHDK/Garvie - 386. new eocene Mollusca froM The collecTions of The Texas naTural science cenTer.pdf
+      \endverb
+    \endentry
+    \entry{goedertMioceneNautilusMollusca2022}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=afa48ab0b2807c6826e64b46d3268232}{%
+           family={Goedert},
+           familyi={G\bibinitperiod},
+           given={James\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a66ac8c1c22321645a9c880c42e6b3d1}{%
+           family={Kiel},
+           familyi={K\bibinitperiod},
+           given={Steffen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cb010d47c9669a35f2a64c8051cb7e0d}{%
+           family={Tsai},
+           familyi={T\bibinitperiod},
+           given={Cheng-Hsiu},
+           giveni={C\bibinithyphendelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b1c129486c46e8736d6fb130cb85d203}
+      \strng{fullhash}{aab3870944b5794136d3b5368af2b2e2}
+      \strng{fullhashraw}{aab3870944b5794136d3b5368af2b2e2}
+      \strng{bibnamehash}{aab3870944b5794136d3b5368af2b2e2}
+      \strng{authorbibnamehash}{aab3870944b5794136d3b5368af2b2e2}
+      \strng{authornamehash}{b1c129486c46e8736d6fb130cb85d203}
+      \strng{authorfullhash}{aab3870944b5794136d3b5368af2b2e2}
+      \strng{authorfullhashraw}{aab3870944b5794136d3b5368af2b2e2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The fossil record of the cephalopod genus Nautilus has been obscured because a few influential taxonomists during the 20th Century decided that fossils similar to Nautilus were instead other genera. We now recognize fossils once classified as species of other genera as species of Nautilus. This includes fossils from Miocene rocks of Taiwan that were previously described as Kummelonautilus taiwanum but herein recognized instead as being the northernmost Neogene record of Nautilus in the Indo-Pacific region. The name is corrected to Nautilus taiwanus, and now known to occur in two formations in central Taiwan, the early Miocene Shihmentsun and early to middle Miocene Houdongkeng formations. Miocene fossils from Indonesia that were placed in other genera are now considered to represent Nautilus as they were originally assigned, in addition to several Miocene species from Australia, which provide the southernmost Neogene fossil record for the genus. Some of these Indo-Pacific fossils may represent the same species, but more specimens are needed to determine the amount of variability within these Neogene taxa.}
+      \field{issn}{1440-1738}
+      \field{journaltitle}{Island Arc}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{title}{Miocene {{Nautilus}} ({{Mollusca}}, {{Cephalopoda}}) from {{Taiwan}}, and a Review of the {{Indo-Pacific}} Fossil Record of {{Nautilus}}}
+      \field{urlday}{8}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{31}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{e12442}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1111/iar.12442
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/CG4S7SQP/Goedert et al. - 2022 - Miocene Nautilus (Mollusca, Cephalopoda) from Taiwan, and a review of the Indo-Pacific fossil record.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/J5R8EPCQ/iar.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/iar.12442
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/iar.12442
+      \endverb
+      \keyw{fossil,Indo-Pacific,Miocene,Nautilus,Taiwan}
+    \endentry
+    \entry{halderCenozoicFossilNautiloids2012}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3b7f244e2e987d0459721b527bf58b1b}{%
+           family={Halder},
+           familyi={H\bibinitperiod},
+           given={Kalyan},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{fullhash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{fullhashraw}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{bibnamehash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{authorbibnamehash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{authornamehash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{authorfullhash}{3b7f244e2e987d0459721b527bf58b1b}
+      \strng{authorfullhashraw}{3b7f244e2e987d0459721b527bf58b1b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Cenozoic marine succession of Kutch, India, is rich in benthic molluscs and other invertebrates, but nautiloids are very scanty. Three nautiloid species, with two being new, are reported here: Deltoidonautilus vredenburgi n. sp. from the Early Eocene Naredi Formation, Cimomia forbesi (d’Archiac and Haime, 1854) from the Middle Eocene Harudi Formation, and Aturia gujaratensis n. sp. from the Early Miocene Khari Nadi and Chhasra formations. Taphonomic and sedimentary features reveal that the Eocene nautiloids were parautochthonous whereas the Miocene species might have been transported post-mortally for some distance. Palaeobiogeographic distribution of the Cenozoic nautiloids of the Indian subcontinent and other parts of the world reveals that though the genera are pandemic the species are often endemic to a basin or a province. Specific endemism and pattern of broad faunal similarity of nautiloids among different provinces within the Tethys Realm (sensu Harzhauser et al., 2002) mimic those of the benthic molluscs during the Palaeogene.}
+      \field{day}{1}
+      \field{issn}{1871-174X}
+      \field{journaltitle}{Palaeoworld}
+      \field{month}{6}
+      \field{number}{2}
+      \field{shortjournal}{Palaeoworld}
+      \field{title}{Cenozoic Fossil Nautiloids ({{Cephalopoda}}) from {{Kutch}}, Western {{India}}}
+      \field{urlday}{17}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{21}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{116\bibrangedash 130}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/j.palwor.2012.05.004
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/VJZY4GCG/Halder - 2012 - Cenozoic fossil nautiloids (Cephalopoda) from Kutch, western India.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/3KESGZTX/S1871174X12000261.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1871174X12000261
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1871174X12000261
+      \endverb
+      \keyw{Aturidae,Cenozoic,Hercoglossidae,Kutch,Nautiloidea}
+    \endentry
+    \entry{hijmansTerraSpatialData2025}{software}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9b0a2427b5a45d44474b8316d0d9aad7}{%
+           family={Hijmans},
+           familyi={H\bibinitperiod},
+           given={Robert\bibnamedelima J},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{fullhash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{fullhashraw}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{bibnamehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{authorbibnamehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{authornamehash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{authorfullhash}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \strng{authorfullhashraw}{9b0a2427b5a45d44474b8316d0d9aad7}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Terra: {{Spatial Data Analysis}}}
+      \field{version}{1.8-62}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/rspatial/terra
+      \endverb
+      \verb{url}
+      \verb https://github.com/rspatial/terra
+      \endverb
+    \endentry
+    \entry{kocsisRgplatesInterfaceGPlates2025}{software}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=8b18d384773657ef80431227f8d6eb7e}{%
+           family={Kocsis},
+           familyi={K\bibinitperiod},
+           given={Adam\bibnamedelima T.},
+           giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2ddabcff824123565f6f61f8bf91386a}{%
+           family={Raja},
+           familyi={R\bibinitperiod},
+           given={Nussaïbah\bibnamedelima B.},
+           giveni={N\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6ef75d37726da5e07c340403462517be}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=242087507ba1deb8caa2a7ac606b8537}{%
+           family={Dowding},
+           familyi={D\bibinitperiod},
+           given={Elizabeth\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {Zenodo}%
+      }
+      \strng{namehash}{6f2258a2a29f599a588874e04c1328e4}
+      \strng{fullhash}{6af093e20210f16615d49251f6ae6984}
+      \strng{fullhashraw}{6af093e20210f16615d49251f6ae6984}
+      \strng{bibnamehash}{6af093e20210f16615d49251f6ae6984}
+      \strng{authorbibnamehash}{6af093e20210f16615d49251f6ae6984}
+      \strng{authornamehash}{6f2258a2a29f599a588874e04c1328e4}
+      \strng{authorfullhash}{6af093e20210f16615d49251f6ae6984}
+      \strng{authorfullhashraw}{6af093e20210f16615d49251f6ae6984}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{See dedicated website at https://gplates.github.io/rgplates/. The repository includes two files: .zip: project work files (incl. website and testing data for offline methods) .tar.gz: R package source}
+      \field{day}{26}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shorttitle}{Rgplates}
+      \field{title}{Rgplates: {{R Interface}} for the {{GPlates Web Service}} and {{Desktop Application}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.5281/zenodo.15286150
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/LB6T6RKV/15286150.html
+      \endverb
+      \verb{urlraw}
+      \verb https://zenodo.org/records/15286150
+      \endverb
+      \verb{url}
+      \verb https://zenodo.org/records/15286150
+      \endverb
+      \keyw{plates,R,tectonic reconstruction}
+    \endentry
+    \entry{landmanNautilidNurseriesHatchlings2018}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=28b18cd509ac35c17c60245f3b9359b7}{%
+           family={Landman},
+           familyi={L\bibinitperiod},
+           given={Neil\bibnamedelima H.},
+           giveni={N\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66a552a78c29f29e30665b02aad1f741}{%
+           family={Grier},
+           familyi={G\bibinitperiod},
+           given={James\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb9aed4e0b7cc6ba8e045dd095335be6}{%
+           family={Cochran},
+           familyi={C\bibinitperiod},
+           given={J.\bibnamedelimi Kirk},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8779ca96b03bbd68e426e9df56874b8}{%
+           family={Grier},
+           familyi={G\bibinitperiod},
+           given={Joyce\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b41a1fda91e3fa3ab8f9d5c2df54490d}{%
+           family={Petersen},
+           familyi={P\bibinitperiod},
+           given={Jack\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9f0b054f772011e86db1f6335444f830}{%
+           family={Towbin},
+           familyi={T\bibinitperiod},
+           given={W.\bibnamedelimi Henry},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{2545c43a6fa0f05db8c26943999d857f}
+      \strng{fullhash}{5a81a53d964199c064564407c936b9bd}
+      \strng{fullhashraw}{5a81a53d964199c064564407c936b9bd}
+      \strng{bibnamehash}{5a81a53d964199c064564407c936b9bd}
+      \strng{authorbibnamehash}{5a81a53d964199c064564407c936b9bd}
+      \strng{authornamehash}{2545c43a6fa0f05db8c26943999d857f}
+      \strng{authorfullhash}{5a81a53d964199c064564407c936b9bd}
+      \strng{authorfullhashraw}{5a81a53d964199c064564407c936b9bd}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The nautilid Eutrephoceras dekayi (Morton 1834) is relatively abundant in the lower Maastrichtian (Upper Cretaceous) Pierre Shale of east‐central Montana. We analysed the morphology, size frequency distribution, and isotope composition of a large collection of 220 well‐preserved specimens including hatchlings, juveniles and adults. The newly hatched shell is approximately 14~mm in diameter with a body chamber one‐third whorl in angular length terminating in the nepionic constriction. Internally, the embryonic shell contains five septa. Juveniles are abundant and comprise two‐thirds of the sample whereas sub‐adults, defined by the incipient flattening of the venter, are rare. Adults comprise approximately one‐third of the sample and average 100~mm in diameter. The co‐occurrence of newly hatched shells, small juveniles and adults suggests that the eggs were laid in the same area in which the hatchlings developed. Based on the excellent preservation of the juveniles, we conclude that they did not float into the area after death, but lived in the region, implying that this area served as a nursery for young animals. The calculated temperatures of the embryonic shells are similar to those of the post‐embryonic shells and generally range from 16 to 18~°C. Upon hatching, the nautilids probably followed a demersal mode of life and lived in well‐oxygenated water ≤50~m deep. An examination of lethal injuries (puncture holes) suggests that all ontogenetic stages were equally vulnerable to predation. The proximity of the site to the Sheridan Delta suggests that the specimens were smothered by sudden pulses of sediment transported into the area by major storms. Keywords Embryonic size Eutrephoceras isotopes nautilids ontogeny Pierre Shale Upper Cretaceous Western Interior Seaway}
+      \field{issn}{0024-1164}
+      \field{journaltitle}{Lethaia}
+      \field{month}{1}
+      \field{number}{1}
+      \field{shorttitle}{Nautilid Nurseries}
+      \field{title}{Nautilid Nurseries: Hatchlings and Juveniles of {{Eutrephoceras}} Dekayi from the Lower {{Maastrichtian}} ({{Upper Cretaceous}}) {{Pierre Shale}} of East‐central {{Montana}}}
+      \field{urlday}{28}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{51}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{48\bibrangedash 74}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1111/let.12222
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/YJJZ8WE3/Landman et al. - 2018 - Nautilid nurseries hatchlings and juveniles of Eu.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.idunn.no/doi/10.1111/let.12222
+      \endverb
+      \verb{url}
+      \verb https://www.idunn.no/doi/10.1111/let.12222
+      \endverb
+      \keyw{Embryonic size,Eutrephoceras,isotopes,nautilids,ontogeny,Pierre Shale,Upper Cretaceous,Western Interior Seaway}
+    \endentry
+    \entry{laptikhovskyEnvironmentalImpactEctocochleate2012}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=7a40dfb59343a7a7bc792b68ae6d192b}{%
+           family={Laptikhovsky},
+           familyi={L\bibinitperiod},
+           given={V.L.},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d2ae7a4446db819e7a125f99e2b42cc8}{%
+           family={Rogov},
+           familyi={R\bibinitperiod},
+           given={M.A.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cfb877a45707db9570e638421a6e6dd1}{%
+           family={Nikolaeva},
+           familyi={N\bibinitperiod},
+           given={S.E.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=165b966b8c036e613bdb3ca53ac693ca}{%
+           family={Arkhipkin},
+           familyi={A\bibinitperiod},
+           given={A.I.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c4f822518f71a68371aaea78a060a55b}
+      \strng{fullhash}{2e695aff0cfc3ea6b54b4a9333681017}
+      \strng{fullhashraw}{2e695aff0cfc3ea6b54b4a9333681017}
+      \strng{bibnamehash}{2e695aff0cfc3ea6b54b4a9333681017}
+      \strng{authorbibnamehash}{2e695aff0cfc3ea6b54b4a9333681017}
+      \strng{authornamehash}{c4f822518f71a68371aaea78a060a55b}
+      \strng{authorfullhash}{2e695aff0cfc3ea6b54b4a9333681017}
+      \strng{authorfullhashraw}{2e695aff0cfc3ea6b54b4a9333681017}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{6}
+      \field{issn}{1802-8225, 1214-1119}
+      \field{journaltitle}{Bulletin of Geosciences}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{shortjournal}{Bull. Geosci.}
+      \field{title}{Environmental Impact on Ectocochleate Cephalopod Reproductive Strategies and the Evolutionary Significance of Cephalopod Egg Size}
+      \field{urlday}{28}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{83\bibrangedash 94}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.3140/bull.geosci.1351
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/JV3RJJRX/Laptikhovsky et al. - 2012 - Environmental impact on ectocochleate cephalopod r.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.geology.cz/bulletin/contents/art1351
+      \endverb
+      \verb{url}
+      \verb http://www.geology.cz/bulletin/contents/art1351
+      \endverb
+    \endentry
+    \entry{malchykShellOrnamentSystematic2017}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=40ebc55f44857bd0f37fe30cd727add7}{%
+           family={Malchyk},
+           familyi={M\bibinitperiod},
+           given={Oksana},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc663d2f345f8107bdd97f0700f8e1a1}{%
+           family={Machalski},
+           familyi={M\bibinitperiod},
+           given={Marcin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=06f5763a861de0ae508f370468d76f02}{%
+           family={Waksmundzki},
+           familyi={W\bibinitperiod},
+           given={Bogusław},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=61e894eb531b7cb59088a0a1665d9d8f}{%
+           family={Duda},
+           familyi={D\bibinitperiod},
+           given={Maciej},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{be4bc27d03c3e51149d8e2e55ac177ed}
+      \strng{fullhash}{7cbb813302fc5e7eef7af9125793e2f7}
+      \strng{fullhashraw}{7cbb813302fc5e7eef7af9125793e2f7}
+      \strng{bibnamehash}{7cbb813302fc5e7eef7af9125793e2f7}
+      \strng{authorbibnamehash}{7cbb813302fc5e7eef7af9125793e2f7}
+      \strng{authornamehash}{be4bc27d03c3e51149d8e2e55ac177ed}
+      \strng{authorfullhash}{7cbb813302fc5e7eef7af9125793e2f7}
+      \strng{authorfullhashraw}{7cbb813302fc5e7eef7af9125793e2f7}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The fossil record of Nautilida in carbonate facies is skewed towards moulds (steinkerns) in various states of preservation, which complicates assessment of the original shell ornament of many taxa. As a remarkable exception, moulds of Epicymatoceras vaelsense from upper Campanian and lower Maastrichtian (Upper Cretaceous) siliceous limestones (opoka) in Poland retain details of the original shell ornament, allowing conclusions on the original structure of the shell wall, systematic position and hatching size of this nautilid to be drawn. Both external and internal moulds are present in the material studied, which are referred to as taphomorph 1 and 2, respectively. Based on morphology and inferred taphonomy, it is proposed that the external ribbing of E. vaelsense was originally composed of overlapping, tile-shaped lamellae of the outer prismatic layer, a character recently suggested to be a synapomorphy for the cymatoceratid clade. The diameter of the embryonic conch of E. vaelsense is estimated to have been around 30~mm, which is near the maximum range of hatching size recorded for Cretaceous and younger nautilids. On the basis of the inferred shell structure of E.~vaelsense, it is speculated that living individuals of this nautilid were covered by a dense periostracal cover similar to that of Recent Allonautilus scrobiculatus. This study demonstrates that nautilid moulds may provide a better source of palaeontological data than conventionally accepted.}
+      \field{day}{1}
+      \field{issn}{0195-6671}
+      \field{journaltitle}{Cretaceous Research}
+      \field{month}{12}
+      \field{shortjournal}{Cretaceous Research}
+      \field{shorttitle}{Shell Ornament, Systematic Position and Hatching Size of {{{\mkbibemph{Epicymatoceras}}}}{\mkbibemph{ Vaelsense}} ({{Nautilida}})}
+      \field{title}{Shell Ornament, Systematic Position and Hatching Size of {{{\mkbibemph{Epicymatoceras}}}}{\mkbibemph{ Vaelsense}} ({{Nautilida}}): {{New}} Insights Based on Specimens in Mould Preservation from the {{Upper Cretaceous}} of {{Poland}}}
+      \field{urlday}{1}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{80}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.cretres.2017.08.006
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/VH74BXTT/Malchyk et al. - 2017 - Shell ornament, systematic position and hatching size of Epicymatoceras vaelsense (Nautilida).pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/ULVMNPG6/S0195667117302604.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0195667117302604
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0195667117302604
+      \endverb
+      \keyw{Campanian,Central Europe,Cephalopoda,Fossilisation,Maastrichtian,Taphonomy}
+    \endentry
+    \entry{matthewsGlobalPlateBoundary2016}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=a0cf1905f773c88c2c9c47e145ed08e9}{%
+           family={Matthews},
+           familyi={M\bibinitperiod},
+           given={Kara\bibnamedelima J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c0aa2dd1be08f40e4b8b9c2699961512}{%
+           family={Maloney},
+           familyi={M\bibinitperiod},
+           given={Kayla\bibnamedelima T.},
+           giveni={K\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=af12f7549cbb5abf15b14ab7a1d5690a}{%
+           family={Zahirovic},
+           familyi={Z\bibinitperiod},
+           given={Sabin},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6137f0416ef93f769c8093bb425fa991}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Simon\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=39865d1c47d2b7a6136b51448098f96c}{%
+           family={Seton},
+           familyi={S\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=56f5de3c5f33e14e82e6a4b637f3f853}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={R.\bibnamedelimi Dietmar},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5089452b1a237d7654046aef657273ac}
+      \strng{fullhash}{baa5426a9b646d69a3aa68a067a2afa1}
+      \strng{fullhashraw}{baa5426a9b646d69a3aa68a067a2afa1}
+      \strng{bibnamehash}{baa5426a9b646d69a3aa68a067a2afa1}
+      \strng{authorbibnamehash}{baa5426a9b646d69a3aa68a067a2afa1}
+      \strng{authornamehash}{5089452b1a237d7654046aef657273ac}
+      \strng{authorfullhash}{baa5426a9b646d69a3aa68a067a2afa1}
+      \strng{authorfullhashraw}{baa5426a9b646d69a3aa68a067a2afa1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Many aspects of deep-time Earth System models, including mantle convection, paleoclimatology, paleobiogeography and the deep Earth carbon cycle, require high-resolution plate motion models that include the evolution of the mosaic of plate boundaries through time. We present the first continuous late Paleozoic to present-day global plate model with evolving plate boundaries, building on and extending two previously published models for the late Paleozoic (410–250Ma) and Mesozoic-Cenozoic (230–0Ma). We ensure continuity during the 250–230Ma transition period between the two models, update the absolute reference frame of the Mesozoic-Cenozoic model and add a new Paleozoic reconstruction for the Baltica-derived Alexander Terrane, now accreted to western North America. This 410–0Ma open access model provides a framework for deep-time whole Earth modelling and acts as a base for future extensions and refinement. We analyse the model in terms of the number of plates, predicted plate size distribution, plate and continental root mean square (RMS) speeds, plate velocities and trench migration through time. Overall model trends share many similarities to those for recent times, which we use as a first order benchmark against which to compare the model and identify targets for future model refinement. Except for during the period \textasciitilde 260–160Ma, the number of plates (16–46) and ratio of “large” plates (≥107.5km2) to smaller plates (\textasciitilde 2.7–6.6) are fairly similar to present-day values (46 and 6.6, respectively), with lower values occurring during late Paleozoic assembly and growth of Pangea. This temporal pattern may also reflect difficulties in reconstructing small, now subducted oceanic plates further back in time, as well as whether a supercontinent is assembling or breaking up. During the \textasciitilde 260–160Ma timeframe the model reaches a minima in the number of plates, in contrast to what we would expect during initial Pangea breakup and thus highlighting the need for refinement of the relative plate motion model. Continental and plate RMS speeds show an overall increase backwards through time from \textasciitilde 200 to 365Ma, reaching a peak at 365Ma of {$>$}14 and {$>$}16cm/yr, respectively, compared to \textasciitilde 3 and \textasciitilde 5cm/yr, respectively, at present-day. The median value of trench motion remains close to, yet above 0cm/yr for most of the model timeframe, with a dominance in positive values reflecting a prevalence of trench retreat over advance. Trench advance speeds are excessive during the 370–160Ma period, reaching more than four times that observed at present-day. Extended periods of trench advance and global continental and plate RMS speeds that far exceed present-day values warrant further investigation. Future work should test whether alternative absolute reference frames or relative motions would mitigate these high speeds, while still being consistent with geologic and geophysical observations, or alternatively focus on identifying potential driving mechanisms to account for such rapid motions.}
+      \field{day}{1}
+      \field{issn}{0921-8181}
+      \field{journaltitle}{Global and Planetary Change}
+      \field{month}{11}
+      \field{shortjournal}{Global and Planetary Change}
+      \field{title}{Global Plate Boundary Evolution and Kinematics since the Late {{Paleozoic}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{146}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{226\bibrangedash 250}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1016/j.gloplacha.2016.10.002
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/HLUFJU9G/Matthews et al. - 2016 - Global plate boundary evolution and kinematics since the late Paleozoic.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/4PRA9RPN/S0921818116302417.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0921818116302417
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0921818116302417
+      \endverb
+      \keyw{Alexander Terrane,Paleozoic,Pangea,Panthalassa,Plate reconstruction,Subduction}
+    \endentry
+    \entry{merdithExtendingFullplateTectonic2021}{article}{}{}
+      \name{author}{11}{}{%
+        {{un=0,uniquepart=base,hash=b8bcb30a1347cd38b08e56dc1d1106dc}{%
+           family={Merdith},
+           familyi={M\bibinitperiod},
+           given={Andrew\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6137f0416ef93f769c8093bb425fa991}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Simon\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a589d4c1b6d2658a638c143899b2c557}{%
+           family={Collins},
+           familyi={C\bibinitperiod},
+           given={Alan\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4d64ebd2fe95ec9d8d64d8ff75c33ac4}{%
+           family={Tetley},
+           familyi={T\bibinitperiod},
+           given={Michael\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f1e7623c69a0f3b78e716b0e2f30ac32}{%
+           family={Mulder},
+           familyi={M\bibinitperiod},
+           given={Jacob\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=47ee1e24d31e056b0adcb7aa78e4479e}{%
+           family={Blades},
+           familyi={B\bibinitperiod},
+           given={Morgan\bibnamedelima L.},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ca669f0cb040412d9169789e79bfcb80}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e315670bebd803be56a16731e956307e}{%
+           family={Armistead},
+           familyi={A\bibinitperiod},
+           given={Sheree\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef4238cce44c194cec970f8d4eb8e92b}{%
+           family={Cannon},
+           familyi={C\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=af12f7549cbb5abf15b14ab7a1d5690a}{%
+           family={Zahirovic},
+           familyi={Z\bibinitperiod},
+           given={Sabin},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=56f5de3c5f33e14e82e6a4b637f3f853}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={R.\bibnamedelimi Dietmar},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ec9f36e2a3cfe34c7cb50bdaa19796c3}
+      \strng{fullhash}{6a0ea428546f75537d0533215db03cae}
+      \strng{fullhashraw}{6a0ea428546f75537d0533215db03cae}
+      \strng{bibnamehash}{6a0ea428546f75537d0533215db03cae}
+      \strng{authorbibnamehash}{6a0ea428546f75537d0533215db03cae}
+      \strng{authornamehash}{ec9f36e2a3cfe34c7cb50bdaa19796c3}
+      \strng{authorfullhash}{6a0ea428546f75537d0533215db03cae}
+      \strng{authorfullhashraw}{6a0ea428546f75537d0533215db03cae}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Recent progress in plate tectonic reconstructions has seen models move beyond the classical idea of continental drift by attempting to reconstruct the full evolving configuration of tectonic plates and plate boundaries. A particular problem for the Neoproterozoic and Cambrian is that many existing interpretations of geological and palaeomagnetic data have remained disconnected from younger, better-constrained periods in Earth history. An important test of deep time reconstructions is therefore to demonstrate the continuous kinematic viability of tectonic motions across multiple supercontinent cycles. We present, for the first time, a continuous full-plate model spanning 1 Ga to the present-day, that includes a revised and improved model for the Neoproterozoic–Cambrian (1000–520 Ma) that connects with models of the Phanerozoic, thereby opening up pre-Gondwana times for quantitative analysis and further regional refinements. In this contribution, we first summarise methodological approaches to full-plate modelling and review the existing full-plate models in order to select appropriate models that produce a single continuous model. Our model is presented in a palaeomagnetic reference frame, with a newly-derived apparent polar wander path for Gondwana from 540 to 320 Ma, and a global apparent polar wander path from 320 to 0 Ma. We stress, though while we have used palaeomagnetic data when available, the model is also geologically constrained, based on preserved data from past-plate boundaries. This study is intended as a first step in the direction of a detailed and self-consistent tectonic reconstruction for the last billion years of Earth history, and our model files are released to facilitate community development.}
+      \field{day}{1}
+      \field{issn}{0012-8252}
+      \field{journaltitle}{Earth-Science Reviews}
+      \field{month}{3}
+      \field{shortjournal}{Earth-Science Reviews}
+      \field{shorttitle}{Extending Full-Plate Tectonic Models into Deep Time}
+      \field{title}{Extending Full-Plate Tectonic Models into Deep Time: {{Linking}} the {{Neoproterozoic}} and the {{Phanerozoic}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{214}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{103477}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.earscirev.2020.103477
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/IJRV4DRH/Merdith et al. - 2021 - Extending full-plate tectonic models into deep time Linking the Neoproterozoic and the Phanerozoic.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/TI87KU4M/S0012825220305237.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0012825220305237
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0012825220305237
+      \endverb
+      \keyw{Gondwana,Neoproterozoic,Palaeogeography,Plate tectonics,Rodinia}
+    \endentry
+    \entry{mullerGPlatesBuildingVirtual2018}{article}{}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=56f5de3c5f33e14e82e6a4b637f3f853}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={R.\bibnamedelimi Dietmar},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef4238cce44c194cec970f8d4eb8e92b}{%
+           family={Cannon},
+           familyi={C\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ee57faae00595f7267097ff450907d44}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Xiaodong},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f8e34b2c9932e4c5c3c92b3765c99e2d}{%
+           family={Watson},
+           familyi={W\bibinitperiod},
+           given={Robin\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6b032d6702118dc0ebfb7080474e1627}{%
+           family={Gurnis},
+           familyi={G\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6ef75d37726da5e07c340403462517be}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6cf804b513b8833b8bf231b4dea76bf}{%
+           family={Pfaffelmoser},
+           familyi={P\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=39865d1c47d2b7a6136b51448098f96c}{%
+           family={Seton},
+           familyi={S\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5b9dbc5b1f12061571b76caba471f03b}{%
+           family={Russell},
+           familyi={R\bibinitperiod},
+           given={Samuel\bibnamedelimb H.\bibnamedelimi J.},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=af12f7549cbb5abf15b14ab7a1d5690a}{%
+           family={Zahirovic},
+           familyi={Z\bibinitperiod},
+           given={Sabin},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1edae5fbfd03a649df2dd9b5961585e0}
+      \strng{fullhash}{905cd657c14a847c5175d76bd1489f00}
+      \strng{fullhashraw}{905cd657c14a847c5175d76bd1489f00}
+      \strng{bibnamehash}{905cd657c14a847c5175d76bd1489f00}
+      \strng{authorbibnamehash}{905cd657c14a847c5175d76bd1489f00}
+      \strng{authornamehash}{1edae5fbfd03a649df2dd9b5961585e0}
+      \strng{authorfullhash}{905cd657c14a847c5175d76bd1489f00}
+      \strng{authorfullhashraw}{905cd657c14a847c5175d76bd1489f00}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{GPlates is an open-source, cross-platform plate tectonic geographic information system, enabling the interactive manipulation of plate-tectonic reconstructions and the visualization of geodata through geological time. GPlates allows the building of topological plate models representing the mosaic of evolving plate boundary networks through time, useful for computing plate velocity fields as surface boundary conditions for mantle convection models and for investigating physical and chemical exchanges of material between the surface and the deep Earth along tectonic plate boundaries. The ability of GPlates to visualize subsurface 3-D scalar fields together with traditional geological surface data enables researchers to analyze their relationships through geological time in a common plate tectonic reference frame. To achieve this, a hierarchical cube map framework is used for rendering reconstructed surface raster data to support the rendering of subsurface 3-D scalar fields using graphics-hardware-accelerated ray-tracing techniques. GPlates enables the construction of plate deformation zones—regions combining extension, compression, and shearing that accommodate the relative motion between rigid blocks. Users can explore how strain rates, stretching/shortening factors, and crustal thickness evolve through space and time and interactively update the kinematics associated with deformation. Where data sets described by geometries (points, lines, or polygons) fall within deformation regions, the deformation can be applied to these geometries. Together, these tools allow users to build virtual Earth models that quantitatively describe continental assembly, fragmentation and dispersal and are interoperable with many other mapping and modeling tools, enabling applications in tectonics, geodynamics, basin evolution, orogenesis, deep Earth resource exploration, paleobiology, paleoceanography, and paleoclimate.}
+      \field{issn}{1525-2027}
+      \field{journaltitle}{Geochemistry, Geophysics, Geosystems}
+      \field{langid}{english}
+      \field{number}{7}
+      \field{shorttitle}{{{GPlates}}}
+      \field{title}{{{GPlates}}: {{Building}} a {{Virtual Earth Through Deep Time}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{19}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2243\bibrangedash 2261}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1029/2018GC007584
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/7VI8JJ5C/Müller et al. - 2018 - GPlates Building a Virtual Earth Through Deep Time.pdf;/home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/LU2NHQA4/2018GC007584.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1029/2018GC007584
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1029/2018GC007584
+      \endverb
+      \keyw{geodynamics,geographic information system,paleogeography,plate deformation,plate tectonics,virtual globe}
+    \endentry
+    \entry{scotesePALEOMAPPaleoAtlasGPlates2020}{software}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9b48e865ac35f746291e7cd31b48ad74}{%
+           family={Scotese},
+           familyi={S\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{fullhash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{fullhashraw}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{bibnamehash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{authorbibnamehash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{authornamehash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{authorfullhash}{9b48e865ac35f746291e7cd31b48ad74}
+      \strng{authorfullhashraw}{9b48e865ac35f746291e7cd31b48ad74}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{month}{2}
+      \field{title}{{{PALEOMAP PaleoAtlas}} for {{GPlates}} – {{EarthByte}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/DVHJND44/paleomap-paleoatlas-for-gplates.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.earthbyte.org/paleomap-paleoatlas-for-gplates/
+      \endverb
+      \verb{url}
+      \verb https://www.earthbyte.org/paleomap-paleoatlas-for-gplates/
+      \endverb
+    \endentry
+    \entry{setonDeconstructingPlateTectonic2023}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=39865d1c47d2b7a6136b51448098f96c}{%
+           family={Seton},
+           familyi={S\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6137f0416ef93f769c8093bb425fa991}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Simon\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc193ac9319f9086c388c141ca43bb58}{%
+           family={Domeier},
+           familyi={D\bibinitperiod},
+           given={Mathew},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a589d4c1b6d2658a638c143899b2c557}{%
+           family={Collins},
+           familyi={C\bibinitperiod},
+           given={Alan\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3c03aba8d8cad99076199d73cbb208c2}{%
+           family={Sigloch},
+           familyi={S\bibinitperiod},
+           given={Karin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{5cfbbf7237910e0ed739d8d039c4e6ce}
+      \strng{fullhash}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \strng{fullhashraw}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \strng{bibnamehash}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \strng{authorbibnamehash}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \strng{authornamehash}{5cfbbf7237910e0ed739d8d039c4e6ce}
+      \strng{authorfullhash}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \strng{authorfullhashraw}{726fb5ee9ef22c0b7dcb0fb285eeae72}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The evolving mosaic of tectonic plates across the surface of the Earth sets boundary conditions for the evolution of biotic and abiotic processes and helps shape the dynamics of its interior. Reconstructing plate tectonics back through time allows scientists from a range of disciplines (such as palaeobiology, palaeoclimate, geodynamics and seismology) to investigate Earth evolution through these spatiotemporal dimensions. However, the variety and complexity of plate reconstructions can lead to some of their limitations being overlooked. In this Technical Review, we discuss the domain-specific knowledge underpinning modern quantitative plate reconstructions and convey a set of principles on how to use (but not abuse) the software or results. Open-source plate tectonic reconstruction software, like GPlates, has led to a major shift in working practices, handing non-specialists the tools to develop and integrate reconstructions based on their own datasets and expertise. However, there is no ‘one-size-fits-all’ and users need to understand what data and underlying assumptions go into making different, sometimes competing reconstruction models. It is therefore essential to consider the many ways reconstructions simplify reality when interpreting them to avoid circular reasoning. Although many aspects of deep-time reconstructions remain unresolved, future work on intercomparisons between models and uncertainty quantification is an essential pathway towards next-generation plate reconstructions.}
+      \field{issn}{2662-138X}
+      \field{journaltitle}{Nature Reviews Earth \& Environment}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shortjournal}{Nat Rev Earth Environ}
+      \field{title}{Deconstructing Plate Tectonic Reconstructions}
+      \field{urlday}{20}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{4}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{185\bibrangedash 204}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1038/s43017-022-00384-8
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/C2I7N22A/Seton et al. - 2023 - Deconstructing plate tectonic reconstructions.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s43017-022-00384-8
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s43017-022-00384-8
+      \endverb
+      \keyw{Geodynamics,Geology,Geophysics,Tectonics}
+    \endentry
+    \entry{tajikaIntraInterspecificVariability2022}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=4d62cf71a84375ec630aa195aa7fdf9d}{%
+           family={Tajika},
+           familyi={T\bibinitperiod},
+           given={Amane},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=28b18cd509ac35c17c60245f3b9359b7}{%
+           family={Landman},
+           familyi={L\bibinitperiod},
+           given={Neil\bibnamedelima H.},
+           giveni={N\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=270d3e8b430263399235da8947010a52}{%
+           family={Slovacek},
+           familyi={S\bibinitperiod},
+           given={Mariah},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3ad9314f1c40eecfdb45786703b71b7}{%
+           family={Nishida},
+           familyi={N\bibinitperiod},
+           given={Kozue},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8de00b52449d7d6bbf709af666df1730}{%
+           family={Morita},
+           familyi={M\bibinitperiod},
+           given={Wataru},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b8394c26e4128e6e3f29d6d90d71a9f3}{%
+           family={Witts},
+           familyi={W\bibinitperiod},
+           given={James\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Scandinavian University Press}%
+      }
+      \strng{namehash}{13258ea316f2c015c4c1ec7cc54a7fea}
+      \strng{fullhash}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \strng{fullhashraw}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \strng{bibnamehash}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \strng{authorbibnamehash}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \strng{authornamehash}{13258ea316f2c015c4c1ec7cc54a7fea}
+      \strng{authorfullhash}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \strng{authorfullhashraw}{5cdddf4bfe6fce47b44e463f45955b0c}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Hatching size has been considered of great importance in the evolution of externally shelled cephalopods. However, our knowledge of how hatching size varies in response to biotic and abiotic factors is largely lacking. We present a comprehensive overview of hatching size in all known species of modern nautilids (225 specimens, representing eight species). Hatching size ranges from 22 to 33 mm, with the smallest hatchlings in Nautilus pompilius suluensis and the largest hatchlings in Nautilus belauensis. There is no significant difference in hatching size between males and females in the same species. In addition, hatching size does not affect the morphology of the embryonic shell; smaller hatchlings are identical in morphology to larger hatchlings in the same species. Although information pertaining to temperature and duration of embryonic development are limited, we conclude that there is no clear correlation between hatching size and the temperature at which embryonic development takes place. In contrast, there is a weak correlation between hatching size and the duration of embryonic development. In the Late Cretaceous nautilid Eutrephoceras for which data on hatching size are available, species in colder climates exhibit a larger hatching size than those in more temperate climates. A comparison of hatching size and adult size among modern nautilid species reveals a positive correlation, largely driven by N. pompilius suluensis, at one end of the spectrum, and N. belauensis, at the other. This relationship may be rooted in parental care strategy and/or predation pressure. Keywords Cephalopods nautiloids evolution development ecology body size}
+      \field{day}{13}
+      \field{issn}{0024-1164}
+      \field{journaltitle}{Lethaia}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{Intra- and Interspecific Variability in Offspring Size in Nautilids}
+      \field{urlday}{11}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{55}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 17}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.18261/let.55.3.1
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/5Y5CGPBL/Tajika et al. - 2022 - Intra- and interspecific variability in offspring .pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.idunn.no/doi/full/10.18261/let.55.3.1
+      \endverb
+      \verb{url}
+      \verb https://www.idunn.no/doi/full/10.18261/let.55.3.1
+      \endverb
+      \keyw{body size,Cephalopods,development,ecology,evolution,nautiloids}
+    \endentry
+    \entry{tanabeRhyncholitesConchorhynchsCalcified1980}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=673d8dbfddd0bfe0204d038a14a60596}{%
+           family={Tanabe},
+           familyi={T\bibinitperiod},
+           given={Kazushige},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=86ef310222cfbe8f170cca702fd1adb8}{%
+           family={Fukuda},
+           familyi={F\bibinitperiod},
+           given={Yoshio},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42d0487525cbb868fb9642676f68bfb4}{%
+           family={Kanie},
+           familyi={K\bibinitperiod},
+           given={Yasumitsu},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c9317c6f04ea5749f785e7efc2e90e7c}{%
+           family={Lehmann},
+           familyi={L\bibinitperiod},
+           given={Ulrich},
+           giveni={U\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{0559b8d901298251a3d330d2659dba24}
+      \strng{fullhash}{3ced1d57236aee969aee21c004aa3148}
+      \strng{fullhashraw}{3ced1d57236aee969aee21c004aa3148}
+      \strng{bibnamehash}{3ced1d57236aee969aee21c004aa3148}
+      \strng{authorbibnamehash}{3ced1d57236aee969aee21c004aa3148}
+      \strng{authornamehash}{0559b8d901298251a3d330d2659dba24}
+      \strng{authorfullhash}{3ced1d57236aee969aee21c004aa3148}
+      \strng{authorfullhashraw}{3ced1d57236aee969aee21c004aa3148}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Conspicuous calcareous coverings are present in the anterior region of 17 fossil jaws from late Cretaceous rocks of Hokkaido (Japan) and Sakhalin (U.S.S.R.). The jaws were preserved in calcareous nodules either in situ in body chambers of ammonites or in close association with identifiable ammonite conch remains. From the morphologic similarity between in situ and isolated jaws, they may be attributed to Tetragonites glabrus, Gaudryceras tenuiliratum, G. denseplicatum, G. sp., and Neophylloceras subramosum. The jaw apparatus of these species is composed of two three‐dimensional black walls of carbonate apatite, which might be a diagenetic replacement of chitinous material. The calcareous coverings in both upper and lower jaws closely resemble those of upper (rhyncholite) and lower (conchorhynch) jaws of modern Nautilus as well as rhyncholite and conchorhynch fossils in their gross morphology, microstructure, and chemical composition. Calcified remains of cephalopod jaws known as rhyncholites and conchorhynchs have been reported from late Paleozoic to Recent. The present discovery of ammonoid rhyncholites and conchorhynchs suggests that at least some previously known late Paleozoic and Mesozoic counterparts belong to the Ammonoidea. The essential similarity of jaw elements of some Late Cretaceous ammonites and modern Nautilus gives reliable information on the feeding habits of the former. The sharp and thick ammonoid rhyncholites and conchorhynchs may have had a special function for cutting up food, similar to those of Nautilus. Keywords Ammonoidea morphology functional morphology rhyncholites conchorhynchs Late Cretaceous Hokkaido Sakhalin}
+      \field{issn}{0024-1164}
+      \field{journaltitle}{Lethaia}
+      \field{month}{4}
+      \field{number}{2}
+      \field{title}{Rhyncholites and Conchorhynchs as Calcified Jaw Elements in Some Late {{Cretaceous}} Ammonites}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{13}
+      \field{year}{1980}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{157\bibrangedash 168}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1111/j.1502-3931.1980.tb01046.x
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/Q7ZCAV9C/Tanabe et al. - 1980 - Rhyncholites and conchorhynchs as calcified jaw elements in some late Cretaceous ammonites.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.scup.com/doi/10.1111/j.1502-3931.1980.tb01046.x
+      \endverb
+      \verb{url}
+      \verb https://www.scup.com/doi/10.1111/j.1502-3931.1980.tb01046.x
+      \endverb
+      \keyw{Ammonoidea,conchorhynchs,functional,Hokkaido,Late Cretaceous,morphology,rhyncholites,Sakhalin}
+    \endentry
+    \entry{torsvikEarthHistoryPalaeogeography2016}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8a6fd3efaf35edc614f7250b5fa068e9}{%
+           family={Torsvik},
+           familyi={T\bibinitperiod},
+           given={Trond\bibnamedelima H.},
+           giveni={T\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa617c2767e10d094724ea78c667e008}{%
+           family={Cocks},
+           familyi={C\bibinitperiod},
+           given={L.\bibnamedelimi Robin\bibnamedelima M.},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{fullhash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{fullhashraw}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{bibnamehash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{authorbibnamehash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{authornamehash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{authorfullhash}{0918b847e8d302471e09c4d68b2253e4}
+      \strng{authorfullhashraw}{0918b847e8d302471e09c4d68b2253e4}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Using full-colour palaeogeographical maps from the Cambrian to the present, this interdisciplinary volume explains how plate motions and surface volcanism are linked to processes in the Earth's mantle, and to climate change and the evolution of the Earth's biota. These new and very detailed maps provide a complete and integrated Phanerozoic story of palaeogeography. They illustrate the development of all the major mountain-building orogenies. Old lands, seas, ice caps, volcanic regions, reefs, and coal beds are highlighted on the maps, as well as faunal and floral provinces. Many other original diagrams show sections from the Earth's core, through the mantle, and up to the lithosphere, and how Large Igneous Provinces are generated, helping to understand how plates have appeared, moved, and vanished through time. Supplementary resources are available online, making this an invaluable reference for researchers, graduate students, professional geoscientists and anyone interested in the geological history of the Earth.}
+      \field{isbn}{978-1-107-10532-4}
+      \field{title}{Earth {{History}} and {{Palaeogeography}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1017/9781316225523
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/6JXCCEDC/076D4FCFCEE4CAE6F8EF3B449594DD50.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.cambridge.org/core/books/earth-history-and-palaeogeography/076D4FCFCEE4CAE6F8EF3B449594DD50
+      \endverb
+      \verb{url}
+      \verb https://www.cambridge.org/core/books/earth-history-and-palaeogeography/076D4FCFCEE4CAE6F8EF3B449594DD50
+      \endverb
+    \endentry
+    \entry{wickhamGgplot2ElegantGraphics2016}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1d0f6977ce2d043e298a59a1cd75b7ef}{%
+           family={Wickham},
+           familyi={W\bibinitperiod},
+           given={Hadley},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag New York}%
+      }
+      \strng{namehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{fullhash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{fullhashraw}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{bibnamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{authorbibnamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{authornamehash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{authorfullhash}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \strng{authorfullhashraw}{1d0f6977ce2d043e298a59a1cd75b7ef}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-319-24277-4}
+      \field{title}{Ggplot2: {{Elegant Graphics}} for {{Data Analysis}}}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ggplot2.tidyverse.org
+      \endverb
+      \verb{url}
+      \verb https://ggplot2.tidyverse.org
+      \endverb
+    \endentry
+    \entry{wilmsenLateCretaceousNautilids2000}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=40abbab0247e3d4d9ddc76a597c7c831}{%
+           family={Wilmsen},
+           familyi={W\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{fullhash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{fullhashraw}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{bibnamehash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{authorbibnamehash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{authornamehash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{authorfullhash}{40abbab0247e3d4d9ddc76a597c7c831}
+      \strng{authorfullhashraw}{40abbab0247e3d4d9ddc76a597c7c831}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Nautilids do not occur throughout the Upper Cretaceous succession in northern Cantabria. Although relatively~rare, they preferentially occur in condensed transgressive horizons. Nine species belonging to the genera~Angulithes MONTFORT, 1808, Eutrephoceras HYATT, 1894, and Pseudocenoceras SPATH, 1927 are recorded.~A. westphalicus (SCHLÜTER, 1872) and E. cf. justum (BLANFORD, 1861) are reported for the first time from the~Iberian Peninsula. The diagnosis of A. vascogoticus WIEDMANN, 1960 is emended.The Cenomanian was characterized by a relative abundance of nautilids of the genus Angulithes which display~a major radiative event, evolving relatively short-lived species. This development was probably related to the~“Cenomanian transgression“. Compared to co-occurring ammonite faunas, Angulithes inhabited deeper and~more distal environments. A possible transitional form, connecting the two genera Angulithes and~Deltocymatoceras KUMMEL, 1956 (?Turonian, Coniacian - Santonian), is recorded from the Mid-/Late~Cenomanian. The Turonian to Campanian succession is dominated by long-ranging nautilids of the genus~Eutrephoceras.}
+      \field{issue}{1}
+      \field{journaltitle}{Acta Geologica Polonica}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{title}{Late {{Cretaceous}} Nautilids from Northern {{Cantabria}}, {{Spain}}}
+      \field{urlday}{17}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{50}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{29\bibrangedash 43}
+      \range{pages}{15}
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/7NU88KPR/Wilmsen - 2000 - Late Cretaceous nautilids from northern Cantabria, Spain.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://geojournals.pgi.gov.pl/agp/article/view/9628
+      \endverb
+      \verb{url}
+      \verb https://geojournals.pgi.gov.pl/agp/article/view/9628
+      \endverb
+      \keyw{Late Cretaceous,Nautilids,Spain,Taxonomy}
+    \endentry
+    \entry{wrightCommunitydrivenPaleogeographicReconstructions2013}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=a88942d17b21b72db849d585b18f564d}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=57e61e6f9ad7ea39ca543ce1d4695149}{%
+           family={Zahirovic},
+           familyi={Z\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c2bd83ee641d42e1faaca59f72dac28c}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={R.\bibnamedelimi D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e55673b3960991120cf1f5df09252258}{%
+           family={Seton},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Copernicus GmbH}%
+      }
+      \strng{namehash}{732cfc683691a5fe6ca4545dcbe1a4e7}
+      \strng{fullhash}{44312072c80d5774ceb9b64898745627}
+      \strng{fullhashraw}{44312072c80d5774ceb9b64898745627}
+      \strng{bibnamehash}{44312072c80d5774ceb9b64898745627}
+      \strng{authorbibnamehash}{44312072c80d5774ceb9b64898745627}
+      \strng{authornamehash}{732cfc683691a5fe6ca4545dcbe1a4e7}
+      \strng{authorfullhash}{44312072c80d5774ceb9b64898745627}
+      \strng{authorfullhashraw}{44312072c80d5774ceb9b64898745627}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{A variety of paleogeographic reconstructions have been published, with applications ranging from paleoclimate, ocean circulation and faunal radiation models to resource exploration; yet their uncertainties remain difficult to assess as they are generally presented as low-resolution static maps. We present a methodology for ground-truthing the digital Palaeogeographic Atlas of Australia by linking the GPlates plate reconstruction tool to the global Paleobiology Database and a Phanerozoic plate motion model. We develop a spatio-temporal data mining workflow to validate the Phanerozoic Palaeogeographic Atlas of Australia with paleoenvironments derived from fossil data. While there is general agreement between fossil data and the paleogeographic model, the methodology highlights key inconsistencies. The Early Devonian paleogeographic model of southeastern Australia insufficiently describes the Emsian inundation that may be refined using biofacies distributions. Additionally, the paleogeographic model and fossil data can be used to strengthen numerical models, such as the dynamic topography and the associated inundation of eastern Australia during the Cretaceous. Although paleobiology data provide constraints only for paleoenvironments with high preservation potential of organisms, our approach enables the use of additional proxy data to generate improved paleogeographic reconstructions.}
+      \field{day}{7}
+      \field{issn}{1726-4170}
+      \field{journaltitle}{Biogeosciences}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shorttitle}{Towards Community-Driven Paleogeographic Reconstructions}
+      \field{title}{Towards Community-Driven Paleogeographic Reconstructions: Integrating Open-Access Paleogeographic and Paleobiology Data with Plate Tectonics}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{10}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1529\bibrangedash 1541}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.5194/bg-10-1529-2013
+      \endverb
+      \verb{file}
+      \verb /home/michael-schmutzer/snap/zotero-snap/common/Zotero/storage/2CK9X33E/Wright et al. - 2013 - Towards community-driven paleogeographic reconstructions integrating open-access paleogeographic an.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://bg.copernicus.org/articles/10/1529/2013/
+      \endverb
+      \verb{url}
+      \verb https://bg.copernicus.org/articles/10/1529/2013/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

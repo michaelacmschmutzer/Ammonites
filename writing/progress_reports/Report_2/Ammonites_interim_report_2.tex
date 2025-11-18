@@ -1,0 +1,141 @@
+\documentclass[a4paper]{article}
+
+\usepackage{setspace}
+\usepackage[math-style=ISO, bold-style=ISO]{unicode-math}
+\setmainfont{EB Garamond}
+\setmathfont{Garamond-Math.otf}[StylisticSet={7,9}]
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{csvsimple}
+\usepackage[super]{nth}
+\usepackage{microtype}
+
+\usepackage[backend=biber,
+			style=apa]{biblatex}
+
+\hypersetup{colorlinks=false,
+			breaklinks=true}
+\graphicspath{ {/home/michael-schmutzer/Documents/Projects/Ammonites/results/} }
+\addbibresource{../../Ammonites.bib}
+
+\title{Ammonoid Extinction and Nautilid Survival: Project report 2}
+\date{\today}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+%\setlength\parindent{0pt}
+\onehalfspacing
+
+I have continued analysing the data at genus level. The aim still is to repeat these analyses at the species level. We will have to see if there is enough data to allow that level of resolution. I have done several analyses, but I would like to focus on one in particular here, because the result is rather striking. I see a clear association between how often a genus is reported in our dataset and whether it is seen as a short-term survivor or not in the literature. I am not sure what to make of this, and would love to hear your opinions. 
+
+I have also written a little literature review of the evidence for Danian ammonoid survivors so far. It doesn't differ much from \textcite{landmanAmmoniteExtinctionNautilid2014}, except that a fourth location seems to have been found recently. It is unpublished, I only know of it from conference abstracts. The nice thing about it is that it comes precisely from a location where I would have expected such a find to come from. 
+
+On another note, I am still not sure what to think of the New Jersey \textit{Pinna} layer ammonoids. I find it hard to say if these are really Danian. For now, I am running analyses where I assume they are, but I will certainly repeat these analyses assuming that they are not. 
+
+
+
+\section*{Results}
+
+
+\noindent
+\textbf{Did ammonoids briefly survive the end-Cretaceous mass extinction?} With the exception of an as of yet unpublished site in the US (see below), the evidence has not changed much since \textcite{landmanAmmoniteExtinctionNautilid2014} surveyed potential Danian ammonoids survivors (see table \ref{tab_surv}). Determining whether ammonoids survived into the Palaeogene is not straightforward. Ammonoid fossil shells can be very common and robust. Shell fragments often survive being excavated by burrowing organisms or geological processes, to be subsequently redeposited in younger layers than they originated from. Naively, such reworked fragments can give the impression that an ammonoid lived longer than it actually did. Reports of fragmented ammonoid fossils in strata younger than expected are therefore generally discounted, and justifiably so \parencite{machalskiDanianAmmonitesDiscussion2002, zinsmeisterDiscoveryFishMortality1998, wittsEvolutionExtinctionMaastrichtian2015, landmanAmmonitesBrinkExtinction2015}.
+
+\begin{table}
+\centering
+\begin{tabular}{lll}
+Location  & Stratum 	& Species	\\
+\hline
+Stevn Klint, & Cerithium Limestone & \textit{Baculites vertebralis} \\
+Denmark$^{1}$  & & \textit{Hoploscaphites constrictus} \\
+ & & \\
+Maastricht, & Unit IVf-7, & \textit{Baculites anceps} \\
+the Netherlands$^{2}$ & Meerssen Member  & \textit{Baculites vertebralis}\\
+ & & \textit{Eubaculites carinatus}\\
+ & & \textit{Hoploscaphites constrictus}\\
+ & & \\
+New Jersey, & \textit{Pinna} layer & \textit{Discoscaphites iris} \\
+ USA$^{3}$ & & \textit{Discoscaphites jerseyensis} \\
+ & & \textit{Discoscaphites minardi} \\
+ & & \textit{Discoscaphites sphaeroidalis} \\
+ & & \textit{Eubaculites carinatus} \\
+ & & \textit{Eubaculites latecarinatus} \\
+ & & \textit{Pachydiscus mokotibensis} \\
+ & & \textit{Sphenodiscus lobatus} \\
+ & & \\
+ & Burrowed Unit & \textit{Discoscaphites} sp. \\
+ & & \textit{Eubaculites latecarinatus} \\
+ & & \\
+Mississippi, & Burrowed Unit & \textit{Discoscaphites} sp. \\
+USA$^{4}$ & & \textit{Eubaculites latecarinatus} \\
+\hline \\
+\end{tabular}
+\caption{Early Danian ammonoid survivors and where they are found. References: 1) \cite{machalskiEvidenceAmmoniteSurvival2005}, 2) \cite{vellekoopTypeMaastrichtianGastropodFaunas2020a, jagtAmmonietenUitHet2012,jagt2003early}, 3) \cite{landmanShortTermSurvivalAmmonites2012}, 4) unpublished, conference abstracts: \cite{barrera-cuencaAmmoniteJawsCretaceous2024, landmanAmmonitesCretaceousPaleogeneSites2024}. }
+\label{tab_surv}
+\end{table}
+
+However, over the past two decades ammonoid fossils from Danian strata have been described that are difficult to interpret as the result of reworking. These fossils come from four different locations. The first to be reported were \textit{Baculites vertebralis} and \textit{Hoploscaphites constrictus} from Stevn Klint, Denmark \parencite{machalskiEvidenceAmmoniteSurvival2005}. One \textit{H. constrictus} fossil had Paleogene dinocysts fossilised within the phragmocone, which about as strong evidence as it gets for the shell having been deposited in the Paleogene \parencite{machalskiEvidenceAmmoniteSurvival2005}. Since then, further early Danian fossil have been reported from Maastricht \parencite{vellekoopTypeMaastrichtianGastropodFaunas2020a, jagtAmmonietenUitHet2012, jagt2003early} and New Jersey \parencite{landmanShortTermSurvivalAmmonites2012}, with further as yet unpublished material from Mississippi \parencite{barrera-cuencaAmmoniteJawsCretaceous2024,landmanAmmonitesCretaceousPaleogeneSites2024}. Danian \textit{Baculites} fossils from Maastricht are preserved with their fragile shell opening (apertures) intact \parencite{jagt2003early}, which is improbable if they had been reworked. Since 2012, further excavations at the Maastrichtian type location have unearthed more Danian ammonoid specimen \parencite{vellekoopTypeMaastrichtianGastropodFaunas2020a}, but no new surviving genera have been reported. 
+
+The fossils from New Jersey paint a more ambiguous picture \parencite{landmanShortTermSurvivalAmmonites2012}. The two latest ammonoid-bearing layers in New Jersey are the \textit{Pinna} layer and the overlying Burrowed Unit. The \textit{Pinna} layer comprises a thriving community of Maastrichtian species including typical Upper Maastrichtian dinoflagellates and the bivalve \textit{Pinna laqueata}, after which the layer is named \parencite{landmanShortTermSurvivalAmmonites2012}. The \textit{Pinna} layer also contains eight ammonoid species (table \ref{tab_surv}). In the Burrowed Unit, this community has disappeared, and the layer has relatively few fossils. Only two ammonoid species were found (table \ref{tab_surv}), of which \textit{Discoscaphites} is represented by jaws (aptychi) and one possibly reworked fragment. Intriguingly, the iridium anomaly lies at the bottom of the \textit{Pinna} layer, implying that the entire community consists of short-term survivors. However, there is evidence that the iridium layer has moved at other sites \parencite{rackiWeatheringModifiedIridiumRecord2011}, including in New Jersey \parencite{olssonEjectaLayerCretaceousTertiary1997}, and it might be that the K-Pg boundary actually lies between the \textit{Pinna} layer and the Burrowed Unit \parencite{millerRelationshipMassExtinction2010, landmanShortTermSurvivalAmmonites2012}. 
+
+Unpublished material presented at the GSA Connects conference in 2024 \parencite{barrera-cuencaAmmoniteJawsCretaceous2024} described \textit{Discoscaphites} and \textit{Eubaculites} jaws (aptychi) from a Danian layer overlying the Prairie Bluff Chalk in Mississippi, also named the Burrowed Unit. At a different conference, Neil Landman also disclosed that the same layer yielded several \textit{E. carinatus} specimen \parencite{landmanAmmonitesCretaceousPaleogeneSites2024}. This novel location at Trim Cane Creek is described by \textcite{sosa-montesdeocaIntenseChangesMain2024}, but the authors did not discuss the Danian ammonoid finds. The Mississippi and the New Jersey Burrowed Unit layers appear to resemble each other, except that the Mississippi site preserves a clear layer with impact spherules \parencite{sosa-montesdeocaIntenseChangesMain2024}, which unambiguously divides the Burrowed Unit from the underlying Maastrichtian sediments (though some burrows do cross the boundary).
+
+It also bears mentioning that a fragmentary \textit{H. constrictus} fossil was recovered from Danian deposits in Turkmenistan, but due to its poor preservation it is unclear whether this specimen is reworked or not \parencite{machalskiTerminalMaastrichtianAmmonites2012}.
+
+Finally, there are three genera that \textcite{landmanAmmoniteExtinctionNautilid2014} included in their analysis which we do not consider survivors (\textit{Diplomoceras}, \textit{Phylloceras}, and \textit{Pseudophyllites}). Their survival into the Danian was predicted through range extension rather than fossil finds \parencite{wangImprovedConfidenceIntervals2004, marshallSuddenGradualMolluscan1996}. We restrict our analysis to those species where fossils were found in plausibly Danian strata. 
+
+As things stand at the moment of writing, the nature of ammonoid survival into the Danian crucially hinges on how the New Jersey \textit{Pinna} layer is interpreted. If this stratum is Danian, it doubles the number of surviving ammonoid genera from three to six. Furthermore, it would mean that not only heteromorph ammonoids, but also some planispiral ammonoids survived, expanding not only the taxonomic but also the morphological diversity of early Danian ammonoids. 
+
+
+
+\noindent
+\textbf{Ammonoid fossil abundance predicts survival.} For ammonoids, there is a strong association between raw abundance (number of occurrences) and survival (figure \ref{fig_abundance}a). The six most common ammonoid genera appear to have survived into the Danian, with the threshold of survival lying between \textit{Eubaculites} (175 occurrences, survived) and \textit{Diplomoceras} (141 occurrences, went extinct). Put simply, the more often a Maastrichtian ammonoid genus is reported in our dataset, the more likely it is that it will be reported as a Danian survivor in the literature (Wilcoxon rank-sum test, $W = 168$, $p = 1.61 \times 10^{-4}$). This is not the case for nautilids, where no such trend is apparent (Wilcoxon rank-sum test, $W = 5$, $p = 0.364$). 
+
+\begin{figure}
+  \begin{subfigure}{1\textwidth}
+    \includegraphics[width=\textwidth]{/abundance_survivalship/Genus_abundance_survival.png}
+    \caption{}
+  \end{subfigure}
+  ~
+  \begin{subfigure}{1\textwidth}
+    \includegraphics[width=\textwidth]{/abundance_survivalship/Genus_locality_survival.png}
+    \caption{}
+  \end{subfigure}
+\caption{Raw abundance (number of occurrences) predicts genus survival at the K-Pg boundary for ammonoids but not for nautilids. (a) The six ammonoid genera with the highest abundance in our dataset are those reported to have survived into the Danian. Abundances do not differ between nautilid genera that survived or went extinct. Vertical axes are not to the same scale. (b) Ammonoid genera that crossed the K-Pg boundary tend to be disproportionately frequent at fossil sites yielding multiple genera. There is no such difference for nautilid genera. Relative abundances are estimated as the percentage of fossil occurrences belonging to a given genus at a particular site. Abundance is estimated relative to other ammonoids or nautilids at a given site, not to the total number of shelled cephalopod fossils. For each genus, we report the median of these percentages across sites. Red diamonds indicate the median, and the red error bars show the interquartile range.}
+\label{fig_abundance}
+\end{figure}
+
+This association between abundance and survival also holds for relative abundances at individual fossil sites. For each fossil site where multiple genera have been found, we estimate the relative abundance of a genus as the percentage of fossil occurrences belonging to that genus at that site. We report the median relative abundance across sites for each genus. Ammonoid genera that survived tend to be found in greater numbers at a given fossil site than ammonoid genera that went extinct (figure \ref{fig_abundance}b, Wilcoxon rank-sum test, $W = 13$, $p < 1.40 \times 10^{-3}$). This is not the case for nautilids (Wilcoxon rank-sum test, $W = 10$, $p = 0.887$). 
+Surviving ammonoid genera are also found at a greater number of sites (figure \ref{fig_numloc_surv}).
+It appears that ammonoid survivors did not have larger geographic ranges than genera that went extinct (I will share some plots next time), but instead were more abundant within their geographic ranges. 
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{/abundance_survivalship/Genus_numloc_survival.png}
+\caption{Ammonoid genera that survived the end-Cretaceous mass extinction are found at more sites than genera that went extinct. There is no such difference between nautilid genera that survived or went extinct. Red diamonds indicate the median, and the red error bars show the interquartile range.}
+\label{fig_numloc_surv}
+\end{figure}
+
+I see two ways to interpret the association between raw abundance and survivorship in ammonoid genera, and Erin suggested a third one. The first is that this is exactly the pattern that I would expect if the Danian ammonoids were reworked. I expect that the more common the fossils of a taxon is within the fossil record, the more likely it is that some of these fossils will end up reworked. The issue with this interpretation is that it would require a remarkably gentle process of reworking that somehow minimised damage to the fossils. At its most extreme, this process was able to scrape out Maastrichtian sediments from within the shell and replace them with Danian ones without damaging the fossil \parencite{machalskiEvidenceAmmoniteSurvival2005}. This scenario seems rather improbable to me, though perhaps \textcite{machalskiInfluenceBurrowgeneratedPseudobreccia2024} have a candidate mechanism.  
+
+The second interpretation is that we are looking at a biological signal, despite all the biases that plague our dataset \parencite{antellSpatialStandardizationTaxon2024, chiarenzaEcologicalNicheModelling2019, kochBiasPublishedFossil1978, hunterFieldSamplingBias2005, closeApparentExponentialRadiation2020, rajaColonialHistoryGlobal2022, sessaImpactLithificationDiversity2009}. If that is the case, fossil abundances do tell us something about the abundance of these shelled cephalopods during the Maastrichtian. Furthermore, it would mean that the present-day association between abundance and extinction risk \parencite{boycePopulationViabilityAnalysis1992, brookPredictiveAccuracyPopulation2000, callaghanPopulationAbundanceEstimates2024} held for ammonoids during the end-Cretaceous mass extinction, but apparently not for nautilids. 
+
+The third interpretation is that there is some form of sampling bias going on here. Maybe ammonoid researchers have been particularly fascinated with ammonoid survivors ever since \textcite{machalskiEvidenceAmmoniteSurvival2005} and \textcite{landmanShortTermSurvivalAmmonites2012} published a list of potential Danian ammonoids. Perhaps that led them to collect and report such ammonoid finds preferentially in an attempt to understand these species better. I wonder if there is a way to test this hypothesis, or anyone is aware of such a bias. 
+
+
+\printbibliography
+
+\appendix 
+
+\makeatletter
+\renewcommand \thesection{S\@arabic\c@section}
+\renewcommand\thetable{S\@arabic\c@table}
+\renewcommand \thefigure{S\@arabic\c@figure}
+\makeatother
+
+
+\end{document}
