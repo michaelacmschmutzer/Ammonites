@@ -56,15 +56,6 @@ cornu <- cornu_split %>% mutate(
          species = replace(species, 
                    str_detect(identified_name, pattern = '[[:punct:]]'), NA))
 
-# Remove the genus Conchorhynchus. These are nautiloid jaws.
-# Also remove the genus Nautilus. Its presence is controversial. 
-cornu <- filter(cornu, !genus %in% c('Conchorhynchus', 'Nautilus'))
-
-# Reassign all Jeletzkytes occurrences to Hoploscaphites. These are 
-# synonyms (Landman et al., 2010, B Am Mus Nat Hist)
-cornu <- cornu %>%
-  mutate(genus = ifelse(genus == 'Jeletzkytes', 'Hoploscaphites', genus))
-
 # Make new columns for classification (nauti only)
 #nauti <- nauti_clean %>% mutate(phylum      = 'Mollusca',
 #                                class       = 'Cephalopoda',
@@ -104,7 +95,7 @@ ammon <- ammon %>% filter(!is.na(order))
 # Merge datasets
 cepha <- bind_rows(ammon, cornu)
 
-################### Disambiguate taxonomy ###################
+################### Cleand and disambiguate taxonomy ###################
 
 genus_taxon <- cepha %>%
   select(c('order', 'suborder', 'superfamily', 'family', 'genus')) %>%
@@ -145,6 +136,14 @@ for (genus in genus_taxon_ambiguous$genus) {
   }
 }
 
+# Remove the genus Conchorhynchus. These are nautiloid jaws.
+# Also remove the genus Nautilus. Its presence is controversial. 
+cepha <- filter(cepha, !genus %in% c('Conchorhynchus', 'Nautilus'))
+
+# Reassign all Jeletzkytes occurrences to Hoploscaphites. These are 
+# synonyms (Landman et al., 2010, B Am Mus Nat Hist)
+cepha <- cepha %>%
+  mutate(genus = ifelse(genus == 'Jeletzkytes', 'Hoploscaphites', genus))
 
 ################### Create Campanian dataset & save ################### 
 
