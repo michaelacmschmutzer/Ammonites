@@ -24,6 +24,23 @@ orange <- '#E38C59'
 # from https://www.color-hex.com/color-palette/23101
 nautilus <- c('#e38c59', '#fcd4ba', '#1789a9', '#71b8c7', '#c2f3fd')
 
+################### Check if taxonomy is unambiguous ################### 
+
+genus_taxon <- cepha %>%
+  select(c('order', 'suborder', 'superfamily', 'family', 'genus')) %>%
+  distinct() 
+
+tally_genus_taxon <- genus_taxon %>%
+  count(genus)
+
+if (any(tally_genus_taxon$n > 1)) {
+  cont <- readline(
+    'Taxonomy is not resolved. Enter "y" if you want to continue anyway')
+  if (cont != 'y') {
+    stop('Good. Fix the taxonomy.')
+  }
+}
+
 ################### Some preliminary explorations ###################
 # DataExplorer
 
