@@ -41,6 +41,14 @@ tally_genus_nauti <- cepha_rota %>%
 tally_genus_ammon <- cepha_rota %>% 
   filter(!order == 'Nautilida') %>%
   count(genus)
+
+# Save the raw abundance data
+write.csv(tally_genus_nauti, 
+  '../results/abundance_survivalship/nautilids_abundance_raw.csv')
+write.csv(tally_genus_ammon, 
+  '../results/abundance_survivalship/ammonoids_abundance_raw.csv')
+
+# Add survivalship info
 tally_nauti_surv <- merge(tally_genus_nauti, surv_nauti)
 tally_ammon_surv <- merge(tally_genus_ammon, surv_ammon)
 

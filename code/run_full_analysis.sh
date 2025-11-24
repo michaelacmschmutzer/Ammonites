@@ -20,5 +20,6 @@ Rscript plot_hatching_size.R &>/dev/null
 Rscript plot_body_size.R &>/dev/null
 Rscript analyse_abundance.R &>/dev/null
 Rscript analyse_subsampling.R $clade &>/dev/null
+RScript compare_hypotheses.R &>/dev/null
 
 # Finale. Figure plotting
