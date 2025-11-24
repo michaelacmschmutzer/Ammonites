@@ -85,9 +85,7 @@ ammon <- select(ammon,
 cornu <- select(cornu, 
   -c(record_type, reid_no, flags, identified_name, identified_rank, 
     identified_no, difference, accepted_name, accepted_rank, accepted_no,
-    early_interval, late_interval, reference_no, primary_reference,
-    geology_comments, tectonic_setting, stratcomments, reinforcement, thickness,
-    architecture, composition
+    early_interval, late_interval, reference_no, primary_reference
     ))
 
 # add "PB" to all values in cornu occurrence_no & collection_no to maintain 
@@ -105,6 +103,48 @@ ammon <- ammon %>% filter(!is.na(order))
 
 # Merge datasets
 cepha <- bind_rows(ammon, cornu)
+
+################### Disambiguate taxonomy ###################
+
+genus_taxon <- cepha %>%
+  select(c('order', 'suborder', 'superfamily', 'family', 'genus')) %>%
+  distinct() %>%
+  arrange(genus)
+
+genus_taxon_ambiguous <- genus_taxon %>%
+  count(genus) %>%
+  filter(n > 1)
+
+# For many genera, the problem is not different taxonomy but missing values
+# Automatically correct for those by filling in missing data 
+
+revise_taxonomy <- c()
+taxon_levels <- c('order', 'suborder', 'superfamily', 'family', 'genus')
+
+for (genus in genus_taxon_ambiguous$genus) {
+  continue <- TRUE # Continue with this genus until a true taxonomic ambiguity 
+  # is found, then move on to next genus
+  for (taxlev in taxon_levels) {
+    if (continue == TRUE) {
+      clade <- unique(cepha[cepha$genus == genus, taxlev])
+      # What if there is no ambiguity at this taxonomic level? Skip
+      if (length(clade) > 1) {
+        # In case there is ambiguity at this taxonomic level, check if it is 
+        # missing values or true ambiguity
+        if (sum(is.na(clade) == FALSE) > 1) {
+          # In this case, there is more than one name for the taxonomic level
+          # and the taxonomy has to be resolved by hand
+          revise_taxonomy <- c(revise_taxonomy, genus)
+          continue <- FALSE
+        } else {
+          # Replace all NAs with the already known taxonomic classification
+          cepha[cepha$genus == genus, taxlev] <- clade[!is.na(clade)]
+        }
+      }
+    }
+  }
+}
+
 
 ################### Create Campanian dataset & save ################### 
 
