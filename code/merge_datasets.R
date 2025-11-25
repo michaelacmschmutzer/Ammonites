@@ -136,6 +136,11 @@ for (genus in genus_taxon_ambiguous$genus) {
   }
 }
 
+# TODO To avoid being dependent on conflicting taxonomy, which I don't want to 
+# resolve right now, make a column is.nautilid TRUE/FALSE to bypass the issue 
+cepha <- cepha %>%
+  mutate(is.nautilid = ifelse(order == 'Nautilida', TRUE, FALSE))
+
 # Remove the genus Conchorhynchus. These are nautiloid jaws.
 # Also remove the genus Nautilus. Its presence is controversial. 
 cepha <- filter(cepha, !genus %in% c('Conchorhynchus', 'Nautilus'))
@@ -153,7 +158,7 @@ campa <- filter(cepha, max_ma <= 84 & min_ma >= 72)
 
 write.csv(campa, file = '../data/campanian_cephalopods.csv', row.names = FALSE)
 
-################### Create Maastrichtian dataset & save ###################
+################### Create Maastrichtian data set & save ###################
 
 # Remove all species/occurrences that do not lie around 66 mya
 # (date of impact). Exclude all occurrences that are not in the Maastrichtian
