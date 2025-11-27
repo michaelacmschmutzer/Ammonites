@@ -178,4 +178,5 @@ cepha_end <- filter(cepha_maas, genus %in% extant)
 write.csv(cepha_end, file = '../data/cephalopods.csv', row.names = FALSE)
 
 # Save the all-Maastrichtian cephalopod data
-write.csv(cepha_maas, file = '../data/cephalopods_maastrichtian.csv')
+write.csv(cepha_maas, file = '../data/cephalopods_maastrichtian.csv', 
+          row.names = FALSE)
