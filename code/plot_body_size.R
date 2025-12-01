@@ -83,7 +83,7 @@ pbnau <- ggplot(data = body_nauti_surv, aes(x = survival, y = logvol)) +
     axis.title.x = element_text(size = fsize, family = font),
   )
 p <- grid.arrange(pbam, pbnau, ncol = 2)
-ggsave('../results/body_size/Genus_body_size_survival.png', device = pdf,
+ggsave('../results/body_size/Genus_body_size_survival.png',
       width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
 wilcox.test(logvol ~ survival, data = body_ammon_surv)

@@ -4,7 +4,19 @@ setwd("~/Documents/Projects/Ammonites/code/")
 library(dplyr)
 library(DataExplorer)
 library(corrplot)
-library(mnt)
+library(QuantPsyc)
+library(MVTests)
+library(ggplot2)
+library(gridExtra)
+library(latex2exp)
+
+# Specify plotting aesthetics
+darkblue  <- '#12255A'
+orange    <- '#E38C59'
+errbarcol <- '#CA282C'
+font <- 'Palatino'
+fsize <- 9
+
 
 ################### Compile hypothesis testing data set ################### 
 
@@ -27,16 +39,14 @@ surv_ammon <- read.csv('../data/ammonoids_extinction_genus.csv')
 
 # Simplify data, take median of species to get at genus level
 hatch_nauti_genus <- hatch_nauti %>%
-  select(genus, species, hatching.size..mm.) %>%
   group_by(genus) %>%
   summarise(med.hatching.size = median(hatching.size..mm.))
 hatch_ammon_genus <- hatch_ammon %>%
-  select(genus, species, hatching.size..mm.) %>%
   group_by(genus) %>%
   summarise(med.hatching.size = median(hatching.size..mm.))
-body_sizes <- select(body_sizes, c('genus', 'logvol'))
-surv_nauti <- select(surv_nauti, c('genus', 'survival'))
-surv_ammon <- select(surv_ammon, c('genus', 'survival'))
+body_sizes <- dplyr::select(body_sizes, c(genus, logvol))
+surv_nauti <- dplyr::select(surv_nauti, c('genus', 'survival'))
+surv_ammon <- dplyr::select(surv_ammon, c('genus', 'survival'))
 
 # Combine nautilid and ammonoid data
 geo <- rbind(geo_ammon, geo_nauti)
@@ -50,7 +60,7 @@ surv <- rbind(surv_ammon, surv_nauti)
 genus_data <- cepha %>%
 # TODO Resolve taxonomy
 #  select(c('order', 'family', 'genus')) %>%
-  select(genus, is.nautilid) %>%
+  dplyr::select(genus, is.nautilid) %>%
   distinct()
 
 genus_data <- left_join(genus_data, geo, by = 'genus')
@@ -62,6 +72,7 @@ genus_data <- left_join(genus_data, surv, by = 'genus')
 # Try logging the median hatching sizes and abundances
 genus_data$log.hatching.size <- log10(genus_data$med.hatching.size)
 genus_data$log.abun <- log10(genus_data$n)
+genus_data$log.area <- log10(genus_data$PALEOMAP.area.km2)
 
 ################### Get to know dataset
 
@@ -80,27 +91,89 @@ pca_df <- na.omit(genus_data[ , c('PALEOMAP.area.km2', 'logvol',
 plot_prcomp(pca_df, variance_cap = 0.9, nrow = 2L, ncol = 2L)
 
 # QQ plots
-qq_data <- na.omit(genus_data[ ,  c('PALEOMAP.area.km2', 'logvol', 
-  'med.hatching.size', 'n', 'log.hatching.size', 'log.abun')])
+qq_data <- na.omit(genus_data[genus_data$is.nautilid == TRUE,
+  c('PALEOMAP.area.km2', 'logvol', 'med.hatching.size', 'n')])
+qq_data_log <- na.omit(genus_data[genus_data$is.nautilid == TRUE,
+  c('log.area', 'logvol', 'log.hatching.size', 'log.hatching.size',
+  'log.abun')])
 plot_qq(qq_data)
+plot_qq(qq_data_log)
+
+qq_data <- na.omit(genus_data[genus_data$is.nautilid == FALSE,
+  c('PALEOMAP.area.km2', 'logvol', 'med.hatching.size', 'n')])
+qq_data_log <- na.omit(genus_data[genus_data$is.nautilid == FALSE,
+  c('log.area', 'logvol', 'log.hatching.size','log.abun')])
+plot_qq(qq_data)
+plot_qq(qq_data_log)
 
 # Correlation plot
-corrM <- cor(na.omit(genus_data[ , c('PALEOMAP.area.km2', 'logvol',
-  'med.hatching.size', 'n', 'survival')]))
-corrplot(corrM, order = 'AOE', type = 'lower')
+corrM <- cor(na.omit(genus_data[genus_data$is.nautilid == FALSE,
+  c('log.area', 'logvol', 'log.hatching.size', 'log.abun', 
+  'survival')]))
+amcorr <- corrplot(corrM, order = 'original', type = 'lower', diag = FALSE)
 
+corrM <- cor(na.omit(genus_data[genus_data$is.nautilid == TRUE,
+  c('log.area', 'logvol', 'log.hatching.size', 'log.abun',
+  'survival')]))
+naucorr <- corrplot(corrM, order = 'original', type = 'lower', diag = FALSE)
 
-################### Check multivariate normality
+nautilid_data <- genus_data[genus_data$is.nautilid == TRUE, ]
+ammonoid_data <- genus_data[genus_data$is.nautilid == FALSE, ]
 
-genus_data_cont <- as.matrix(
-  na.omit(genus_data[ , c('PALEOMAP.area.km2', 'logvol', 'med.hatching.size',
-  'n')]))
+ammaa <- ggplot(data = ammonoid_data, aes(x = log.area, y = log.abun)) +
+  geom_point(color = darkblue) + 
+  labs(
+    x = TeX('Geographic range ($log_{10}$ $km^2$)'),
+    y = TeX('Abundance ($log_{10}$)')) +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(size = fsize, colour = 'black', family = font),
+    axis.text.y = element_text(size = fsize, colour = 'black', family = font),
+    axis.title.y = element_text(size = fsize, family = font),
+    axis.title.x = element_text(size = fsize, family = font),
+  )
+nauaa <- ggplot(data = nautilid_data, aes(x = log.area, y = log.abun)) +
+  geom_point(color = orange) + 
+  labs(
+    x = TeX('Geographic range ($log_{10}$ $km^2$)'),
+    y = TeX('Abundance ($log_{10}$)')) +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(size = fsize, colour = 'black', family = font),
+    axis.text.y = element_text(size = fsize, colour = 'black', family = font),
+    axis.title.y = element_text(size = fsize, family = font),
+    axis.title.x = element_text(size = fsize, family = font),
+  )
+p <- grid.arrange(ammaa, nauaa, ncol = 2)
+ggsave('../results/comparing_hypotheses/Area_abundance_genus.png',
+       width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
-# Cox and Small (1978) multivariate normality test
-test.CS(genus_data_cont)
+cor(nautilid_data$log.area, nautilid_data$log.abun, method = 'spearman')
+cor(ammonoid_data$log.area, ammonoid_data$log.abun, method = 'spearman')
 
-################### TODO Check equality covariance matrix
+plot(genus_data[genus_data$is.nautilid == FALSE, 'log.abun'],
+     genus_data[genus_data$is.nautilid == FALSE, 'log.area'])
 
-################### TODO Hotellinger's t-test
+################### Check multivariate normality ###################
+
+genus_data_cont <- na.omit(
+  genus_data[genus_data$is.nautilid == FALSE, c('log.area', 'logvol',
+  'log.hatching.size', 'log.abun')])
+
+# Mardia's test. Both alternative hypotheses must be rejected
+mult.norm(genus_data_cont)$mult.test
+
+################### Check homogeneity covariance matrix ################### 
+
+# Box M test. Test for homogeneity of the covariance matrices of extinct vs 
+# surviving genera
+
+survs <- na.omit(
+  genus_data[genus_data$is.nautilid == FALSE, c('log.area', 'logvol',
+  'log.hatching.size', 'log.abun', 'survival')])$survival
+
+BoxM(genus_data_cont, survs)
+
+################### Hotelling's t-test ASSUMPTIONS NOT MET
 
 ################### TODO Estimating effect size
