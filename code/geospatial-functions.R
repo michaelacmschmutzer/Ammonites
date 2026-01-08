@@ -78,30 +78,30 @@ unique.within.grid <- function(data, collat, collng, proj = 'EPSG:4326',
   # Change to equal area projection
   data_proj <- terra::project(data_vect, crs(eq.proj))
   
-  # Add a buffer if taxon is only known from a single location. This stops 
-  # problems with the data having zero extent
+  # If taxon is only known from a single location, just return a data frame
+  # with one row, equivalent to one cell. No need to draw a grid. 
   # TODO Add a test for this feature
   # Check how many unique locations there are for the genus
   uniq.loc <- length(unique(paste(data[ , collat], data[ , collng])))
-  if (buffer == TRUE & uniq.loc == 1) {
-    data_proj <- terra::buffer(data_proj, width = buffer.size) 
+  if (uniq.loc == 1) {
+    return(data[1, ])
+  } else {
+    # Make equal area grid cells covering the area with fossil occurrences
+    grid <- terra::rast(extent = 1.1 * ext(data_proj), crs = crs(data_proj),
+                        res = resolution)
+    grid[1:ncell(grid)] <- 1:ncell(grid)
+    
+    # Extract cell ids from raster
+    cellids <- terra::extract(grid, data_proj, bind = TRUE, cells = TRUE)
+    
+    # Use this dataframe for future processing
+    cellids_df <- as.data.frame(cellids)
+    
+    # Retain only a single observation for each cell
+    cellids_df <- cellids_df[!duplicated(cellids_df[ , 'cell']), ]
+    
+    return(cellids_df) 
   }
-  
-  # Make equal area grid cells covering the area with fossil occurrences
-  grid <- terra::rast(extent = 1.1 * ext(data_proj), crs = crs(data_proj),
-    res = resolution)
-  grid[1:ncell(grid)] <- 1:ncell(grid)
-  
-  # Extract cell ids from raster
-  cellids <- terra::extract(grid, data_proj, bind = TRUE, cells = TRUE)
-  
-  # Use this dataframe for future processing
-  cellids_df <- as.data.frame(cellids)
-  
-  # Retain only a single observation for each cell
-  cellids_df <- cellids_df[!duplicated(cellids_df[ , 'cell']), ]
-  
-  return(cellids_df)
 }
 
 jackknife.area <- function(data, collat, collng, proj, maxiter = 1000){
