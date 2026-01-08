@@ -109,12 +109,12 @@ plot_qq(qq_data_log)
 # Correlation plot
 corrM <- cor(na.omit(genus_data[genus_data$is.nautilid == FALSE,
   c('log.area', 'logvol', 'log.hatching.size', 'log.abun', 
-  'survival')]))
+  'survival')]), method = 'spearman')
 amcorr <- corrplot(corrM, order = 'original', type = 'lower', diag = FALSE)
 
 corrM <- cor(na.omit(genus_data[genus_data$is.nautilid == TRUE,
   c('log.area', 'logvol', 'log.hatching.size', 'log.abun',
-  'survival')]))
+  'survival')]), method = 'spearman')
 naucorr <- corrplot(corrM, order = 'original', type = 'lower', diag = FALSE)
 
 nautilid_data <- genus_data[genus_data$is.nautilid == TRUE, ]
