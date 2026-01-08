@@ -35,7 +35,7 @@
 Still, a couple of the preliminary results in here are rather interesting. It appears that geographic range did not play an important role in determining survival for either nautilids or ammonoids. Intriguingly, I find a weak association between ammonoid hatching size and survival -- it is just that it is the genera with \textit{smaller} hatching sizes that appear to have survived into the early Danian.
 
 
-Some caveats: The analysis is missing low-occurrence genera that are present with only one or two fossil occurrences. Erin and I are looking at ways to include them in the analysis. I am continuing to search for further occurrences from the literature. Hopefully I can find occurrences from areas that are poorly sampled, such as parts of South America, Africa (Madagascar?), and Asia. Also, in some places, I have resorted to using a non-parametric test as a rough-and-ready tool to get some indication if the pattern I am seeing is real or not. Doing so is not ideal, it looks a bit like $p$-hacking (i.e. just doing a lot of tests and then reporting the statistically significant ones. The problem is: Doing lots of statistical tests will result in some tests  returning a statistically significant result just by chance). I will be talking to Erin and the rest of the lab to see what the best statistical strategy for this dataset is. 
+Some caveats: The subsampling analyses are missing low-occurrence genera that are present with only one or two fossil occurrences. Erin and I are looking at ways to include them in the analysis. I am continuing to search for further occurrences from the literature. Hopefully I can find occurrences from areas that are poorly sampled, such as parts of South America, Africa (Madagascar?), and Asia. Also, in some places, I have resorted to using a non-parametric test as a rough-and-ready tool to get some indication if the pattern I am seeing is real or not. Doing so is not ideal, it looks a bit like $p$-hacking (i.e. just doing a lot of tests and then reporting the statistically significant ones. The problem is: Doing lots of statistical tests will result in some tests  returning a statistically significant result just by chance). I will be talking to Erin and the rest of the lab to see what the best statistical strategy for this dataset is. 
 
 \section*{Results}
 
@@ -54,6 +54,9 @@ Going clockwise, these are North America, Europe, the coast of Eastern Russia (S
 The four locations with the most convincing Danian ammonoid finds all lie within the North American and European regions of high sampling intensity (figure \ref{fig_locdensity}). 
 
 \noindent
+\textbf{Ammonoid fossil abundance predicts survival.} Write here about number of locations corrected for possible errors in designating fossil locations through use of a grid. 
+
+\noindent
 \textbf{Ammonoid and nautilid geographic range sizes.} Our estimates of the geographic range size of ammonoid genera do not support the idea that ammonoid survivors had larger geographic ranges. Though many genera that survived in the short term had large geographic ranges (figure \ref{fig_ammon_georanges}), they are not exceptional among late Maastrichtian ammonoids (Wilcoxon rank sum test, $W = 74$, $p = 0.981$, areas estimated using the PALEOMAP \parencite{scotesePALEOMAPPaleoAtlasGPlates2020} plate tectonic model). 
 
 \begin{figure}
@@ -69,7 +72,7 @@ For each genus, circles indicate the area estimated with each plate tectonic mod
 \label{fig_ammon_georanges}
 \end{figure}
 
-The same holds true when we consider ammonoid geographic range sizes estimated from subsampled occurrence data. There are no differences in the median geographic range size estimated from  bootstrapped (figure \ref{fig_ammon_subsamp}a, Wilcoxon rank sum test, $W = 106$, $p = 0.13$) or jackknifed occurrence data (figure \ref{fig_ammon_subsamp}b, Wilcoxon rank sum test, $W = 74$, $p = 0.981$. All areas reported in this section are estimated using the PALEOMAP \parencite{scotesePALEOMAPPaleoAtlasGPlates2020} plate tectonic model). 
+The same holds true when we consider ammonoid geographic range sizes corrected for various biases. We correct for bias in collection effort and from outliers by subsampling occurrence data. There are no differences in the median geographic range size estimated from  bootstrapped (figure \ref{fig_ammon_subsamp}a, Wilcoxon rank sum test, $W = 106$, $p = 0.13$) or jackknifed occurrence data (figure \ref{fig_ammon_subsamp}b, Wilcoxon rank sum test, $W = 74$, $p = 0.981$. All areas reported in this section are estimated using the PALEOMAP \parencite{scotesePALEOMAPPaleoAtlasGPlates2020} plate tectonic model). We also correct for inflated geographic range estimates resulting from the inclusion of areas that were on land during the Maastrichtian. Using coastline reconstructions from \textcite{kocsisMappingPaleocoastlinesContinental2021}, we restricted our geographic range estimates to marine areas only. The median marine area is slightly larger for ammonoid survivor genera. However, this difference is not significant (Wilcoxon rank sum test, $W = 77$, $p = 0.478$). 
 
 \begin{figure}
   \begin{subfigure}{1\textwidth}
@@ -89,11 +92,19 @@ Red diamonds indicate the median, and the red error bars show the interquartile 
 \label{fig_ammon_subsamp}
 \end{figure}
 
-The same picture emerges for nautilids. There are no detectable differences in the geographic range sizes of surviving and extinct genera, neither from raw occurrences (figure \ref{fig_geo_surv}, Wilcoxon rank-sum test, $W = 6$, $p = 1$), nor median areas from bootstrapped (figure \ref{fig_nauti_subsamp}a, Wilcoxon rank-sum test, $W = 2$, $p = 0.4$) or jackknifed occurrences (figure \ref{fig_nauti_subsamp}b, Wilcoxon rank-sum test, $W = 3$, $p = 0.7$, all areas estimated using the PALEOMAP \parencite{scotesePALEOMAPPaleoAtlasGPlates2020} plate tectonic model). 
+The same picture emerges for nautilids. There are no detectable differences in the geographic range sizes of surviving and extinct genera, neither from raw occurrences (figure \ref{fig_geo_surv}, Wilcoxon rank-sum test, $W = 6$, $p = 1$), nor median areas from bootstrapped (figure \ref{fig_nauti_subsamp}a, Wilcoxon rank-sum test, $W = 2$, $p = 0.4$) or jackknifed occurrences (figure \ref{fig_nauti_subsamp}b, Wilcoxon rank-sum test, $W = 3$, $p = 0.7$, all areas estimated using the PALEOMAP \parencite{scotesePALEOMAPPaleoAtlasGPlates2020} plate tectonic model). The same holds when we consider only those areas that were marine ($W = 12$, $p = 0.517$).  
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{/abundance_survivalship/Genus_area_survival.pdf}
-\caption{The areas of ammonoid and nautilid geographic range sizes do not differ between genera that survived or went extinct at the K-Pg boundary. Areas shown here are estimated using convex hulls as in figure \ref{fig_ammon_georanges}, using the PALEOMAP plate tectonic model \parencite{scotesePALEOMAPPaleoAtlasGPlates2020}. Red diamonds indicate the median, and the red error bars show the interquartile range.}
+  \begin{subfigure}{1\textwidth}
+  	\includegraphics[width=\textwidth]{/abundance_survivalship/Genus_area_survival.png}
+  	\caption{}
+  \end{subfigure}
+  ~
+  \begin{subfigure}{1\textwidth}
+  	\includegraphics[width=\textwidth]{/abundance_survivalship/Genus_marine_area_survival.png}
+  	\caption{}
+  \end{subfigure}
+\caption{The areas of ammonoid and nautilid geographic range sizes do not differ between genera that survived or went extinct at the K-Pg boundary. A) Geographic range sizes estimated from all occurrence data. B) Geographic range sizes limited to only those areas that were marine in the Maastrichtian. Areas shown here are estimated using convex hulls as in figure \ref{fig_ammon_georanges}, using the PALEOMAP plate tectonic model \parencite{scotesePALEOMAPPaleoAtlasGPlates2020}. Non-marine areas were removed from the convex hulls using the \textcite{kocsisMappingPaleocoastlinesContinental2021} coastline reconstructions. Red diamonds indicate the median, and the red error bars show the interquartile range.}
 \label{fig_geo_surv}
 \end{figure}
 
@@ -125,11 +136,34 @@ laptikhovskyEnvironmentalImpactEctocochleate2012, kennedyThoughtsEvolutionExtinc
 \label{fig_ammon_hatch}
 \end{figure}
 
+\noindent
+\textbf{Are the high abundances of short-term ammonoid survivors due to preferential collecting of these genera?} Potentially, ammonoid survivors occur more frequently in our dataset because the fact that they survived make them interesting targets for collection. We check for this possibility by comparing the abundance of ammonoid genera in the Maastrichtian with their abundance in the preceding Campanian (figure \ref{fig_ammon_campanian}). We assume that any collection bias will be limited to the Maastrichtian because that is the stage that is most relevant to the subsequent mass extinction event. We expect less interest in these genera in the Campanian. Increased collection effort for specifically these survivor genera should cause a jump in their abundance from the Campanian to the Maastrichtian. 
+
+We find no clear indication of such a jump in abundance (figure \ref{fig_ammon_campanian}). Two genera, \textit{Discoscaphites} and \textit{Sphenodiscus}, are decidedly more abundant in the Maastrichtian, which is consistent with the collection bias hypothesis. However, other survivor genera (\textit{Hoploscaphites}, \textit{Baculites}, \textit{Pachydiscus}) are already highly abundant in the Campanian, which suggests that targeted collection of these genera is unlikely to account for their reported abundance in the Maastrichtian. Furthermore, the survivor genera fit in a wider trend in which ammonoids extant at the very end of the Maastrichtian (figure \ref{fig_ammon_campanian}, dark blue circles) tend to grow more abundant in the Maastrichtian compared to the Campanian. This is not the case for ammonoid genera that became extinct before the end of the Maastrichtian (figure \ref{fig_ammon_campanian}, light blue circles).
+ 
+\begin{figure}
+  \includegraphics[width=\textwidth]{/abundance_survivalship/Genus_abundance_comparison.png}
+\caption{No evidence for preferential collecting of short-term ammonoid survivors. Abundances of ammonoid (blue) and nautilid (orange) genera for the Maastrichtian and Campanian.
+Only genera that were extant in both stages are shown. 
+Light blue circles show ammonoid genera that were no longer extant at the end of the Maastrichtian, dark blue circles mark genera that were extant at the beginning of the end-Cretaceous mass extinction.
+The red dashed lines mark equal number of occurrences in both stages.}
+\label{fig_ammon_campanian}
+\end{figure}
+
+\noindent
+\textbf{Surviving ammonoid genera are found at a greater number of sites.} This also holds when we filter out ambiguity in occurrence locations with an equal-area grid, and we count the number of grid cells rather than the raw number of locations (figure \ref{fig_gridcell_surv}). 
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{/abundance_survivalship/Genus_numcell_survival.png}
+\caption{Ammonoid genera that survived the end-Cretaceous mass extinction are found at more sites than genera that went extinct. There is no such difference for nautilid genera. To account for errors in the reported location of fossil occurrences, we filter occurrence locations with an equal area grid and count the number of grid cells rather than the raw number of unique locations. Red diamonds indicate the median, and the red error bars show the interquartile range.}
+\label{fig_gridcell_surv}
+\end{figure}
+
 \section*{Methods}
 
 \noindent
 \textbf{Data sources and cleaning.} 
-We searched the literature for further Maastrichtian nautilid and ammonoid fossil occurrences and added them to the dataset. 
+We search the literature for further Maastrichtian nautilid and ammonoid fossil occurrences and added them to the dataset. 
 
 We follow \textcite{landmanScaphitesNodosusGroup2010} in considering the genus \textit{Jeletzkites} a synonym of \textit{Hoploscaphites}. We therefore reassign all \textit{Jeletzkites} occurrences in our dataset to \textit{Hoploscaphites}. 
 
@@ -157,6 +191,10 @@ Subsequently, we employ two further subsampling routines on the filtered data. W
 
 We also perform jackknifing to correct for the effect of geographic outliers (e.g. locations that might have been misreported). For all taxa with occurrences from more than three locations, we remove a single location and record the area of a minimum 
 convex hull drawn around the remaining locations. We repeat these steps until either a maximum of 1000 unique samples has been reached or all possible combinations have been sampled. 
+
+\noindent
+\textbf{Excising land area from geographic range estimates.} Our convex hull approximations of geographic range will often overestimate the range of a given taxon because some of the resulting polygon will cover ground that was on land during the Maastrichtian. To correct for this factor, we remove areas from the convex hulls that were terrestrial during the Maastrichtian. Coastline reconstructions using the PALEOMAP plate tectonic model are available from \parencite{kocsisMappingPaleocoastlinesContinental2021}. 
+With these coastlines, we trim down the convex hulls so that the geographic ranges contain only marine areas. We do so for the PALEOMAP \parencite{scotesePALEOMAPPaleoAtlasGPlates2020} reconstructions only. 
 
 \printbibliography
 
