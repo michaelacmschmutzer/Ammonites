@@ -59,7 +59,8 @@ for (m in rotamodels) {
   # Save the rotated coastlines for later plotting
   st_write(coastlines, 
     paste('../results/mapping_files/palaeocoastlines/', m,
-    '_coastlines.shp', sep = '')
+    '_coastlines.shp', sep = ''), 
+    append = FALSE
   )
 
   # Get map edges 

@@ -279,7 +279,7 @@ p <- grid.arrange(plocam, plocna, ncol = 2)
 ggsave('../results/abundance_survivalship/Genus_numloc_survival.png',
        width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
-# TODO Get the number of unique grid cells per genus
+# Get the number of unique grid cells per genus
 # Use PALEOMAP for now
 numcell <- distinct(cepha_rota, genus, order)
 numcell$n.cell <- 0

@@ -20,7 +20,8 @@ if (length(args) == 0){
 }
 
 # Get the raw geographic distributions
-distrfile <- paste('../data/', cephas, '_distributions_genus.csv', sep = '')
+distrfile <- paste('../results/geographic_distributions/', cephas,
+  '_distributions_genus.csv', sep = '')
 geo.distr <- read.csv(distrfile)
 
 # Get bootstrapping and jackknifing results

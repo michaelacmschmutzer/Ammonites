@@ -71,7 +71,7 @@ genus_data <- left_join(genus_data, surv, by = 'genus')
 
 # Try logging the median hatching sizes and abundances
 genus_data$log.hatching.size <- log10(genus_data$med.hatching.size)
-genus_data$log.abun <- log10(genus_data$n)
+genus_data$sqrt.abun <- sqrt(genus_data$n)
 genus_data$log.area <- log10(genus_data$PALEOMAP.area.km2)
 
 ################### Get to know dataset
@@ -95,36 +95,36 @@ qq_data <- na.omit(genus_data[genus_data$is.nautilid == TRUE,
   c('PALEOMAP.area.km2', 'logvol', 'med.hatching.size', 'n')])
 qq_data_log <- na.omit(genus_data[genus_data$is.nautilid == TRUE,
   c('log.area', 'logvol', 'log.hatching.size', 'log.hatching.size',
-  'log.abun')])
+  'sqrt.abun')])
 plot_qq(qq_data)
 plot_qq(qq_data_log)
 
 qq_data <- na.omit(genus_data[genus_data$is.nautilid == FALSE,
   c('PALEOMAP.area.km2', 'logvol', 'med.hatching.size', 'n')])
 qq_data_log <- na.omit(genus_data[genus_data$is.nautilid == FALSE,
-  c('log.area', 'logvol', 'log.hatching.size','log.abun')])
+  c('log.area', 'logvol', 'log.hatching.size','sqrt.abun')])
 plot_qq(qq_data)
 plot_qq(qq_data_log)
 
 # Correlation plot
 corrM <- cor(na.omit(genus_data[genus_data$is.nautilid == FALSE,
-  c('log.area', 'logvol', 'log.hatching.size', 'log.abun', 
+  c('log.area', 'logvol', 'log.hatching.size', 'sqrt.abun', 
   'survival')]), method = 'spearman')
 amcorr <- corrplot(corrM, order = 'original', type = 'lower', diag = FALSE)
 
 corrM <- cor(na.omit(genus_data[genus_data$is.nautilid == TRUE,
-  c('log.area', 'logvol', 'log.hatching.size', 'log.abun',
+  c('log.area', 'logvol', 'log.hatching.size', 'sqrt.abun',
   'survival')]), method = 'spearman')
 naucorr <- corrplot(corrM, order = 'original', type = 'lower', diag = FALSE)
 
 nautilid_data <- genus_data[genus_data$is.nautilid == TRUE, ]
 ammonoid_data <- genus_data[genus_data$is.nautilid == FALSE, ]
 
-ammaa <- ggplot(data = ammonoid_data, aes(x = log.area, y = log.abun)) +
+ammaa <- ggplot(data = ammonoid_data, aes(x = log.area, y = sqrt.abun)) +
   geom_point(color = darkblue) + 
   labs(
     x = TeX('Geographic range ($log_{10}$ $km^2$)'),
-    y = TeX('Abundance ($log_{10}$)')) +
+    y = TeX('Abundance (square-root)')) +
   theme_classic() +
   theme(
     axis.text.x = element_text(size = fsize, colour = 'black', family = font),
@@ -132,11 +132,11 @@ ammaa <- ggplot(data = ammonoid_data, aes(x = log.area, y = log.abun)) +
     axis.title.y = element_text(size = fsize, family = font),
     axis.title.x = element_text(size = fsize, family = font),
   )
-nauaa <- ggplot(data = nautilid_data, aes(x = log.area, y = log.abun)) +
+nauaa <- ggplot(data = nautilid_data, aes(x = log.area, y = sqrt.abun)) +
   geom_point(color = orange) + 
   labs(
     x = TeX('Geographic range ($log_{10}$ $km^2$)'),
-    y = TeX('Abundance ($log_{10}$)')) +
+    y = TeX('Abundance (square-root)')) +
   theme_classic() +
   theme(
     axis.text.x = element_text(size = fsize, colour = 'black', family = font),
@@ -148,29 +148,32 @@ p <- grid.arrange(ammaa, nauaa, ncol = 2)
 ggsave('../results/comparing_hypotheses/Area_abundance_genus.png',
        width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
-cor(nautilid_data$log.area, nautilid_data$log.abun, method = 'spearman')
-cor(ammonoid_data$log.area, ammonoid_data$log.abun, method = 'spearman')
-
-plot(genus_data[genus_data$is.nautilid == FALSE, 'log.abun'],
-     genus_data[genus_data$is.nautilid == FALSE, 'log.area'])
+cor(nautilid_data$log.area, nautilid_data$sqrt.abun, method = 'spearman')
+cor(ammonoid_data$log.area, ammonoid_data$sqrt.abun, method = 'spearman')
 
 ################### Check multivariate normality ###################
 
-genus_data_cont <- na.omit(
+genus_data_cont_amm <- na.omit(
   genus_data[genus_data$is.nautilid == FALSE, c('log.area', 'logvol',
-  'log.hatching.size', 'log.abun')])
+  'log.hatching.size', 'sqrt.abun')])
+
+genus_data_cont_nau <- na.omit(
+  genus_data[genus_data$is.nautilid == TRUE, c('log.area', 'logvol',
+  'log.hatching.size', 'sqrt.abun')])
 
 # Mardia's test. Both alternative hypotheses must be rejected
-mult.norm(genus_data_cont)$mult.test
+mult.norm(genus_data_cont_amm)$mult.test
+mult.norm(genus_data_cont_nau)$mult.test
+
 
 ################### Check homogeneity covariance matrix ################### 
 
 # Box M test. Test for homogeneity of the covariance matrices of extinct vs 
-# surviving genera
+# surviving genera. Must reject alternative hypothesis
 
 survs <- na.omit(
   genus_data[genus_data$is.nautilid == FALSE, c('log.area', 'logvol',
-  'log.hatching.size', 'log.abun', 'survival')])$survival
+  'log.hatching.size', 'sqrt.abun', 'survival')])$survival
 
 BoxM(genus_data_cont, survs)
 
