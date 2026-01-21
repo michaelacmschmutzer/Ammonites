@@ -95,7 +95,7 @@ ammon <- ammon %>% filter(!is.na(order))
 # Merge datasets
 cepha <- bind_rows(ammon, cornu)
 
-################### Cleand and disambiguate taxonomy ###################
+################### Clean and disambiguate taxonomy ###################
 
 genus_taxon <- cepha %>%
   select(c('order', 'suborder', 'superfamily', 'family', 'genus')) %>%
