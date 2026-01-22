@@ -205,10 +205,10 @@ abline(0, 0, lty = 2)
 # nautilids and ammonoids makes sense.  
 
 # Model fitting
-# Having area in the model causes singularity
+# Having area in the model causes singularity, except if only area is included
+# in the model, in which case the AIC is at 56.7, while otherwise it is at 30. 
 genus_model <- glmer(
-  survival ~ logvol.zscore + sqrt.abun.zscore + 
-    (1|is.nautilid), 
+  survival ~ logvol.zscore + sqrt.abun.zscore + (1|is.nautilid), 
   data = genus_data,
   family = binomial())
 
