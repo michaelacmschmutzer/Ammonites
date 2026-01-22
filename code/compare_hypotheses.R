@@ -4,11 +4,11 @@ setwd("~/Documents/Projects/Ammonites/code/")
 library(dplyr)
 library(DataExplorer)
 library(corrplot)
-library(QuantPsyc)
-library(MVTests)
 library(ggplot2)
 library(gridExtra)
 library(latex2exp)
+library(lme4)
+
 
 # Specify plotting aesthetics
 darkblue  <- '#12255A'
@@ -17,6 +17,13 @@ errbarcol <- '#CA282C'
 font <- 'Palatino'
 fsize <- 9
 
+################### Convenience functions ################### 
+
+zscore <- function(x, na.rm = TRUE) {
+  # Calculate the Z-score normalized values for x
+  z <- (x - mean(x, na.rm = na.rm) ) / sd(x, na.rm = na.rm)
+  return(z)
+}
 
 ################### Compile hypothesis testing data set ################### 
 
@@ -117,6 +124,8 @@ corrM <- cor(na.omit(genus_data[genus_data$is.nautilid == TRUE,
   'survival')]), method = 'spearman')
 naucorr <- corrplot(corrM, order = 'original', type = 'lower', diag = FALSE)
 
+################### Correlation abundance and area ###################
+
 nautilid_data <- genus_data[genus_data$is.nautilid == TRUE, ]
 ammonoid_data <- genus_data[genus_data$is.nautilid == FALSE, ]
 
@@ -151,32 +160,56 @@ ggsave('../results/comparing_hypotheses/Area_abundance_genus.png',
 cor(nautilid_data$log.area, nautilid_data$sqrt.abun, method = 'spearman')
 cor(ammonoid_data$log.area, ammonoid_data$sqrt.abun, method = 'spearman')
 
-################### Check multivariate normality ###################
+################### Standardize predictor variables ###################
 
-genus_data_cont_amm <- na.omit(
-  genus_data[genus_data$is.nautilid == FALSE, c('log.area', 'logvol',
-  'log.hatching.size', 'sqrt.abun')])
+# From all predictors, subtract mean and divide by standard deviation
+# (Z-score normalization)
 
-genus_data_cont_nau <- na.omit(
-  genus_data[genus_data$is.nautilid == TRUE, c('log.area', 'logvol',
-  'log.hatching.size', 'sqrt.abun')])
+genus_data$log.area.zscore <- zscore(genus_data$log.area)
+genus_data$logvol.zscore <- zscore(genus_data$logvol)
+genus_data$sqrt.abun.zscore <- zscore(genus_data$sqrt.abun)
+genus_data$log.hatching.size.zscore <- zscore(genus_data$log.hatching.size)
 
-# Mardia's test. Both alternative hypotheses must be rejected
-mult.norm(genus_data_cont_amm)$mult.test
-mult.norm(genus_data_cont_nau)$mult.test
+# Convert boolean factors to numeric
+genus_data$survival <- as.numeric(genus_data$survival)
+genus_data$is.nautilid <- as.numeric(genus_data$is.nautilid)
 
+# Try out a model without random effect and include area
+# Hatching size has too many missing values
+glm.test.area <- glm(
+  survival ~ log.area.zscore + logvol.zscore + sqrt.abun.zscore,
+  data = genus_data,
+  family = binomial())
 
-################### Check homogeneity covariance matrix ################### 
+summary(glm.test.area)
 
-# Box M test. Test for homogeneity of the covariance matrices of extinct vs 
-# surviving genera. Must reject alternative hypothesis
+# Try out a model without random effect to see if a random effect is necessary
+glm.test <- glm(
+  survival ~ logvol.zscore + sqrt.abun.zscore,
+  data = genus_data,
+  family = binomial())
 
-survs <- na.omit(
-  genus_data[genus_data$is.nautilid == FALSE, c('log.area', 'logvol',
-  'log.hatching.size', 'sqrt.abun', 'survival')])$survival
+summary(glm.test)
 
-BoxM(genus_data_cont, survs)
+# Plot the residuals vs nautilid/ammonoid to see how much residual variation 
+# it might explain
+glm.test.resid <- rstandard(glm.test)
 
-################### Hotelling's t-test ASSUMPTIONS NOT MET
+plot(
+  glm.test.resid ~ as.factor(genus_data[!is.na(genus_data$logvol), ]$is.nautilid), 
+    xlab = 'Nautilid',
+    ylab = 'Standardized residuals')
+abline(0, 0, lty = 2)
 
-################### TODO Estimating effect size
+# is.nautilid does explain quite some residual variation. Distinguishing between
+# nautilids and ammonoids makes sense.  
+
+# Model fitting
+# Having area in the model causes singularity
+genus_model <- glmer(
+  survival ~ logvol.zscore + sqrt.abun.zscore + 
+    (1|is.nautilid), 
+  data = genus_data,
+  family = binomial())
+
+summary(genus_model)
