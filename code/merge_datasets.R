@@ -56,14 +56,6 @@ cornu <- cornu_split %>% mutate(
          species = replace(species, 
                    str_detect(identified_name, pattern = '[[:punct:]]'), NA))
 
-# Make new columns for classification (nauti only)
-#nauti <- nauti_clean %>% mutate(phylum      = 'Mollusca',
-#                                class       = 'Cephalopoda',
-#                                order       = 'Nautilida',
-#                                suborder    =  NA,
-#                                superfamily =  NA,
-#                                family      = 'Nautilidae')
-
 ################### Merging main dataset ###################
 
 # Restrict datasets to columns actually needed
@@ -179,4 +171,15 @@ write.csv(cepha_end, file = '../data/cephalopods.csv', row.names = FALSE)
 
 # Save the all-Maastrichtian cephalopod data
 write.csv(cepha_maas, file = '../data/cephalopods_maastrichtian.csv', 
-          row.names = FALSE)
+  row.names = FALSE)
+
+################### Create Danian nautilid data set & save ###################
+
+# Retain only those species/occurrences that are younger than 66 mya
+# (date of impact). Nautilids only 
+nauti_danian <- cepha %>% 
+  filter(max_ma <= 66.04) %>%
+  filter(is.nautilid == TRUE)
+
+write.csv(nauti_danian, file = '../data/nautilids_danian.csv',
+  row.names = FALSE)
