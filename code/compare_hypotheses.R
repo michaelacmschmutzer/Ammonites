@@ -55,7 +55,7 @@ hatch_nauti_genus <- hatch_nauti %>%
 hatch_ammon_genus <- hatch_ammon %>%
   group_by(genus) %>%
   summarise(med.hatching.size = median(hatching.size..mm.))
-body_sizes <- dplyr::select(body_sizes, c(genus, logvol))
+body_sizes <- dplyr::select(body_sizes, c('genus', 'logvol'))
 surv_nauti <- dplyr::select(surv_nauti, c('genus', 'survival'))
 surv_ammon <- dplyr::select(surv_ammon, c('genus', 'survival'))
 
@@ -310,6 +310,15 @@ glm.test.hatchabun <- glmer(
 )
 
 summary(glm.test.hatchabun)
+
+glm.test.area <- glmer(
+  survival ~ 
+    log.area.zscore + (1 | is.nautilid),
+  data = genus_data,
+  family = binomial(link = 'logit')
+)
+
+summary(glm.test.area)
 
 ################### Fit GLMs for ammonoids only ###################
 

@@ -175,7 +175,7 @@ write.csv(cepha_maas, file = '../data/cephalopods_maastrichtian.csv',
 
 ################### Create Danian nautilid data set & save ###################
 
-# Retain only those species/occurrences that are younger than 66 mya
+# Retain only those species/occurrences that are younger than 66.04 mya
 # (date of impact). Nautilids only 
 nauti_danian <- cepha %>% 
   filter(max_ma <= 66.04) %>%

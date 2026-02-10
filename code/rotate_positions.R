@@ -110,19 +110,3 @@ cepha_rota <- cepha_rota %>%
 # Save rotated positions
 write.csv(cepha_rota, '../data/cephalopods_palaeorotated.csv', 
   row.names = FALSE)
-
-# Plot median/consensus locations with the PALEOMAP rotation
-# Transform locations
-locations <- cepha_rota %>% 
-  filter(!is.na('p_lng') | !is.na('p_lat')) %>%
-  sf::st_as_sf(coords = c('p_lng', 'p_lat'), crs = 4326) %>%
-  sf::st_transform(crs = epsg)
-
-p <- ggplot() +
-  geom_sf() +
-  geom_sf(data = edges, colour = 'gray30', fill = oceanblue) +
-  geom_sf(data = coasts, colour = 'gray90') + 
-  geom_sf(data = locations, colour = 'darkred', size = 1) +
-  theme_minimal()
-filename = '../results/palaeorotations/Consensus_rotation.pdf'
-ggsave(filename, plot = p, width = 12, height = 6, units = 'cm')

@@ -9,8 +9,9 @@ Rscript make_density_maps.R
 
 # Toccata. Run the main body of GIS analyses
 Rscript rotate_positions.R
-Rscript draw_convex_hulls.R 'ammonoids'
-Rscript draw_convex_hulls.R 'nautilids'
+Rscript filter_palaeorotations_species.R
+Rscript draw_convex_hulls.R 'ammonoids' 'genus'
+Rscript draw_convex_hulls.R 'nautilids' 'genus'
 Rscript subsample_distributions.R 'ammonoids'
 Rscript subsample_distributions.R 'nautilids'
 Rscript impose_palaeocoasts.R 'ammonoids'
