@@ -10,6 +10,7 @@ library(rgplates)
 library(tmaptools)
 
 cepha <- read.csv('../data/cephalopods.csv')
+cepha_species <- read.csv('../data/cephalopods_palaeorotated_species.csv')
 
 orders <- unique(cepha$order)
 
@@ -31,6 +32,8 @@ edge <- mapedge()
 epsg <- 'ESRI:54030'
 coasts <- sf::st_transform(world, crs = epsg)
 edges <- sf::st_transform(edge, crs = epsg)
+
+########################## Genus-level filtering ########################## 
 
 # Also transform locations
 locations <- cepha %>% 
@@ -61,6 +64,36 @@ map <- ggplot() +
   xlab('') +
   theme_void()
 map_ratio <- get_asp_ratio(edges)
-ggsave('../results/diagnostic_plots/Fossil_occurrence_density.pdf', plot = map,
+ggsave('../results/diagnostic_plots/Fossil_occurrence_density_genus.pdf', plot = map,
        width = 12, height = 12/map_ratio, units = 'cm')  
 
+########################## Species-level filtering ########################## 
+
+# Also transform locations
+locations <- cepha_species %>% 
+  filter(!is.na('lng') | !is.na('lat')) %>%
+  sf::st_as_sf(coords = c('lng', 'lat'), crs = 4326) %>%
+  sf::st_transform(crs = epsg)
+
+# Plot map
+map <- ggplot() +
+  geom_sf() +
+  geom_sf(data = edges, colour = 'white', fill = oceanblue) +
+  geom_sf(data = coasts, colour = 'gray90') + 
+  stat_density_2d(
+    data = locations,
+    mapping = ggplot2::aes(
+      x = purrr::map_dbl(geometry, ~.[1]),
+      y = purrr::map_dbl(geometry, ~.[2])),
+    geom = 'polygon',
+    adjust = 0.8,
+    contour = TRUE,
+    alpha = 0.5) +
+  geom_sf(data = locations, colour = 'black', size = 0.5) +
+  geom_sf(data = survpos, colour = darkred, shape = 4, size = 1.5) +
+  ylab('') +
+  xlab('') +
+  theme_void()
+map_ratio <- get_asp_ratio(edges)
+ggsave('../results/diagnostic_plots/Fossil_occurrence_density_species.pdf', 
+  plot = map, width = 12, height = 12/map_ratio, units = 'cm')  
