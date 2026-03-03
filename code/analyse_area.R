@@ -22,25 +22,25 @@ fsize <- 9
 
 # Read in geographic distribution data
 geo_distr_nauti <- read.csv(
-  '../results/geographic_distributions/nautilids_distributions_genus.csv') 
+  '../results/genus/geographic_distributions/nautilids_distributions_genus.csv') 
 geo_distr_ammon <- read.csv(
-  '../results/geographic_distributions/ammonoids_distributions_genus.csv') 
+  '../results/genus/geographic_distributions/ammonoids_distributions_genus.csv') 
 
 # Read in subsampled geographic distribution data
 boot_distr_nauti <- read.csv(
-  '../results/subsampling_distributions/nautilids/bootstrap.csv')
+  '../results/genus/subsampling_distributions/nautilids/bootstrap.csv')
 boot_distr_ammon <- read.csv(
-  '../results/subsampling_distributions/ammonoids/bootstrap.csv')
+  '../results/genus/subsampling_distributions/ammonoids/bootstrap.csv')
 jack_distr_nauti <- read.csv(
-  '../results/subsampling_distributions/nautilids/jackknife.csv')
+  '../results/genus/subsampling_distributions/nautilids/jackknife.csv')
 jack_distr_ammon <- read.csv(
-  '../results/subsampling_distributions/ammonoids/jackknife.csv')
+  '../results/genus/subsampling_distributions/ammonoids/jackknife.csv')
 
 # Read in marine areas geographic distribution data
 mari_nauti <- read.csv(
-  '../results/geographic_distributions/nautilids_marine_areas.csv')
+  '../results/genus/geographic_distributions/nautilids_marine_areas.csv')
 mari_ammon <- read.csv(
-  '../results/geographic_distributions/ammonoids_marine_areas.csv')
+  '../results/genus/geographic_distributions/ammonoids_marine_areas.csv')
 
 # Read in survival data 
 surv_nauti <- read.csv('../data/nautilids_extinction_genus.csv') 
