@@ -10,7 +10,7 @@ source('geospatial-functions.R')
 args <- commandArgs(trailingOnly = TRUE)
 
 if (length(args) == 0){
-  cephas <- 'ammonoids'  # 'nautilids' 'ammonoids'
+  cephas <- 'nautilids'  # 'nautilids' 'ammonoids'
   taxon <- 'species' # 'species' 'genus'
 } else {
   cephas <- args[1]

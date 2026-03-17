@@ -171,7 +171,7 @@ geo_summary$med.dev.boot =
 geo_summary$med.dev.jack = 
   with(geo_comb, tapply(jack.area, genus, scaled.median.deviation))
 
-resdir <- paste('../results/subsampling_distributions/', cephas, '/', sep = '')
+resdir <- paste('../results/genus/subsampling_distributions/', cephas, '/', sep = '')
 write.csv(geo_summary, paste(resdir, 'geo_sub_summary.csv', sep = ''),
 row.names = FALSE)
 
