@@ -67,14 +67,14 @@ pdistram <- ggplot(data = distr_ammon_surv,
   #  labs(x = 'Ammonoids', y = 'Area (km²)') +
   scale_x_discrete('Ammonoids', 
                    labels = c('FALSE' = 'Extinct', 'TRUE' = 'Survived')) +
-  # scale_y_log10('Area (km²)',
-  #   breaks = scales::trans_breaks('log10', function(x) 10^x),
-  #   labels = scales::trans_format('log10', scales::math_format(10^.x)),
-  #   limits = c(minarea, maxarea)) +
-  scale_y_continuous(TeX('Area (km$^{2}$)'),
-                     label = scientific_10,
-                     #limits = c(minarea, maxarea)
-                     ) +
+  scale_y_log10('Area (km²)',
+    breaks = scales::trans_breaks('log10', function(x) 10^x),
+    labels = scales::trans_format('log10', scales::math_format(10^.x)),
+    limits = c(minarea, maxarea)) +
+  # scale_y_continuous(TeX('Area (km$^{2}$)'),
+  #                    label = scientific_10,
+  #                    #limits = c(minarea, maxarea)
+  #                    ) +
   #  ylim(0, max(distr_ammon_surv$PALEOMAP.area.km2) + 10) +
   stat_summary(
     fun = median, geom = 'point', shape = 18, size = 3.5, color = errbarcol) +
@@ -95,14 +95,14 @@ pdistrna <- ggplot(data = distr_nauti_surv,
   #  labs(x = 'Nautilids', y = 'Area (km²)') +
   scale_x_discrete('Nautilids', 
                    labels = c('FALSE' = 'Extinct', 'TRUE' = 'Survived')) +
-  # scale_y_log10('Area (km²)',
-  #   breaks = scales::trans_breaks('log10', function(x) 10^x),
-  #   labels = scales::trans_format('log10', scales::math_format(10^.x)),
-  #   limits = c(minarea, maxarea)) +
-  scale_y_continuous(TeX('Area (km$^{2}$)'),
-                     label = scientific_10,
-                     #limits = c(minarea, maxarea)
-                     ) +
+  scale_y_log10('Area (km²)',
+    breaks = scales::trans_breaks('log10', function(x) 10^x),
+    labels = scales::trans_format('log10', scales::math_format(10^.x)),
+    limits = c(minarea, maxarea)) +
+  # scale_y_continuous(TeX('Area (km$^{2}$)'),
+  #                    label = scientific_10,
+  #                    #limits = c(minarea, maxarea)
+  #                    ) +
   #  ylim(0, max(distr_ammon_surv$PALEOMAP.area.km2) + 10) +
   stat_summary(
     fun = median, geom = 'point', shape = 18, size = 3.5, color = errbarcol) +
@@ -118,3 +118,6 @@ pdistrna <- ggplot(data = distr_nauti_surv,
     axis.title.x = element_text(size = fsize, family = font),
   )
 p <- grid.arrange(pdistram, pdistrna, ncol = 2)
+
+wilcox.test(PALEOMAP.area.km2 ~ survival, data = distr_ammon_surv)
+wilcox.test(PALEOMAP.area.km2 ~ survival, data = distr_nauti_surv)

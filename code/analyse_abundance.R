@@ -44,10 +44,10 @@ tally_genus_ammon <- cepha_rota %>%
 
 # Save the raw abundance data
 write.csv(tally_genus_nauti, 
-  '../results/abundance_survivalship/nautilids_abundance_raw.csv', 
+  '../results/genus/abundance_survivalship/nautilids_abundance_raw.csv', 
   row.names = FALSE)
 write.csv(tally_genus_ammon, 
-  '../results/abundance_survivalship/ammonoids_abundance_raw.csv',
+  '../results/genus/abundance_survivalship/ammonoids_abundance_raw.csv',
   row.names = FALSE)
 
 # Add survivalship info
