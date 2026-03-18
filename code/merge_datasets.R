@@ -17,7 +17,7 @@ pbdb_data <- read.csv('../data/pbdb_campanian_danian_all.csv', skip = 17)
 
 # Read in data on which ammonoid genera were extant at the end of the
 # Maastrichtian
-end_maas <- read.csv('../data/ammonoids_end_maastrichtian.csv')
+end_maas_ammon <- read.csv('../data/ammonoids_end_maastrichtian_genus.csv')
 
 ################### Data filtering, correct taxonomy ###################
 
@@ -157,7 +157,7 @@ write.csv(campa, file = '../data/campanian_cephalopods.csv', row.names = FALSE)
 cepha_maas <- filter(cepha, max_ma <= 72.5 & min_ma >= 65)
 
 # Remove all ammonoid genera not extant at the end of the Maastrichtian
-ext_ammon <- end_maas %>%
+ext_ammon <- end_maas_ammon %>%
   filter(extant == TRUE) %>%
   select(genus)
 # add in nautilids (these were extant)
