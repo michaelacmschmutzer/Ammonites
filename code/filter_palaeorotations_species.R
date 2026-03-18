@@ -8,6 +8,7 @@ cepha_rota <- read.csv('../data/cephalopods_palaeorotated.csv')
 
 # Which ammonoid species existed at the end of the Maastrichtian? 
 end_maas_ammon <- read.csv('../data/ammonoids_end_maastrichtian_species.csv')
+end_maas_nauti <- read.csv('../data/nautilids_end_maastrichtian_species.csv')
 
 # Only retain those occurrences that can be allocated to a species
 cepha_rota_clean <- cepha_rota %>%
@@ -22,9 +23,11 @@ ext_ammon <- end_maas_ammon %>%
   mutate(species = paste(genus, species)) %>%
   filter(extant == TRUE) %>%
   select(species)
-# add in nautilids (these were extant)
-ext_nauti <-
-  unique(cepha_rota_clean[cepha_rota_clean$order == 'Nautilida', 'species'])
+# add in nautilids
+ext_nauti <- end_maas_nauti %>%
+  mutate(species = paste(genus, species)) %>%
+  filter(extant == TRUE) %>%
+  select(species)
 extant <- c(ext_ammon$species, ext_nauti)
 # Restrict data to those present at the end of the Maastrichtian
 cepha_rota_end <- filter(cepha_rota_clean, species %in% extant)

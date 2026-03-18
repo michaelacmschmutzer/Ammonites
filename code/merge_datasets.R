@@ -18,6 +18,7 @@ pbdb_data <- read.csv('../data/pbdb_campanian_danian_all.csv', skip = 17)
 # Read in data on which ammonoid genera were extant at the end of the
 # Maastrichtian
 end_maas_ammon <- read.csv('../data/ammonoids_end_maastrichtian_genus.csv')
+end_maas_nauti <- read.csv('../data/nautilids_end_maastrichtian_genus.csv')
 
 ################### Data filtering, correct taxonomy ###################
 
@@ -160,8 +161,10 @@ cepha_maas <- filter(cepha, max_ma <= 72.5 & min_ma >= 65)
 ext_ammon <- end_maas_ammon %>%
   filter(extant == TRUE) %>%
   select(genus)
-# add in nautilids (these were extant)
-ext_nauti <- unique(cepha_maas[cepha_maas$order == 'Nautilida', 'genus'])
+# add in nautilids
+ext_nauti <- end_maas_nauti %>%
+  filter(extant == TRUE) %>%
+  select(genus)
 extant <- c(ext_ammon$genus, ext_nauti)
 # Restrict data to those present at the end of the Maastrichtian
 cepha_end <- filter(cepha_maas, genus %in% extant)
