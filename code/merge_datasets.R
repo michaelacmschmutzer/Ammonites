@@ -20,6 +20,9 @@ pbdb_data <- read.csv('../data/pbdb_campanian_danian_all.csv', skip = 17)
 end_maas_ammon <- read.csv('../data/ammonoids_end_maastrichtian_genus.csv')
 end_maas_nauti <- read.csv('../data/nautilids_end_maastrichtian_genus.csv')
 
+# Read in synonym data to reassign occurrences
+synonyms <- read.csv('../data/synonyms.csv')
+
 ################### Data filtering, correct taxonomy ###################
 
 # Filter out all entries that are not ammonoid or nautilid
@@ -90,6 +93,28 @@ cepha <- bind_rows(ammon, cornu)
 
 ################### Clean and disambiguate taxonomy ###################
 
+# Filter out taxonomic synonyms. Reassign occurrences to accepted taxon. 
+# Prepare synonym table. Simplify and determine what changes need to be made
+
+for (i in 1:nrow(synonyms)){
+  # If species is empty, change genus only for all occurrences
+  if (nchar(synonyms[i, 'original_species']) == 0) {
+    cepha <- cepha %>%
+      mutate(genus = ifelse(
+        genus == synonyms[i, 'original_genus'], 
+        synonyms[i, 'target_genus'],
+        genus))
+  } else {
+    index <- cepha$genus == synonyms[i, 'original_genus'] & 
+      cepha$species == synonyms[i, 'original_species']
+    index[is.na(index)] <- FALSE # So many NAs...
+    cepha[index, 'genus'] <- synonyms[i, 'target_genus']
+    cepha[index, 'species'] <- synonyms[i, 'target_species']
+  }
+}
+
+# Check for ambiguous taxonomy
+
 genus_taxon <- cepha %>%
   select(c('order', 'suborder', 'superfamily', 'family', 'genus')) %>%
   distinct() %>%
@@ -129,7 +154,7 @@ for (genus in genus_taxon_ambiguous$genus) {
   }
 }
 
-# TODO To avoid being dependent on conflicting taxonomy, which I don't want to 
+# TODO: To avoid being dependent on conflicting taxonomy, which I don't want to 
 # resolve right now, make a column is.nautilid TRUE/FALSE to bypass the issue 
 cepha <- cepha %>%
   mutate(is.nautilid = ifelse(order == 'Nautilida', TRUE, FALSE))
@@ -138,10 +163,6 @@ cepha <- cepha %>%
 # Also remove the genus Nautilus. Its presence is controversial. 
 cepha <- filter(cepha, !genus %in% c('Conchorhynchus', 'Nautilus'))
 
-# Reassign all Jeletzkytes occurrences to Hoploscaphites. These are 
-# synonyms (Landman et al., 2010, B Am Mus Nat Hist)
-cepha <- cepha %>%
-  mutate(genus = ifelse(genus == 'Jeletzkytes', 'Hoploscaphites', genus))
 
 ################### Create Campanian dataset & save ################### 
 
