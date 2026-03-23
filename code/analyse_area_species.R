@@ -67,7 +67,7 @@ pdistram <- ggplot(data = distr_ammon_surv,
   #  labs(x = 'Ammonoids', y = 'Area (km²)') +
   scale_x_discrete('Ammonoids', 
                    labels = c('FALSE' = 'Extinct', 'TRUE' = 'Survived')) +
-  scale_y_log10('Area (km²)',
+  scale_y_log10(TeX('Area (km$^{2}$)'),
     breaks = scales::trans_breaks('log10', function(x) 10^x),
     labels = scales::trans_format('log10', scales::math_format(10^.x)),
     limits = c(minarea, maxarea)) +
@@ -95,7 +95,7 @@ pdistrna <- ggplot(data = distr_nauti_surv,
   #  labs(x = 'Nautilids', y = 'Area (km²)') +
   scale_x_discrete('Nautilids', 
                    labels = c('FALSE' = 'Extinct', 'TRUE' = 'Survived')) +
-  scale_y_log10('Area (km²)',
+  scale_y_log10(TeX('Area (km$^{2}$)'),
     breaks = scales::trans_breaks('log10', function(x) 10^x),
     labels = scales::trans_format('log10', scales::math_format(10^.x)),
     limits = c(minarea, maxarea)) +
@@ -118,6 +118,10 @@ pdistrna <- ggplot(data = distr_nauti_surv,
     axis.title.x = element_text(size = fsize, family = font),
   )
 p <- grid.arrange(pdistram, pdistrna, ncol = 2)
+ggsave(
+  '../results/species/abundance_survivalship/Species_area_survival.png',
+  width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
+
 
 wilcox.test(PALEOMAP.area.km2 ~ survival, data = distr_ammon_surv)
 wilcox.test(PALEOMAP.area.km2 ~ survival, data = distr_nauti_surv)
@@ -148,7 +152,7 @@ pdistram <- ggplot(data = boot_ammon_surv,
   #  labs(x = 'Ammonoids', y = 'Area (km²)') +
   scale_x_discrete('Ammonoids', 
                    labels = c('FALSE' = 'Extinct', 'TRUE' = 'Survived')) +
-  scale_y_log10('Area (km²)',
+  scale_y_log10(TeX('Area (km$^{2}$)'),
                 breaks = scales::trans_breaks('log10', function(x) 10^x),
                 labels = scales::trans_format('log10', scales::math_format(10^.x)),
                 limits = c(minarea, maxarea)) +
@@ -176,7 +180,7 @@ pdistrna <- ggplot(data = boot_nauti_surv,
   #  labs(x = 'Nautilids', y = 'Area (km²)') +
   scale_x_discrete('Nautilids', 
                    labels = c('FALSE' = 'Extinct', 'TRUE' = 'Survived')) +
-  scale_y_log10('Area (km²)',
+  scale_y_log10(TeX('Area (km$^{2}$)'),
                 breaks = scales::trans_breaks('log10', function(x) 10^x),
                 labels = scales::trans_format('log10', scales::math_format(10^.x)),
                 limits = c(minarea, maxarea)) +
@@ -199,6 +203,10 @@ pdistrna <- ggplot(data = boot_nauti_surv,
     axis.title.x = element_text(size = fsize, family = font),
   )
 p <- grid.arrange(pdistram, pdistrna, ncol = 2)
+ggsave(
+  '../results/species/abundance_survivalship/Species_area_survival_boot.png',
+  width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
+
 
 ###################  Plotting Jackknife vs Survival  ################### 
 
@@ -225,7 +233,7 @@ pdistram <- ggplot(data = jack_ammon_surv,
   #  labs(x = 'Ammonoids', y = 'Area (km²)') +
   scale_x_discrete('Ammonoids', 
                    labels = c('FALSE' = 'Extinct', 'TRUE' = 'Survived')) +
-  scale_y_log10('Area (km²)',
+  scale_y_log10(TeX('Area (km$^{2}$)'),
                 breaks = scales::trans_breaks('log10', function(x) 10^x),
                 labels = scales::trans_format('log10', scales::math_format(10^.x)),
                 limits = c(minarea, maxarea)) +
@@ -253,7 +261,7 @@ pdistrna <- ggplot(data = jack_nauti_surv,
   #  labs(x = 'Nautilids', y = 'Area (km²)') +
   scale_x_discrete('Nautilids', 
                    labels = c('FALSE' = 'Extinct', 'TRUE' = 'Survived')) +
-  scale_y_log10('Area (km²)',
+  scale_y_log10(TeX('Area (km$^{2}$)'),
                 breaks = scales::trans_breaks('log10', function(x) 10^x),
                 labels = scales::trans_format('log10', scales::math_format(10^.x)),
                 limits = c(minarea, maxarea)) +
@@ -276,3 +284,6 @@ pdistrna <- ggplot(data = jack_nauti_surv,
     axis.title.x = element_text(size = fsize, family = font),
   )
 p <- grid.arrange(pdistram, pdistrna, ncol = 2)
+ggsave(
+  '../results/species/abundance_survivalship/Species_area_survival_jack.png',
+  width = 12, height = 6, units = 'cm', dpi = 600, plot = p)

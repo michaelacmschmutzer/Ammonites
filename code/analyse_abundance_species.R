@@ -103,6 +103,8 @@ pnauti <- ggplot(data = tally_nauti_surv, aes(x = survival, y = n)) +
     axis.title.x = element_text(size = fsize, family = font),
   )
 p <- grid.arrange(pammon, pnauti, ncol = 2)
+ggsave('../results/species/abundance_survivalship/Species_abundance_survival.png',
+       width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
 wilcox.test(n ~ survival, data = tally_ammon_surv)
 wilcox.test(n ~ survival, data = tally_nauti_surv)
@@ -119,7 +121,7 @@ tally_species_ammon_eur <- cepha_rota %>%
 # Add survivalship info
 tally_ammon_surv_eur <- merge(tally_species_ammon_eur, surv_ammon)
 
-ggplot(data = tally_ammon_surv_eur, aes(x = survival, y = n)) +
+p <- ggplot(data = tally_ammon_surv_eur, aes(x = survival, y = n)) +
   geom_jitter(position = position_jitter(0.1), cex = 3, color = darkblue) +
   #  geom_text_repel(data = subset(tally_ammon_surv, survival == TRUE),
   #                  aes(label = species),
@@ -144,6 +146,10 @@ ggplot(data = tally_ammon_surv_eur, aes(x = survival, y = n)) +
     axis.title.y = element_text(size = fsize, family = font),
     axis.title.x = element_text(size = fsize, family = font),
   )
+
+ggsave(
+  '../results/species/abundance_survivalship/Species_abundance_survival_eur.png',
+  width = 6, height = 6, units = 'cm', dpi = 600, plot = p)
 
 wilcox.test(n ~ survival, data = tally_ammon_surv_eur)
 
@@ -182,5 +188,8 @@ ggplot(data = tally_ammon_surv_nam, aes(x = survival, y = n)) +
     axis.title.y = element_text(size = fsize, family = font),
     axis.title.x = element_text(size = fsize, family = font),
   )
+ggsave(
+  '../results/species/abundance_survivalship/Species_abundance_survival_nam.png',
+  width = 6, height = 6, units = 'cm', dpi = 600, plot = p)
 
 wilcox.test(n ~ survival, data = tally_ammon_surv_nam)

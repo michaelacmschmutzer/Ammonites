@@ -94,7 +94,7 @@ pnauti <- ggplot(data = tally_nauti_surv, aes(x = survival, y = n)) +
     axis.title.x = element_text(size = fsize, family = font),
   )
 p <- grid.arrange(pammon, pnauti, ncol = 2)
-ggsave('../results/abundance_survivalship/Genus_abundance_survival.png',
+ggsave('../results/genus/abundance_survivalship/Genus_abundance_survival.png',
       width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
 
