@@ -14,8 +14,7 @@ end_maas_nauti <- read.csv('../data/nautilids_end_maastrichtian_species.csv')
 cepha_rota_clean <- cepha_rota %>%
   filter(!is.na(species)) %>%
   # For convenience, to have a unique identifier for every species
-  mutate(species = paste(genus, species)) %>%
-  select(-c(genus))
+  mutate(species = paste(genus, species))
 
 # As on the genus level, assume all nautilid species are extant at the end
 # of the Maastrichtian
@@ -28,7 +27,7 @@ ext_nauti <- end_maas_nauti %>%
   mutate(species = paste(genus, species)) %>%
   filter(extant == TRUE) %>%
   select(species)
-extant <- c(ext_ammon$species, ext_nauti)
+extant <- c(ext_ammon$species, ext_nauti$species)
 # Restrict data to those present at the end of the Maastrichtian
 cepha_rota_end <- filter(cepha_rota_clean, species %in% extant)
 
