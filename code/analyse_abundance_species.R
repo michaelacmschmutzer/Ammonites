@@ -1,4 +1,4 @@
-# Analysis of abundance datasets at the species level
+# Analysis of abundance data at the species level
 setwd("~/Documents/Projects/Ammonites/code/")
 
 library(dplyr)
@@ -44,6 +44,16 @@ tally_species_nauti <- cepha_rota %>%
 tally_species_ammon <- cepha_rota %>% 
   filter(!order == 'Nautilida') %>%
   count(species)
+
+# Save the raw abundance data
+write.csv(
+  tally_species_nauti, 
+  '../results/species/abundance_survivalship/nautilids_abundance_raw_species.csv', 
+  row.names = FALSE)
+write.csv(
+  tally_species_ammon, 
+  '../results/species/abundance_survivalship/ammonoids_abundance_raw_species.csv',
+  row.names = FALSE)
 
 # Add survivalship info
 tally_nauti_surv <- merge(tally_species_nauti, surv_nauti)

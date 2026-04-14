@@ -12,8 +12,12 @@ Rscript rotate_positions.R
 Rscript filter_palaeorotations_species.R
 Rscript draw_convex_hulls.R 'ammonoids' 'genus'
 Rscript draw_convex_hulls.R 'nautilids' 'genus'
-Rscript subsample_distributions.R 'ammonoids'
-Rscript subsample_distributions.R 'nautilids'
+Rscript draw_convex_hulls.R 'ammonoids' 'species'
+Rscript draw_convex_hulls.R 'nautilids' 'species'
+Rscript subsample_distributions.R 'ammonoids' 'genus'
+Rscript subsample_distributions.R 'nautilids' 'genus'
+Rscript subsample_distributions.R 'ammonoids' 'species'
+Rscript subsample_distributions.R 'nautilids' 'species'
 Rscript impose_palaeocoasts.R 'ammonoids'
 Rscript impose_palaeocoasts.R 'nautilids'
 
@@ -21,6 +25,9 @@ Rscript impose_palaeocoasts.R 'nautilids'
 Rscript plot_hatching_size.R &>/dev/null
 Rscript plot_body_size.R &>/dev/null
 Rscript analyse_abundance.R &>/dev/null
+Rscript analyse_abundance_species.R &>/dev/null
+Rscript analyse_area.R &>/dev/null
+Rscript analyse_area_species.R &>/dev/null
 Rscript analyse_subsampling.R 'ammonoids' &>/dev/null
 Rscript analyse_subsampling.R 'nautilids' &>/dev/null
 RScript compare_hypotheses.R &>/dev/null

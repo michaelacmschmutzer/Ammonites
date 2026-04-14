@@ -42,13 +42,17 @@ tally_genus_ammon <- cepha_rota %>%
   filter(!order == 'Nautilida') %>%
   count(genus)
 
+
 # Save the raw abundance data
-write.csv(tally_genus_nauti, 
+write.csv(
+  tally_genus_nauti, 
   '../results/genus/abundance_survivalship/nautilids_abundance_raw.csv', 
   row.names = FALSE)
-write.csv(tally_genus_ammon, 
+write.csv(
+  tally_genus_ammon, 
   '../results/genus/abundance_survivalship/ammonoids_abundance_raw.csv',
   row.names = FALSE)
+
 
 # Add survivalship info
 tally_nauti_surv <- merge(tally_genus_nauti, surv_nauti)
@@ -214,7 +218,7 @@ pabdna <- ggplot(data = abd_nauti_genus,
     axis.title.x = element_text(size = fsize, family = font),
   )
 p <- grid.arrange(pabdam, pabdna, ncol = 2)
-ggsave('../results/abundance_survivalship/Genus_locality_survival.png',
+ggsave('../results/genus/abundance_survivalship/Genus_locality_survival.png',
        width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
   
@@ -276,7 +280,7 @@ plocna <- ggplot(data = loc_nauti, aes(x = survival, y = n.loc)) +
     axis.title.x = element_text(size = fsize, family = font),
   )
 p <- grid.arrange(plocam, plocna, ncol = 2)
-ggsave('../results/abundance_survivalship/Genus_numloc_survival.png',
+ggsave('../results/genus/abundance_survivalship/Genus_numloc_survival.png',
        width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
 # Get the number of unique grid cells per genus
@@ -337,7 +341,7 @@ pcellna <- ggplot(data = ncell_nauti_surv, aes(x = survival, y = n.cell)) +
     axis.title.x = element_text(size = fsize, family = font),
   )
 p <- grid.arrange(pcellam, pcellna, ncol = 2)
-ggsave('../results/abundance_survivalship/Genus_numcell_survival.png',
+ggsave('../results/genus/abundance_survivalship/Genus_numcell_survival.png',
        width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
 ################### Comparison with Campanian ################### 
@@ -440,7 +444,7 @@ pnacor <- ggplot(data = comp_abun_nauti, aes(x = n.camp, y = n.maas)) +
     axis.title.x = element_text(size = fsize, family = font)
   )
 p <- grid.arrange(pamcor, pnacor, ncol = 2)
-ggsave('../results/abundance_survivalship/Genus_abundance_comparison.png',
+ggsave('../results/genus/abundance_survivalship/Genus_abundance_comparison.png',
        width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
 cor.test(comp_abun_ammon$n.camp, comp_abun_ammon$n.maas, method = 'spearman')
