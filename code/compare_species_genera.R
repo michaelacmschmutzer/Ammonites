@@ -26,6 +26,8 @@ fsize <- 9
 
 ###################  Read in data ###################
 
+cepha <- read.csv('../data/cephalopods.csv')
+
 # Abundances (counts) at genus and species level
 nauti_genus_abun <- read.csv(
   '../results/genus/abundance_survivalship/nautilids_abundance_raw.csv'
@@ -64,7 +66,75 @@ nauti_species_boot <- read.csv(
 ammon_species_boot <- read.csv(
   '../results/species/subsampling_distributions/ammonoids/bootstrap.csv')
 
+# Read in survival data for ammonoids at genus level
+surv_ammon <- read.csv('../data/ammonoids_extinction_genus.csv')
+# Simplify
+surv_ammon <- select(surv_ammon, c('genus', 'survival'))
+
+
+###################  How species-rich is each genus? ###################
+
+# How many species are there per genus in the all-Maastrichtian data?
+count_per_genus <- cepha %>%
+  filter(!is.na(species)) %>% # Ignoring unassigned at species
+  group_by(genus) %>%
+  summarise(num.species = n_distinct(species)) %>%
+  arrange(desc(num.species))
+count_per_genus <- merge(count_per_genus, surv_ammon)
+
+wilcox.test(num.species ~ survival, data = count_per_genus)
+
+genus_nspecies_abun <- merge(count_per_genus, ammon_genus_abun)
+
+plot(log(genus_nspecies_abun$num.species), log(genus_nspecies_abun$n))
+
+p <- ggplot(data = genus_nspecies_abun, 
+       aes(x = num.species, y = n)) +
+  geom_point(cex = 3, color = darkblue) +
+  #  labs(x = 'Ammonoids', y = 'Area (km²)') +
+  scale_x_log10(
+    'Number of species per genus', 
+    breaks = scales::trans_breaks('log10', function(x) 10^x),
+    labels = scales::trans_format('log10', scales::math_format(10^.x)),
+    limits = c(1, 1.2 * max(genus_nspecies_abun$num.species))) +
+  scale_y_log10(
+    'Number of occurrences in genus',
+    breaks = scales::trans_breaks('log10', function(x) 10^x),
+    labels = scales::trans_format('log10', scales::math_format(10^.x)),
+    limits = c(1, 1.2 * max(genus_nspecies_abun$n))) +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(size = fsize, colour = 'black', family = font),
+    axis.text.y = element_text(size = fsize, colour = 'black', family = font),
+    axis.title.y = element_text(size = fsize, family = font),
+    axis.title.x = element_text(size = fsize, family = font),
+  )
+ggsave(
+  '../results/compare_taxon_level/Ammonoids_genus_speciesvsoccurrences.png',
+  width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
+
+cor(genus_nspecies_abun$num.species, genus_nspecies_abun$n, method = 'spearman')
+
 ###################  Compare abundance ###################
+
+# Plot a histogram of the number of occurrences per species
+
+p <- ggplot(ammon_species_abun, aes(x = n)) +
+  geom_histogram(binwidth = 5, fill = darkblue) +
+  xlab('Number of occurrences') +
+  ylab('Number of species') +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(size = fsize, colour = 'black', family = font),
+    axis.text.y = element_text(size = fsize, colour = 'black', family = font),
+    axis.title.y = element_text(size = fsize, family = font),
+    axis.title.x = element_text(size = fsize, family = font),
+  )
+ggsave(
+  '../results/compare_taxon_level/Ammonoid_abundance_species.png',
+  width = 6, height = 6, units = 'cm', dpi = 600, plot = p)
 
 # Get the genus of each species to act as key in next step
 nauti_species_abun <- nauti_species_abun %>%
