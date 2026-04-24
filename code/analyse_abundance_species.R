@@ -48,11 +48,11 @@ tally_species_ammon <- cepha_rota %>%
 # Save the raw abundance data
 write.csv(
   tally_species_nauti, 
-  '../results/species/abundance_survivalship/nautilids_abundance_raw_species.csv', 
+  '../results/species/analyse_survivalship/nautilids_abundance_raw_species.csv', 
   row.names = FALSE)
 write.csv(
   tally_species_ammon, 
-  '../results/species/abundance_survivalship/ammonoids_abundance_raw_species.csv',
+  '../results/species/analyse_survivalship/ammonoids_abundance_raw_species.csv',
   row.names = FALSE)
 
 # Add survivalship info
@@ -113,7 +113,7 @@ pnauti <- ggplot(data = tally_nauti_surv, aes(x = survival, y = n)) +
     axis.title.x = element_text(size = fsize, family = font),
   )
 p <- grid.arrange(pammon, pnauti, ncol = 2)
-ggsave('../results/species/abundance_survivalship/Species_abundance_survival.png',
+ggsave('../results/species/analyse_survivalship/Species_abundance_survival.png',
        width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
 wilcox.test(n ~ survival, data = tally_ammon_surv)
@@ -158,7 +158,7 @@ p <- ggplot(data = tally_ammon_surv_eur, aes(x = survival, y = n)) +
   )
 
 ggsave(
-  '../results/species/abundance_survivalship/Species_abundance_survival_eur.png',
+  '../results/species/analyse_survivalship/Species_abundance_survival_eur.png',
   width = 6, height = 6, units = 'cm', dpi = 600, plot = p)
 
 wilcox.test(n ~ survival, data = tally_ammon_surv_eur)
@@ -199,7 +199,7 @@ ggplot(data = tally_ammon_surv_nam, aes(x = survival, y = n)) +
     axis.title.x = element_text(size = fsize, family = font),
   )
 ggsave(
-  '../results/species/abundance_survivalship/Species_abundance_survival_nam.png',
+  '../results/species/analyse_survivalship/Species_abundance_survival_nam.png',
   width = 6, height = 6, units = 'cm', dpi = 600, plot = p)
 
 wilcox.test(n ~ survival, data = tally_ammon_surv_nam)

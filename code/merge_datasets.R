@@ -186,7 +186,7 @@ ext_ammon <- end_maas_ammon %>%
 ext_nauti <- end_maas_nauti %>%
   filter(extant == TRUE) %>%
   select(genus)
-extant <- c(ext_ammon$genus, ext_nauti)
+extant <- c(ext_ammon$genus, ext_nauti$genus)
 # Restrict data to those present at the end of the Maastrichtian
 cepha_end <- filter(cepha_maas, genus %in% extant)
 

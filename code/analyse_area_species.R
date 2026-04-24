@@ -119,7 +119,7 @@ pdistrna <- ggplot(data = distr_nauti_surv,
   )
 p <- grid.arrange(pdistram, pdistrna, ncol = 2)
 ggsave(
-  '../results/species/abundance_survivalship/Species_area_survival.png',
+  '../results/species/analyse_survivalship/Species_area_survival.png',
   width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
 
@@ -204,7 +204,7 @@ pdistrna <- ggplot(data = boot_nauti_surv,
   )
 p <- grid.arrange(pdistram, pdistrna, ncol = 2)
 ggsave(
-  '../results/species/abundance_survivalship/Species_area_survival_boot.png',
+  '../results/species/analyse_survivalship/Species_area_survival_boot.png',
   width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
 
@@ -285,5 +285,5 @@ pdistrna <- ggplot(data = jack_nauti_surv,
   )
 p <- grid.arrange(pdistram, pdistrna, ncol = 2)
 ggsave(
-  '../results/species/abundance_survivalship/Species_area_survival_jack.png',
+  '../results/species/analyse_survivalship/Species_area_survival_jack.png',
   width = 12, height = 6, units = 'cm', dpi = 600, plot = p)

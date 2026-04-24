@@ -8,7 +8,7 @@ library(ggplot2)
 library(gridExtra)
 library(latex2exp)
 library(lme4)
-
+#library(lmerPerm)
 
 # Specify plotting aesthetics
 darkblue  <- '#12255A'
@@ -32,17 +32,17 @@ cepha <- read.csv('../data/cephalopods.csv')
 body_sizes <- read.csv(
   '../data/doi_10_5061_dryad_zpc866t5b__v20210211/genus.sizes.ranges.rev.csv')
 geo_nauti <- read.csv(
-  '../results/geographic_distributions/nautilids_distributions_genus.csv')
+  '../results/genus/geographic_distributions/nautilids_distributions_genus.csv')
 geo_ammon <- read.csv(
-  '../results/geographic_distributions/ammonoids_distributions_genus.csv')
+  '../results/genus/geographic_distributions/ammonoids_distributions_genus.csv')
 geo_nauti_boot <- read.csv(
-  '../results/subsampling_distributions/nautilids/bootstrap.csv')
+  '../results/genus/subsampling_distributions/nautilids/bootstrap.csv')
 geo_ammon_boot <- read.csv(
-  '../results/subsampling_distributions/ammonoids/bootstrap.csv')
+  '../results/genus/subsampling_distributions/ammonoids/bootstrap.csv')
 abun_nauti <- read.csv(
-  '../results/abundance_survivalship/nautilids_abundance_raw.csv')
+  '../results/genus/analyse_survivalship/nautilids_abundance_raw.csv')
 abun_ammon <- read.csv(
-  '../results/abundance_survivalship/ammonoids_abundance_raw.csv')
+  '../results/genus/analyse_survivalship/ammonoids_abundance_raw.csv')
 hatch_nauti <- read.csv('../data/nautilids_embryonic_shell_size.csv')
 hatch_ammon <- read.csv('../data/ammonoids_embryonic_shell_size.csv')
 surv_nauti <- read.csv('../data/nautilids_extinction_genus.csv')
@@ -233,7 +233,7 @@ genus_data$is.nautilid <- as.numeric(genus_data$is.nautilid)
 # Hatching size has too many missing values
 
 glm.test.all <- glm(
-  survival ~ log.area.zscore + logvol.zscore + sqrt.abun.zscore,
+  survival ~ log.boot.zscore + logvol.zscore + log.hatching.size.zscore,
   data = genus_data,
   family = binomial(link = 'logit')
 )
@@ -279,7 +279,7 @@ abline(0, 0, lty = 2)
 # Having area in the model causes singularity, except if only area is included
 # in the model, in which case the AIC is at 56.7, while otherwise it is at 30. 
 genus_model <- glmer(
-  survival ~ sqrt.abun.zscore  + logvol.zscore + (1 | is.nautilid),
+  survival ~ log.area.zscore + logvol.zscore + (1 | is.nautilid),
   data = genus_data,
   family = binomial())
 

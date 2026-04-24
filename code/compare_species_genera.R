@@ -30,16 +30,16 @@ cepha <- read.csv('../data/cephalopods.csv')
 
 # Abundances (counts) at genus and species level
 nauti_genus_abun <- read.csv(
-  '../results/genus/abundance_survivalship/nautilids_abundance_raw.csv'
+  '../results/genus/analyse_survivalship/nautilids_abundance_raw.csv'
   )
 ammon_genus_abun <- read.csv(
-  '../results/genus/abundance_survivalship/ammonoids_abundance_raw.csv'
+  '../results/genus/analyse_survivalship/ammonoids_abundance_raw.csv'
   )
 nauti_species_abun <- read.csv(
-  '../results/species/abundance_survivalship/nautilids_abundance_raw_species.csv'
+  '../results/species/analyse_survivalship/nautilids_abundance_raw_species.csv'
   )
 ammon_species_abun <- read.csv(
-  '../results/species/abundance_survivalship/ammonoids_abundance_raw_species.csv'
+  '../results/species/analyse_survivalship/ammonoids_abundance_raw_species.csv'
   )
 
 # Geographic ranges at genus and species level
