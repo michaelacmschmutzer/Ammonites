@@ -9,8 +9,11 @@
 *.bcf
 *.blg
 *.log
+*.out
+*.run.xml
 *.pdf
 *.synctex.gz
 /data
 /literature
 /results
+.positai

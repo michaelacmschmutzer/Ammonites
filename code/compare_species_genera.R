@@ -86,8 +86,6 @@ wilcox.test(num.species ~ survival, data = count_per_genus)
 
 genus_nspecies_abun <- merge(count_per_genus, ammon_genus_abun)
 
-plot(log(genus_nspecies_abun$num.species), log(genus_nspecies_abun$n))
-
 p <- ggplot(data = genus_nspecies_abun, 
        aes(x = num.species, y = n)) +
   geom_point(cex = 3, color = darkblue) +
@@ -111,7 +109,7 @@ p <- ggplot(data = genus_nspecies_abun,
   )
 ggsave(
   '../results/compare_taxon_level/Ammonoids_genus_speciesvsoccurrences.png',
-  width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
+  width = 6, height = 6, units = 'cm', dpi = 600, plot = p)
 
 cor(genus_nspecies_abun$num.species, genus_nspecies_abun$n, method = 'spearman')
 

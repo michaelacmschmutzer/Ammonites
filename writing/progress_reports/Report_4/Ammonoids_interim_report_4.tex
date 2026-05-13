@@ -34,43 +34,140 @@
 
 What is the status of subgenera and can I ignore them? 
 
-
-Analysis at the species level
-
-Body size data is at genus level
-Hatching size data is too incomplete. Only five ammonoid species actually extant at the end of the Maastrichtian have measurements, and none of the survivors.
-
-Ammonites present at end of Maastrichtian. Species level. 
-- Literature search and PBDB last occurrences. 
-- Using a fairly strict cut-off, have to have occurrences in the latest Maastrichtian formations
-- Geographic ranges are based on finds from throughout the Maastrichtian
-
-Identifying survivorship in nautilids poses considerable challenges.
-- Many genera cross the K-Pg boundary, but have different species before and after. Unclear what is descended from what
-- The same species may be assigned a different name after the K-Pg, for example many Asian specimen of \textit{Eutrephoceras dekayi} are assigned to \textit{E. bellerophon} in the Danian. MALCHYK THESIS
-- For many other nautilids, these relationships are less clear. 
-- Currently these issues are causing me to underestimate the number of surviving nautilid genera
-- I have used a less stringent cut-off for nautilids, because they are relatively rare compared to ammonites it is not clear to me if they went extinct before the end of the Maastrichtian or the sampling probability is just too low 
-
-Cutting down dataset to species level.
-- Keep only those occurrences that are classified to the species level
-- Remove all occurrences of species not extant at the end of the Maastrichtian. Last occurrence on PBDB and literature search
-- Resolve species synonymies. Give a list.
-- Losing some taxa that are not resolved to species level, e.g. Nostoceras and Fresvillia
-
-Taxonomy matters. The number of occurrences and the geographic range reconstructed from a handful of specimen can change substantially if these occurrences are classified in a different way. 
-- Problems with sexual dimorphism, eg Menuites being the microconch, Anapachydiscus the macroconch of the same species COBBAN AND KENNEDY 1993
-
-Data problems
-- Low resolution at stage level of PBDB makes it seem like species that followed each other in rapid succession actually coexisted
-
-Results
+Unfortunately, I only have enough data to consider abundance and geographic range size at the species level. The body size estimates I draw on \parencite{payneBodySizeSampling2020, payneSelectivityMassExtinctions2023} were made at the genus level (or rather, for only one species per genus). 
+While hatching size measurements are reported at the species level, these data are too incomplete to make any inferences. For example, hatching sizes are measured for only five ammonoid species that were extant at the end of the Maastrichtian, and none these species crossed the K-Pg boundary.
 
 
+Identifying survivorship in nautilids poses considerable challenges. Just from looking at the data, I can see that many nautilid genera cross the K-Pg boundary, but have different species before and after. It is entirely unclear to me what is descended from what. It appears that for at least some of these genera, the same species is assigned a different name after the K-Pg. For example, Asian specimen of \textit{Eutrephoceras dekayi} are apparently assigned to \textit{E. bellerophon} in the Danian \parencite{malchykLateCretaceousEarly}. I therefore treat these as synonymous. 
+My impression is that these taxonomic issues are causing me to underestimate the number of surviving nautilid species, and possibly genera too. 
+I don't have a solution for these issues. I believe the only real solution is a taxonomic reassessment of Cretaceous and Paleogene nautilids. 
+Given the current state of nautilid data, I believe any analysis is more likely to produce GIGO (garbage in, garbage out) than anything useful. Still, I think it may be best to present nautilid results in an upcoming publication, and clearly communicate the limitations of the analysis. It is an opportunity to bring this neglected group back into the limelight, and to make an appeal for more fundamental and taxonomic research into them. 
 
-How to communicate sensitivity analyses?
-- Different plate tectonic models
-- Subsampling results
+I have refrained from adding statistical tests to this report, as I am still trying out different approaches. I have played around with mixed effect models, but the low numbers of survivors cause considerable difficulties, and I think a different kind of test will be more informative. 
 
+I think I am now getting close to preparing a publications. Apart from deciding on a statistical framework and writing the study, there are a few things where I would greatly value any input you have:
+\begin{itemize}
+\item Addition of further occurrences from literature or dark data
+\item Addition of any hatching size measurements
+\item Validating ammonoid taxonomy and any reclassification of occurrences (e.g. cleaning up synonymous taxa)
+\item Validating the presence of taxa at the end of the Maastrichtian
+\item (Possibly) filtering occurrences as rigorously as in \textcite{landmanAmmoniteExtinctionNautilid2014}
+\item Any suggestions for dealing with nautilid taxonomy, and deciding what taxa actually cross the K-Pg boundary. We are incredibly far from solving this issue, but any improvement is better than the status quo
+\end{itemize}
+
+Subsampling improvements
+-The jackknifed and bootstrapped geographic range sizes do not currently include taxa with less than four occurrences that cannot be subsampled. This biases the medians to larger values.
+-Could plot those not subsampled with hatched circles or with a different alpha level to correct for this bias. 
+
+\section*{Methods}
+
+\textbf{Removing synonymies from the occurrence dataset.} We reassigned occurrences to another taxon in two cases. The first are occurrences belonging to taxa that have undergone taxonomic reassignment, for example species in the genus \textit{Jeletzkytes}, which are now classified under \textit{Hoploscaphites} \parencite{landmanScaphitesNodosusGroup2010}. The second are data-entry mistakes, for example \textit{Hoploscaphites spedoni} instead of \textit{H. spedeni}. A list of synonymies is given in table \ref{tab_synonymies}. 
+
+\textbf{Data cleaning for species-level analyses.} To prepare the species-level analyses, we put the occurrence data through two further filtering steps. First, we removed occurrences that were not classified to the species level. Second, we removed all occurrences of species that had already gone extinct before the end of the Maastrichtian. To determine if a given species was extant at the time of the Chicxulub impact, we drew on a variety of sources. 
+For ammonoids, \textcite{landmanAmmonitesBrinkExtinction2015} compiled a list of latest Maastrichtian species.
+For species not listed by \textcite{landmanAmmonitesBrinkExtinction2015}, we checked the last occurrence of the species listed on PaleoDB, and where possible examined the published source of the occurrence. We supplemented this approach with literature searches.
+For nautilids, we followed a less strict protocol. Nautilid occurrences are relatively rare, which makes it difficult to infer whether a given species went extinct before the end of the Maastrichtian, or whether their absence from latest-Maastrichtian formations is due to their low probability of preservation. We therefore included all Maastrichtian nautilid species in the analysis. 
+
+
+We unfortunately cannot include \textit{Fresvillia} in the species-level analyses because the specimen recently recovered from Denmark could only be determined to the genus level \parencite{machalskiAmmoniteSurvivalCretaceous2025}.
+Also, there is a latest Maastrichtian \textit{Nostoceras} from Maastricht (\textit{Belemnitella junior} zone, Maastricht formation IVf1) that implies that the genus survived up to the end of the Maastrichtian \parencite{vandertuukEersteVondstVan1979}. Unfortunately it too cannot be assigned to any given species \parencite{vandertuukEersteVondstVan1979}, and the genus is not represented in our species-level analyses. 
+
+\section*{Results}
+
+\textbf{Geographic range size does not predict survival at the species level.}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{/species/analyse_survivalship/Species_area_survival.png}
+\caption{No clear association between the geographic ranges of ammonoid and nautilid species and their survival at the K-Pg boundary.
+The geographic range of each species is approximated as a minimum convex hull enclosing all fossil locations of the species. The area of the resulting polygon is an approximation of the species range.
+Results are shown for the PALEOMAP plate tectonic model only \parencite{scotesePALEOMAPPaleoAtlasGPlates2020}.
+Red diamonds indicate the median, and the red error bars show the interquartile range.}
+\label{fig_area_species}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{/species/analyse_survivalship/Species_area_survival_boot.png}
+\caption{No clear association between bootstrapped geographic ranges of ammonoid and nautilid species and their survival at the K-Pg boundary. Areas are estimated using convex hulls drawn around the subsampled occurrences as in figure \ref{fig_area_species}. Only genera with occurrences from more than three distinct locations are included in the subsampling procedures.  
+Results are shown for the PALEOMAP plate tectonic model only \parencite{scotesePALEOMAPPaleoAtlasGPlates2020}. Red diamonds indicate the median, and the red error bars show the interquartile range.}
+\label{fig_boot_species}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{/species/analyse_survivalship/Species_area_survival_jack.png}
+\caption{No clear association between jackknifed geographic ranges of ammonoid and nautilid species and their survival at the K-Pg boundary. Areas are estimated using convex hulls drawn around the subsampled occurrences as in figure \ref{fig_area_species}. Only genera with occurrences from more than three distinct locations are included in the subsampling procedures.  
+Results are shown for the PALEOMAP plate tectonic model only \parencite{scotesePALEOMAPPaleoAtlasGPlates2020}. Red diamonds indicate the median, and the red error bars show the interquartile range.}
+\label{fig_jack_species}
+\end{figure}
+
+\noindent
+\textbf{No relation between abundance and survival at the species level.} When we consider the association between the number of occurrences and survival for individual species, the strong signal at the genus level disappears (figure \ref{fig_abun_species}).
+
+\begin{figure}
+\includegraphics[width=\textwidth]{/species/analyse_survivalship/Species_abundance_survival.png}
+\caption{Abundance does not predict the survival of ammonoid or nautilid species.  Red diamonds indicate the median, and the red error bars show the interquartile range.}
+\label{fig_abun_species}
+\end{figure}
+
+\noindent
+\textbf{Taxonomy explains why more abundant ammonoid genera are more likely to be reported as short-term survivors.}
+I have dug deeper into the data and have finally been able to figure out why it is the most abundant genera that survive into the Danian. It is an artefact arising from the fact that not all genera are equally large. 
+The number of occurrences per species is roughly exponentially distributed, with most species having relatively few occurrences, and a few species that occur very frequently in the dataset (figure \ref{fig_taxonomic_imbalance}A). 
+This means that the majority of species will add similar occurrence counts to the genus they are assigned to. 
+Consequently, the number of occurrences in a given genus scales directly with how many species are assigned to the genus (Spearman's $\rho = 0.737$, figure \ref{fig_taxonomic_imbalance}B).
+Given the imbalance in the number of species assigned to different genera, it is unsurprising that most survivors will be classified as members of a genus that is species-rich, and therefore abundant. In fact, such a pattern could be expected simply by chance alone. % Is it worth making a random model of this?
+This explanation holds even in cases where short-term survival is in fact questionable, as it is for the New Jersey \textit{Pinna}-layer ammonoids. Most likely, if we were to repeat this analysis for specimen that are obviously reworked we would get the same signal at the genus level. 
+
+\begin{figure}
+  \begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{/compare_taxon_level/Ammonoid_abundance_species.png}
+    \caption{}
+  \end{subfigure}
+  \begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{/compare_taxon_level/Ammonoids_genus_speciesvsoccurrences.png}
+    \caption{}
+  \end{subfigure}
+  \caption{Variation in the number of species assigned to genera explains the association between abundance and genus survival in ammonoids. A) The distribution of abundances (counted as number of occurrences) per ammonoid species is roughly exponential, with most species contributing a roughly similar number of occurrences to the genus they are assigned to. B) The abundance of a genus is correlated with the number of species assigned to that genus (Spearman's $\rho = 0.737$). Ammonoid genera with many species will be more abundant, and also more likely to contain short-term survivors just by chance.}
+  \label{fig_taxonomic_imbalance}
+\end{figure}
+
+\section*{Discussion}
+
+- Geographic ranges are probably being smudged because I am using occurrences from throughout the Maastrichtian. This would weaken the association between geographic range and survival seen in \textcite{landmanAmmoniteExtinctionNautilid2014}
+- Unlikely that geographic ranges were stable for 6 million years
+- Taxonomy matters. The number of occurrences and the geographic range reconstructed from a handful of specimen can change substantially if these occurrences are classified in a different way. 
+- There are likely still problems with sexual dimorphism, for example \textit{Menuites} being the microconch, \textit{Anapachydiscus} the macroconch of the same species \textcite{cobbanUpperCretaceousDimorphic1993}. Although this particular synonymy seems to be resolved in the PaleoDB data (only \textit{Menuites} is present), other genera are almost certainly effected by the same problem. 
+
+\printbibliography
+
+\appendix 
+
+\makeatletter
+\renewcommand \thesection{S\@arabic\c@section}
+\renewcommand\thetable{S\@arabic\c@table}
+\renewcommand \thefigure{S\@arabic\c@figure}
+\makeatother
+
+\section*{Table of synonymies}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+Original taxon  & Replaced with	& References	 \\
+\hline
+\textit{Acanthoscaphites schmidi} & \textit{Hoploscaphites schmidi} & \cite{machalskiLateMaastrichtianEarliest2005}\\
+\textit{Didymoceras attenuatum} & \textit{Nostoceras attenuatum} & \cite{kuchlerUpperCampanianMaastrichtianAmmonites2001}\\
+\textit{Discoscaphites abyssinus} & \textit{Hoploscaphites comprimus} & \cite{landmanScaphitidAmmonitesUpper1993}\\
+\textit{Eubaculites lyelli} & \textit{Eubaculites carinatus} & \cite{wardMaastrichtianAmmonitesBiscay1993}\\
+\textit{Eutrephoceras bellerophon} & \textit{Eutrephoceras dekayi} & \cite{malchykLateCretaceousEarly}\\ 
+\textit{Hoploscaphites spedoni} & \textit{Hoploscaphites spedeni} & Data-entry typo\\
+\textit{Jeletzkytes} & \textit{Hoploscaphites} & \cite{landmanScaphitesNodosusGroup2010}\\
+\textit{Pseudokossmaticeras dureri} & \textit{Pseudokossmaticeras duereri} & Data-entry typo\\
+\textit{Sphenodiscus beecheri} & \textit{Sphenodiscus lobatus} & \cite{kennedy1997new}\\
+\hline \\
+\end{tabular}
+\caption{Synonyms and their replacements during data cleaning. All occurrences listed under an outdated taxon were reassigned. If only a genus name is given, all species listed under that genus were reassigned. This list also included cases we believe to have arisen from data entry mistakes, and which we disambiguated accordingly.}
+\label{tab_synonymies}
+\end{table}
 
 \end{document}
