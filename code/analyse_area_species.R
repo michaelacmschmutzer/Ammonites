@@ -207,6 +207,11 @@ ggsave(
   '../results/species/analyse_survivalship/Species_area_survival_boot.png',
   width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
+wilcox.test(median.area.km2 ~ survival, data = boot_ammon_surv)
+wilcox.test(median.area.km2 ~ survival, data = boot_nauti_surv)
+
+# Ammonoid geographic ranges are larger than nautilid?
+wilcox.test(boot_ammon_surv$median.area.km2, boot_nauti_median$median.area.km2)
 
 ###################  Plotting Jackknife vs Survival  ################### 
 
