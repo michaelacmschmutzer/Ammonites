@@ -8,6 +8,10 @@ test_x <- c(1, 1, 5, 4, 6, 8, 6)
 test_xna <- c(1, 1, 5, 4, 6, 8, 6, NA)
 test_cor1 <- c(1, 2, 4, 3, 5, 7, 6)
 test_cor2 <- c(2, 3, 5, 4, 1, 6, 7)
+test_df <- data.frame(
+  values = c(1, 1, 3, 7, 2, 6, 8, 9, 4),
+  survival = c(FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, FALSE)
+)
 
 test_that(
   'Scaled median absolute deviations are calculated correctly', {
@@ -24,3 +28,11 @@ test_that(
   }
 )
 
+test_that(
+  'Common language effect size and CI are calculated correctly', {
+    x <- wilmanwhit.effect.size(test_df, 'values')
+    expect_equal(round(x[1], digits = 7), 0.05)
+    expect_equal(round(x[2], digits = 7), 0.0020122)
+    expect_equal(round(x[3], digits = 7), 0.5787490)
+  }
+)

@@ -4,6 +4,8 @@ setwd("~/Documents/Projects/Ammonites/code/")
 library(dplyr)
 library(auRoc)
 
+source('statistical-functions.R')
+
 # Specify plotting aesthetics
 darkblue  <- '#12255A'
 orange    <- '#E38C59'
@@ -12,7 +14,16 @@ font <- 'Palatino'
 fsize <- 9
 
 ################### Compile hypothesis testing data set ################### 
-
+body_sizes <- read.csv(
+  '../data/doi_10_5061_dryad_zpc866t5b__v20210211/genus.sizes.ranges.rev.csv')
+geo_nauti <- read.csv(
+  '../results/genus/geographic_distributions/nautilids_distributions_genus.csv')
+geo_ammon <- read.csv(
+  '../results/genus/geographic_distributions/ammonoids_distributions_genus.csv')
+geo_nauti_boot <- read.csv(
+  '../results/genus/subsampling_distributions/nautilids/bootstrap.csv')
+geo_ammon_boot <- read.csv(
+  '../results/genus/subsampling_distributions/ammonoids/bootstrap.csv')
 hatch_nauti <- read.csv('../data/nautilids_embryonic_shell_size.csv')
 hatch_ammon <- read.csv('../data/ammonoids_embryonic_shell_size.csv')
 surv_nauti_genus <- read.csv('../data/nautilids_extinction_genus.csv')
@@ -25,7 +36,7 @@ hatch_nauti_genus <- hatch_nauti %>%
 hatch_ammon_genus <- hatch_ammon %>%
   group_by(genus) %>%
   summarise(med.hatching.size = median(hatching.size..mm.))
-
+body_sizes <- dplyr::select(body_sizes, c('genus', 'logvol'))
 surv_nauti_genus <- dplyr::select(surv_nauti_genus, c('genus', 'survival'))
 surv_ammon_genus <- dplyr::select(surv_ammon_genus, c('genus', 'survival'))
 
@@ -33,11 +44,7 @@ surv_ammon_genus <- dplyr::select(surv_ammon_genus, c('genus', 'survival'))
 hatch_nauti_surv <- na.omit(merge(hatch_nauti_genus, surv_nauti_genus))
 hatch_ammon_surv <- na.omit(merge(hatch_ammon_genus, surv_ammon_genus))
 
-################### Permutation testing ################### 
-
-# Use coin 'approximate' distribution This either uses exact tests or Monte Carlo
-# subsampling (default 10000 random samples from all possible permutations, or
-# all permutations if that is less)
+################### Calculating effect sizes ################### 
 
 # Get p-value
 wt_hatch <- wilcox.test(med.hatching.size ~ factor(survival),
@@ -50,14 +57,23 @@ surv <- hatch_nauti_surv[hatch_nauti_surv$survival == TRUE, 'med.hatching.size']
 exti <- hatch_nauti_surv[hatch_nauti_surv$survival == FALSE, 'med.hatching.size']
 
 # Get common language effect size (U / (n1 * n2)) with confidence interval
-auc.nonpara.mw(exti, surv, method = 'DL.corr')
+variables <- c(
+  'Hatching size (genus)',
+  'Body size (genus)',
+  'Geographic range (genus)',
+  'Geographic range (species)',
+  'Geographic range (bootstrap, genus)',
+  'Geographic range (boostrap, species)',
+  'Geographic range (jackknife, genus)',
+  'Geographic range (jackknife, species)'
+)
 
-wilmanwhit.effect.size <- function(data, x_col, y_col = 'survival',
-  ci.method = 'DL.corr', alpha = 0.05, nboot = 1000) {
-  # Function to calculate the common language effect size with its associated
-  # confidence interval
-  groups <- split(data, data[[y_col]])
-  e.size <- auc.nonpara.mw(groups[[1]][[x_col]], groups[[2]][[x_col]], method = ci.method, 
-    conf.level = 1 - alpha, nboot = nboot)
-  return(e.size)
-}
+effect.sizes.ammon <- data.frame(
+  variable = variables, eff.size = 0, ci.lower = 0, ci.upper = 0)
+effect.sizes.nauti <- data.frame(
+  variable = variables, eff.size = 0, ci.lower = 0, ci.upper = 0)
+
+
+effect.sizes.ammon[1, 2:4] <-
+  wilmanwhit.effect.size(hatch_ammon_surv, 'med.hatching.size')
+effect.sizes.ammon[2, 2:4] <- 

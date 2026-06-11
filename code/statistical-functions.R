@@ -1,6 +1,7 @@
 # Helper functions for statistical analyses and figure plotting
 
 library(scales)
+library(auRoc)
 
 ##################### STATISTICS FUNCTIONS ##################### 
 
@@ -24,6 +25,26 @@ get.spearmans.rho <- function(x, y) {
   # Wrapper function in order to obtain only Spearman's rho and nothing else
   rho <- cor.test(x, y, method = 'spearman')$estimate
   return(unname(rho))
+}
+
+wilmanwhit.effect.size <- function(data, x_col, y_col = 'survival',
+  ci.method = 'DL.corr', alpha = 0.05, nboot = 1000) {
+  # Function to calculate the common language effect size with its associated
+  # confidence interval.
+  # Variables:
+  #  data       = Data frame containing values in x_col and grouping factor in 
+  #               y_col
+  #  x_col      = String. Column name containing values
+  #  y_col      = String. Column name containing grouping factor
+  #  ci.method  = Confidence interval method from auRoc. Must be one of 
+  #               "newcombe", "pepe", "delong", "jackknife", "bootstrapP",
+  #               "bootstrapBCa"
+  #  alpha      = Alpha level
+  #  nboot      = Number of bootstrap repetitions
+  groups <- split(data, data[[y_col]])
+  e.size <- auc.nonpara.mw(groups[[1]][[x_col]], groups[[2]][[x_col]], 
+    method = ci.method, conf.level = 1 - alpha, nboot = nboot)
+  return(e.size)
 }
 
 ##################### PLOTTING FUNCTIONS ##################### 
