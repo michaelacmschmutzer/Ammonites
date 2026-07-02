@@ -2,7 +2,8 @@
 setwd("~/Documents/Projects/Ammonites/code/")
 
 library(dplyr)
-library(auRoc)
+library(ggplot2)
+library(forcats)
 
 source('statistical-functions.R')
 
@@ -13,21 +14,57 @@ errbarcol <- '#CA282C'
 font <- 'Palatino'
 fsize <- 9
 
-################### Compile hypothesis testing data set ################### 
+################### Compile hypothesis testing data set ###################
+cepha <- read.csv('../data/cephalopods.csv')
+
+# Genus-level data
 body_sizes <- read.csv(
   '../data/doi_10_5061_dryad_zpc866t5b__v20210211/genus.sizes.ranges.rev.csv')
-geo_nauti <- read.csv(
+geo_nauti_genus <- read.csv(
   '../results/genus/geographic_distributions/nautilids_distributions_genus.csv')
-geo_ammon <- read.csv(
+geo_ammon_genus <- read.csv(
   '../results/genus/geographic_distributions/ammonoids_distributions_genus.csv')
-geo_nauti_boot <- read.csv(
+geo_nauti_boot_genus <- read.csv(
   '../results/genus/subsampling_distributions/nautilids/bootstrap.csv')
-geo_ammon_boot <- read.csv(
+geo_ammon_boot_genus <- read.csv(
   '../results/genus/subsampling_distributions/ammonoids/bootstrap.csv')
+geo_nauti_jack_genus <- read.csv(
+  '../results/genus/subsampling_distributions/nautilids/jackknife.csv')
+geo_ammon_jack_genus <- read.csv(
+  '../results/genus/subsampling_distributions/ammonoids/jackknife.csv')
+
 hatch_nauti <- read.csv('../data/nautilids_embryonic_shell_size.csv')
 hatch_ammon <- read.csv('../data/ammonoids_embryonic_shell_size.csv')
 surv_nauti_genus <- read.csv('../data/nautilids_extinction_genus.csv')
 surv_ammon_genus <- read.csv('../data/ammonoids_extinction_genus.csv')
+
+# Ammonoid genera
+ammon_genus <- unique(cepha[cepha$is.nautilid == FALSE, 'genus'])
+# Nautilid genera
+nauti_genus <- unique(cepha[cepha$is.nautilid == TRUE, 'genus'])
+
+# Species-level data
+geo_nauti_species <- read.csv(
+  '../results/species/geographic_distributions/nautilids_distributions_species.csv')
+geo_ammon_species <- read.csv(
+  '../results/species/geographic_distributions/ammonoids_distributions_species.csv')
+geo_nauti_boot_species <- read.csv(
+  '../results/species/subsampling_distributions/nautilids/bootstrap.csv')
+geo_ammon_boot_species <- read.csv(
+  '../results/species/subsampling_distributions/ammonoids/bootstrap.csv')
+geo_nauti_jack_species <- read.csv(
+  '../results/species/subsampling_distributions/nautilids/jackknife.csv')
+geo_ammon_jack_species <- read.csv(
+  '../results/species/subsampling_distributions/ammonoids/jackknife.csv')
+
+surv_nauti_species <- read.csv('../data/nautilids_extinction_species.csv')
+surv_ammon_species <- read.csv('../data/ammonoids_extinction_species.csv')
+
+# Place genus and species name in single column
+surv_nauti_species <- surv_nauti_species %>%
+  mutate(species = paste(genus, species))
+surv_ammon_species <- surv_ammon_species %>%
+  mutate(species = paste(genus, species))
 
 # Simplify data, take median of species to get at genus level
 hatch_nauti_genus <- hatch_nauti %>%
@@ -37,24 +74,88 @@ hatch_ammon_genus <- hatch_ammon %>%
   group_by(genus) %>%
   summarise(med.hatching.size = median(hatching.size..mm.))
 body_sizes <- dplyr::select(body_sizes, c('genus', 'logvol'))
+
 surv_nauti_genus <- dplyr::select(surv_nauti_genus, c('genus', 'survival'))
 surv_ammon_genus <- dplyr::select(surv_ammon_genus, c('genus', 'survival'))
+surv_nauti_species <- dplyr::select(surv_nauti_species, c('species', 'survival'))
+surv_ammon_species <- dplyr::select(surv_ammon_species, c('species', 'survival'))
+
+# Simplify sub-sampling results
+# Use PALEOMAP for now
+boot_nauti_genus <- geo_nauti_boot_genus %>%
+  filter(model == 'PALEOMAP') %>%
+  group_by(genus) %>%
+  summarise(boot.median.area = median(area.km2))
+boot_ammon_genus <- geo_ammon_boot_genus %>%
+  filter(model == 'PALEOMAP') %>%
+  group_by(genus) %>%
+  summarise(boot.median.area = median(area.km2))
+jack_nauti_genus <- geo_nauti_jack_genus %>%
+  filter(model == 'PALEOMAP') %>%
+  group_by(genus) %>%
+  summarise(jack.median.area = median(area.km2))
+jack_ammon_genus <- geo_ammon_jack_genus %>%
+  filter(model == 'PALEOMAP') %>%
+  group_by(genus) %>%
+  summarise(jack.median.area = median(area.km2))
+
+boot_nauti_species <- geo_nauti_boot_species %>%
+  filter(model == 'PALEOMAP') %>%
+  group_by(species) %>%
+  summarise(boot.median.area = median(area.km2))
+boot_ammon_species <- geo_ammon_boot_species %>%
+  filter(model == 'PALEOMAP') %>%
+  group_by(species) %>%
+  summarise(boot.median.area = median(area.km2))
+jack_nauti_species <- geo_nauti_jack_species %>%
+  filter(model == 'PALEOMAP') %>%
+  group_by(species) %>%
+  summarise(jack.median.area = median(area.km2))
+jack_ammon_species <- geo_ammon_jack_species %>%
+  filter(model == 'PALEOMAP') %>%
+  group_by(species) %>%
+  summarise(jack.median.area = median(area.km2))
+
+# Handle body sizes
+bodyvol_nauti <- body_sizes %>% filter(genus %in% nauti_genus)
+bodyvol_ammon <- body_sizes %>% filter(genus %in% ammon_genus)
 
 # Merge with survival data
-hatch_nauti_surv <- na.omit(merge(hatch_nauti_genus, surv_nauti_genus))
-hatch_ammon_surv <- na.omit(merge(hatch_ammon_genus, surv_ammon_genus))
+hatch_nauti <- na.omit(merge(hatch_nauti_genus, surv_nauti_genus))
+hatch_ammon <- na.omit(merge(hatch_ammon_genus, surv_ammon_genus))
+
+bodyvol_nauti <- merge(bodyvol_nauti, surv_nauti_genus)
+bodyvol_ammon <- merge(bodyvol_ammon, surv_ammon_genus)
+
+geo_nauti_genus <- merge(geo_nauti_genus, surv_nauti_genus)
+geo_ammon_genus <- merge(geo_ammon_genus, surv_ammon_genus)
+
+boot_nauti_genus <- merge(boot_nauti_genus, surv_nauti_genus)
+boot_ammon_genus <- merge(boot_ammon_genus, surv_ammon_genus)
+
+jack_nauti_genus <- merge(jack_nauti_genus, surv_nauti_genus)
+jack_ammon_genus <- merge(jack_ammon_genus, surv_ammon_genus)
+
+geo_nauti_species <- merge(geo_nauti_species, surv_nauti_species)
+geo_ammon_species <- merge(geo_ammon_species, surv_ammon_species)
+
+boot_nauti_species <- merge(boot_nauti_species, surv_nauti_species)
+boot_ammon_species <- merge(boot_ammon_species, surv_ammon_species)
+
+jack_nauti_species <- merge(jack_nauti_species, surv_nauti_species)
+jack_ammon_species <- merge(jack_ammon_species, surv_ammon_species)
 
 ################### Calculating effect sizes ################### 
 
 # Get p-value
 wt_hatch <- wilcox.test(med.hatching.size ~ factor(survival),
-  data = hatch_ammon_surv, exact = TRUE)
+  data = hatch_ammon, exact = TRUE)
 
-surv <- hatch_ammon_surv[hatch_ammon_surv$survival == TRUE, 'med.hatching.size']
-exti <- hatch_ammon_surv[hatch_ammon_surv$survival == FALSE, 'med.hatching.size']
+surv <- hatch_ammon[hatch_ammon$survival == TRUE, 'med.hatching.size']
+exti <- hatch_ammon[hatch_ammon$survival == FALSE, 'med.hatching.size']
 
-surv <- hatch_nauti_surv[hatch_nauti_surv$survival == TRUE, 'med.hatching.size']
-exti <- hatch_nauti_surv[hatch_nauti_surv$survival == FALSE, 'med.hatching.size']
+surv <- hatch_nauti[hatch_nauti$survival == TRUE, 'med.hatching.size']
+exti <- hatch_nauti[hatch_nauti$survival == FALSE, 'med.hatching.size']
 
 # Get common language effect size (U / (n1 * n2)) with confidence interval
 variables <- c(
@@ -63,17 +164,110 @@ variables <- c(
   'Geographic range (genus)',
   'Geographic range (species)',
   'Geographic range (bootstrap, genus)',
-  'Geographic range (boostrap, species)',
+  'Geographic range (bootstrap, species)',
   'Geographic range (jackknife, genus)',
   'Geographic range (jackknife, species)'
 )
 
+# Create dataframe for effect sizes
 effect.sizes.ammon <- data.frame(
-  variable = variables, eff.size = 0, ci.lower = 0, ci.upper = 0)
+  variable = variables, eff.size = 0, ci.lower = 0, ci.upper = 0, 
+  num.ext = 0, num.surv = 0, var.ext = 0, var.surv = 0)
 effect.sizes.nauti <- data.frame(
-  variable = variables, eff.size = 0, ci.lower = 0, ci.upper = 0)
+  variable = variables, eff.size = 0, ci.lower = 0, ci.upper = 0,
+  num.ext = 0, num.surv = 0, var.ext = 0, var.surv = 0)
+
+# Fill in effect sizes ... ammonoids
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Hatching size (genus)', 2:4] <-
+  wilmanwhit.effect.size(hatch_ammon, 'med.hatching.size')
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Body size (genus)', 2:4] <- 
+  wilmanwhit.effect.size(bodyvol_ammon, 'logvol')
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (genus)', 2:4] <- 
+  wilmanwhit.effect.size(geo_ammon_genus, 'PALEOMAP.area.km2')
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (bootstrap, genus)', 2:4] <- 
+  wilmanwhit.effect.size(boot_ammon_genus, 'boot.median.area')
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (jackknife, genus)', 2:4] <- 
+  wilmanwhit.effect.size(jack_ammon_genus, 'jack.median.area')
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (species)', 2:4] <- 
+  wilmanwhit.effect.size(geo_ammon_species, 'PALEOMAP.area.km2')
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (bootstrap, species)', 2:4] <- 
+  wilmanwhit.effect.size(boot_ammon_species, 'boot.median.area')
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (jackknife, species)', 2:4] <- 
+  wilmanwhit.effect.size(jack_ammon_species, 'jack.median.area')
 
 
-effect.sizes.ammon[1, 2:4] <-
-  wilmanwhit.effect.size(hatch_ammon_surv, 'med.hatching.size')
-effect.sizes.ammon[2, 2:4] <- 
+# Fill in effect sizes ... nautilids
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Hatching size (genus)', 2:4] <-
+  wilmanwhit.effect.size(hatch_nauti, 'med.hatching.size')
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Body size (genus)', 2:4] <- 
+  wilmanwhit.effect.size(bodyvol_nauti, 'logvol')
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (genus)', 2:4] <- 
+  wilmanwhit.effect.size(geo_nauti_genus, 'PALEOMAP.area.km2')
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (bootstrap, genus)', 2:4] <- 
+  wilmanwhit.effect.size(boot_nauti_genus, 'boot.median.area')
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (jackknife, genus)', 2:4] <- 
+  wilmanwhit.effect.size(jack_nauti_genus, 'jack.median.area')
+# effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (species)', 2:4] <- 
+#   wilmanwhit.effect.size(geo_nauti_species, 'PALEOMAP.area.km2')
+# effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (bootstrap, species)', 2:4] <- 
+#   wilmanwhit.effect.size(boot_nauti_species, 'boot.median.area')
+# effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (jackknife, species)', 2:4] <- 
+#   wilmanwhit.effect.size(jack_nauti_species, 'jack.median.area')
+
+# Remove missing rows from nautilid effect sizes
+effect.sizes.nauti <- effect.sizes.nauti %>%
+  filter(eff.size != 0)
+
+################### Plotting effect sizes ################### 
+
+# Make sure variables are ordered as specified in data frame row order
+effect.sizes.ammon$variable <- fct_rev(factor(effect.sizes.ammon$variable, 
+  levels = effect.sizes.ammon$variable))
+effect.sizes.nauti$variable <- fct_rev(factor(effect.sizes.nauti$variable,
+  levels = effect.sizes.nauti$variable))
+
+# Plotting ... ammonoids
+efam <- ggplot(effect.sizes.ammon, aes(x = eff.size, y = variable)) +
+  geom_hline(yintercept = nrow(effect.sizes.ammon) + 0.6, linewidth = 1) +
+  geom_vline(xintercept = 0.5, linetype = 'longdash', linewidth = 0.4) +
+  geom_errorbar(aes(xmin = ci.lower, xmax = ci.upper, width = 0.3),
+    color = 'black') +
+  geom_point(size = 3, color = darkblue) +
+  scale_x_continuous(breaks = seq(0, 1, 0.25), limits = c(0, 1), 
+    expand = c(0,0)) +
+  labs(x = 'Effect size', y = '') +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(size = fsize, colour = 'black', family = font),
+    axis.text.y = element_text(size = fsize, colour = 'black', family = font),
+    axis.title.x = element_text(size = fsize, colour = 'black', family = font),
+    axis.line.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    plot.margin = margin(t = 2, r = 10, b = 0, l = 0, unit = 'pt')
+  )
+ggsave(
+  '../results/comparing_hypotheses/Effect_sizes_ammonoids.png',
+  width = 12, height = 6, units = 'cm', dpi = 600, plot = efam)
+
+# And nautilids
+efna <- ggplot(effect.sizes.nauti, aes(x = eff.size, y = variable)) +
+  geom_hline(yintercept = nrow(effect.sizes.nauti) + 0.6, linewidth = 1) +
+  geom_vline(xintercept = 0.5, linetype = 'longdash', linewidth = 0.4) +
+  geom_errorbar(aes(xmin = ci.lower, xmax = ci.upper, width = 0.3),
+                color = 'black') +
+  geom_point(size = 3, color = orange) +
+  scale_x_continuous(breaks = seq(0, 1, 0.25), limits = c(0, 1), 
+                     expand = c(0,0)) +
+  labs(x = 'Effect size', y = '') +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(size = fsize, colour = 'black', family = font),
+    axis.text.y = element_text(size = fsize, colour = 'black', family = font),
+    axis.title.x = element_text(size = fsize, colour = 'black', family = font),
+    axis.line.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    plot.margin = margin(t = 2, r = 10, b = 0, l = 0, unit = 'pt')
+  )
+ggsave(
+  '../results/comparing_hypotheses/Effect_sizes_nautilids.png',
+  width = 12, height = 6, units = 'cm', dpi = 600, plot = efna)

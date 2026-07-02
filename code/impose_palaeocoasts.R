@@ -54,7 +54,7 @@ if (coasts_downloaded == FALSE) {
 }
 
 # Get all unique genera
-cepha_rota <- read.csv('../data/cephalopods_palaeorotated.csv')
+cepha_rota <- read.csv('../data/cephalopods_palaeorotated_genus.csv')
 # Use the same age regardless of group
 age <- unique(cepha_rota$age)
 
@@ -95,7 +95,7 @@ for (g in genera) {
 }
 
 # Save
-resfile <- paste('../results/geographic_distributions/', cephas, 
+resfile <- paste('../results/genus/geographic_distributions/', cephas, 
   '_marine_areas.csv', sep = '')
 write.csv(marine_area, resfile, row.names = FALSE)
 

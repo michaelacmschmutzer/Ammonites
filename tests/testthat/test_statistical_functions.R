@@ -3,6 +3,7 @@
 library(testthat)
 
 source('../../code/statistical-functions.R')
+source('../../code/power_analysis.R')
 
 test_x <- c(1, 1, 5, 4, 6, 8, 6)
 test_xna <- c(1, 1, 5, 4, 6, 8, 6, NA)
@@ -34,5 +35,20 @@ test_that(
     expect_equal(round(x[1], digits = 7), 0.05)
     expect_equal(round(x[2], digits = 7), 0.0020122)
     expect_equal(round(x[3], digits = 7), 0.5787490)
+  }
+)
+
+test_that(
+  'Normal distributions are parameterised correctly', {
+    y.mean <- find_mean_shift(1-0.3273604, 1, 2, 3)
+    expect_equal(round(y.mean, digits = 6), 2)
+  }
+)
+
+test_that(
+  'Statistical power is calculated correctly', {
+    set.seed(1)
+    power <- determine_power(0.8, 100, 10, 2, 3, 100)
+    expect_equal(round(power, digits = 7), 0.92)
   }
 )

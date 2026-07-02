@@ -41,6 +41,10 @@ wilmanwhit.effect.size <- function(data, x_col, y_col = 'survival',
   #               "bootstrapBCa"
   #  alpha      = Alpha level
   #  nboot      = Number of bootstrap repetitions
+  # Value:
+  #   e.size    = Point estimate and lower and upper bounds of the confidence
+  #               interval
+  
   groups <- split(data, data[[y_col]])
   e.size <- auc.nonpara.mw(groups[[1]][[x_col]], groups[[2]][[x_col]], 
     method = ci.method, conf.level = 1 - alpha, nboot = nboot)
