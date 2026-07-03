@@ -1,13 +1,25 @@
 # Calculate power analyses for common language effect size
 
 library(auRoc)
+library(ggplot2)
+library(reshape2)
+library(dplyr)
+library(forcats)
 
-# The simulation assumes data is sampled from two independent normal 
+# Specify plotting aesthetics
+darkblue  <- '#12255A'
+orange    <- '#E38C59'
+errbarcol <- '#CA282C'
+font <- 'Palatino'
+fsize <- 9
+
+
+# This simulation assumes data is sampled from two independent normal 
 # distributions. The number of samples and distribution variances are taken from 
 # the dataset for which the power analysis is being conducted. 
 
-# Effect sizes, expressed in terms of common language effect sizes or 
-# probability of superiority, are systematically explored from 0 to 1.
+# Effect sizes, expressed in terms of common language effect sizes, also known 
+# as the probability of superiority, are systematically explored from 0.5+ to 1.
 # This is done by shifting one of the normal distributions along the horizontal
 # axis, changing the fraction that has larger values. 
 
@@ -111,5 +123,74 @@ determine_power <- function(theta, m, n, x.var, y.var, n.samples = 10000,
 ###################  Run analysis ################### 
 
 # Read in empirical data
+effect.sizes.ammon <- 
+  read.csv('../results/comparing_hypotheses/ammonoids_effect_sizes.csv')
+
+# Standardize variances to be relative (so that means become irrelevant and 
+# the non-shifting normal distribution X can have a mean of zero)
+effect.sizes.ammon$std.var.ext <- 
+  effect.sizes.ammon$var.ext / effect.sizes.ammon$var.ext
+effect.sizes.ammon$std.var.surv <-
+  effect.sizes.ammon$var.surv / effect.sizes.ammon$var.ext
+
+# Calculate power
+simef <- seq(0.5, 0.9, by = 0.1) # simulated effect sizes
+power <- matrix(0, nrow = nrow(effect.sizes.ammon), ncol = length(simef))
+idx <- expand.grid(1:nrow(effect.sizes.ammon), 1:length(simef)) # Indicies of matrix
+
+# Progress bar... this is a bit slow
+pbar <- txtProgressBar(min = 0, max = nrow(idx))
+
+for (i in 1:nrow(idx)) {
+  
+  m     <- effect.sizes.ammon$num.ext[idx[i,1]]
+  n     <- effect.sizes.ammon$num.surv[idx[i,1]]
+  x.var <- effect.sizes.ammon$std.var.ext[idx[i,1]]
+  y.var <- effect.sizes.ammon$std.var.surv[idx[i,1]]
+  
+  power[idx[i,1], idx[i,2]] <- determine_power(simef[idx[i,2]], m, n, x.var, y.var)
+  
+  setTxtProgressBar(pbar, i)
+}
+
+# Convert to dataframe
+power.df <- data.frame(power)
+colnames(power.df) <- simef
+power.df <- cbind(data.frame(variable = effect.sizes.ammon$variable), power.df)
+
+# Save power dataframe
+write.csv(power.df, '../results/comparing_hypotheses/ammonoids_power.csv',
+  row.names = FALSE)
 
 # Plot a heatmap of power vs effect size for all variables of interest
+power.df.plt <- melt(power.df)
+colnames(power.df.plt) <- c('variable', 'eff.size', 'power')
+
+power.df.plt$variable <- fct_rev(factor(power.df.plt$variable, 
+  levels = effect.sizes.ammon$variable))
+
+# Reframe effect sizes so that they are all > 0.5 
+plot.ef.ammon <- effect.sizes.ammon %>%
+  mutate(rel.eff.size = if_else(eff.size < 0.5, 1 - eff.size, eff.size))
+# rounded for plotting
+plot.ef.ammon$eff.size <- 
+  as.factor(round(effect.sizes.ammon$rel.eff.size, digits = 1))
+
+p <- ggplot(power.df.plt, aes(x = eff.size, y = variable)) +
+  geom_tile(aes(fill = power)) +
+  scale_fill_distiller(name = 'Power', palette = 'Reds', direction = 1) +
+  geom_point(data = plot.ef.ammon, aes(x = eff.size, y = variable)) +
+  labs(x = 'Effect size', y = '') +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(size = fsize, colour = 'black', family = font),
+    axis.text.y = element_text(size = fsize, colour = 'black', family = font),
+    axis.title.x = element_text(size = fsize, colour = 'black', family = font),
+    legend.title = element_text(size = fsize, colour = 'black', family = font),
+    legend.text = element_text(size = fsize, colour = 'black', family = font),
+    axis.line.y = element_blank(),
+    axis.ticks.y = element_blank(),
+  )
+ggsave(
+  '../results/comparing_hypotheses/Power_analysis_ammonoids.png',
+  width = 12, height = 6, units = 'cm', dpi = 600, plot = p)

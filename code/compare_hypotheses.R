@@ -195,6 +195,77 @@ effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (bootstrap, 
 effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (jackknife, species)', 2:4] <- 
   wilmanwhit.effect.size(jack_ammon_species, 'jack.median.area')
 
+# Fill in number of extinct taxa ... ammonoids
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Hatching size (genus)', 5] <-
+  sum(hatch_ammon$survival == FALSE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Body size (genus)', 5] <- 
+  sum(bodyvol_ammon$survival == FALSE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (genus)', 5] <- 
+  sum(geo_ammon_genus$survival == FALSE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (bootstrap, genus)', 5] <- 
+  sum(boot_ammon_genus$survival == FALSE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (jackknife, genus)', 5] <- 
+  sum(jack_ammon_genus$survival == FALSE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (species)', 5] <- 
+  sum(geo_ammon_species$survival == FALSE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (bootstrap, species)', 5] <- 
+  sum(boot_ammon_species$survival == FALSE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (jackknife, species)', 5] <- 
+  sum(jack_ammon_species$survival == FALSE)
+
+# Fill in number of surviving taxa ... ammonoids
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Hatching size (genus)', 6] <-
+  sum(hatch_ammon$survival == TRUE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Body size (genus)', 6] <- 
+  sum(bodyvol_ammon$survival == TRUE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (genus)', 6] <- 
+  sum(geo_ammon_genus$survival == TRUE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (bootstrap, genus)', 6] <- 
+  sum(boot_ammon_genus$survival == TRUE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (jackknife, genus)', 6] <- 
+  sum(jack_ammon_genus$survival == TRUE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (species)', 6] <- 
+  sum(geo_ammon_species$survival == TRUE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (bootstrap, species)', 6] <- 
+  sum(boot_ammon_species$survival == TRUE)
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (jackknife, species)', 6] <- 
+  sum(jack_ammon_species$survival == TRUE)
+
+# Fill in variance for extinct taxa ... ammonoids
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Hatching size (genus)', 7] <-
+  var(hatch_ammon[hatch_ammon$survival == FALSE, 'med.hatching.size'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Body size (genus)', 7] <- 
+  var(bodyvol_ammon[bodyvol_ammon$survival == FALSE, 'logvol'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (genus)', 7] <- 
+  var(geo_ammon_genus[geo_ammon_genus$survival == FALSE, 'PALEOMAP.area.km2'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (bootstrap, genus)', 7] <- 
+  var(boot_ammon_genus[boot_ammon_genus$survival == FALSE, 'boot.median.area'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (jackknife, genus)', 7] <- 
+  var(jack_ammon_genus[jack_ammon_genus$survival == FALSE, 'jack.median.area'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (species)', 7] <- 
+  var(geo_ammon_species[geo_ammon_species$survival == FALSE, 'PALEOMAP.area.km2'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (bootstrap, species)', 7] <- 
+  var(boot_ammon_species[boot_ammon_species$survival == FALSE, 'boot.median.area'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (jackknife, species)', 7] <- 
+  var(jack_ammon_species[jack_ammon_species$survival == FALSE, 'jack.median.area'])
+
+# Fill in variance for surviving taxa ... ammonoids
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Hatching size (genus)', 8] <-
+  var(hatch_ammon[hatch_ammon$survival == TRUE, 'med.hatching.size'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Body size (genus)', 8] <- 
+  var(bodyvol_ammon[bodyvol_ammon$survival == TRUE, 'logvol'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (genus)', 8] <- 
+  var(geo_ammon_genus[geo_ammon_genus$survival == TRUE, 'PALEOMAP.area.km2'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (bootstrap, genus)', 8] <- 
+  var(boot_ammon_genus[boot_ammon_genus$survival == TRUE, 'boot.median.area'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (jackknife, genus)', 8] <- 
+  var(jack_ammon_genus[jack_ammon_genus$survival == TRUE, 'jack.median.area'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (species)', 8] <- 
+  var(geo_ammon_species[geo_ammon_species$survival == TRUE, 'PALEOMAP.area.km2'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (bootstrap, species)', 8] <- 
+  var(boot_ammon_species[boot_ammon_species$survival == TRUE, 'boot.median.area'])
+effect.sizes.ammon[effect.sizes.ammon$variable == 'Geographic range (jackknife, species)', 8] <- 
+  var(jack_ammon_species[jack_ammon_species$survival == TRUE, 'jack.median.area'])
 
 # Fill in effect sizes ... nautilids
 effect.sizes.nauti[effect.sizes.nauti$variable == 'Hatching size (genus)', 2:4] <-
@@ -217,6 +288,12 @@ effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (jackknife, 
 # Remove missing rows from nautilid effect sizes
 effect.sizes.nauti <- effect.sizes.nauti %>%
   filter(eff.size != 0)
+
+################### Save effect sizes ################### 
+
+write.csv(effect.sizes.ammon, 
+  '../results/comparing_hypotheses/ammonoids_effect_sizes.csv', 
+  row.names = FALSE)
 
 ################### Plotting effect sizes ################### 
 
