@@ -1,4 +1,6 @@
 # Calculate power analyses for common language effect size
+setwd("~/Documents/Projects/Ammonites/code/")
+
 
 library(auRoc)
 library(ggplot2)
@@ -60,7 +62,7 @@ find_mean_shift <- function(theta, x.mean, x.var, y.var) {
 
 
 determine_power <- function(theta, m, n, x.var, y.var, n.samples = 10000,
-  ci.method = 'DL.corr', alpha = 0.05, nboot = 1000) {
+  ci.method = 'DL.corr', alpha.level = 0.05, nboot = 1000) {
   # Simulate two distributions that are shifted relatively to one another, so 
   # that distribution Y has a probability of superiority of theta over
   # distribtion X. For a total of n.samples, take m and n random samples from
@@ -102,7 +104,7 @@ determine_power <- function(theta, m, n, x.var, y.var, n.samples = 10000,
   for (i in 1:n.samples) {
     # Calculate effect size and confidence intervals
     e.size <- auc.nonpara.mw(y.trials[i,], x.trials[i,], 
-      method = ci.method, conf.level = 1 - alpha, nboot = nboot)
+      method = ci.method, conf.level = 1 - alpha.level, nboot = nboot)
     
     # Determine if the confidence interval crosses the 0.5 mark. If it does, no 
     # significant effect detected. If not, mark as significant. 
@@ -125,6 +127,8 @@ determine_power <- function(theta, m, n, x.var, y.var, n.samples = 10000,
 # Read in empirical data
 effect.sizes.ammon <- 
   read.csv('../results/comparing_hypotheses/ammonoids_effect_sizes.csv')
+effect.sizes.nauti <-
+  read.csv('../results/comparing_hypotheses/nautilids_effect_sizes.csv')
 
 # Standardize variances to be relative (so that means become irrelevant and 
 # the non-shifting normal distribution X can have a mean of zero)
@@ -133,40 +137,77 @@ effect.sizes.ammon$std.var.ext <-
 effect.sizes.ammon$std.var.surv <-
   effect.sizes.ammon$var.surv / effect.sizes.ammon$var.ext
 
+effect.sizes.nauti$std.var.ext <- 
+  effect.sizes.nauti$var.ext / effect.sizes.nauti$var.ext
+effect.sizes.nauti$std.var.surv <-
+  effect.sizes.nauti$var.surv / effect.sizes.nauti$var.ext
+
 # Calculate power
 simef <- seq(0.5, 0.9, by = 0.1) # simulated effect sizes
-power <- matrix(0, nrow = nrow(effect.sizes.ammon), ncol = length(simef))
-idx <- expand.grid(1:nrow(effect.sizes.ammon), 1:length(simef)) # Indicies of matrix
+am.power <- matrix(0, nrow = nrow(effect.sizes.ammon), ncol = length(simef))
+na.power <- matrix(0, nrow = nrow(effect.sizes.nauti), ncol = length(simef))
+am.idx <- expand.grid(1:nrow(effect.sizes.ammon), 1:length(simef)) # Indicies of matrix
+na.idx <- expand.grid(1:nrow(effect.sizes.nauti), 1:length(simef)) # Indicies of matrix
 
+# Ammonoids
 # Progress bar... this is a bit slow
-pbar <- txtProgressBar(min = 0, max = nrow(idx))
+pbar <- txtProgressBar(min = 0, max = nrow(am.idx))
 
-for (i in 1:nrow(idx)) {
+for (i in 1:nrow(am.idx)) {
   
-  m     <- effect.sizes.ammon$num.ext[idx[i,1]]
-  n     <- effect.sizes.ammon$num.surv[idx[i,1]]
-  x.var <- effect.sizes.ammon$std.var.ext[idx[i,1]]
-  y.var <- effect.sizes.ammon$std.var.surv[idx[i,1]]
+  m     <- effect.sizes.ammon$num.ext[am.idx[i,1]]
+  n     <- effect.sizes.ammon$num.surv[am.idx[i,1]]
+  x.var <- effect.sizes.ammon$std.var.ext[am.idx[i,1]]
+  y.var <- effect.sizes.ammon$std.var.surv[am.idx[i,1]]
   
-  power[idx[i,1], idx[i,2]] <- determine_power(simef[idx[i,2]], m, n, x.var, y.var)
+  am.power[am.idx[i,1], am.idx[i,2]] <- determine_power(simef[am.idx[i,2]], m, n, x.var, y.var)
   
   setTxtProgressBar(pbar, i)
 }
 
 # Convert to dataframe
-power.df <- data.frame(power)
-colnames(power.df) <- simef
-power.df <- cbind(data.frame(variable = effect.sizes.ammon$variable), power.df)
+am.power.df <- data.frame(am.power)
+colnames(am.power.df) <- simef
+am.power.df <- cbind(data.frame(variable = effect.sizes.ammon$variable), am.power.df)
 
 # Save power dataframe
-write.csv(power.df, '../results/comparing_hypotheses/ammonoids_power.csv',
+write.csv(am.power.df, '../results/comparing_hypotheses/ammonoids_power.csv',
   row.names = FALSE)
 
-# Plot a heatmap of power vs effect size for all variables of interest
-power.df.plt <- melt(power.df)
-colnames(power.df.plt) <- c('variable', 'eff.size', 'power')
+# Nautilids
+pbar <- txtProgressBar(min = 0, max = nrow(na.idx))
 
-power.df.plt$variable <- fct_rev(factor(power.df.plt$variable, 
+for (i in 1:nrow(na.idx)) {
+  
+  m     <- effect.sizes.nauti$num.ext[na.idx[i,1]]
+  n     <- effect.sizes.nauti$num.surv[na.idx[i,1]]
+  x.var <- effect.sizes.nauti$std.var.ext[na.idx[i,1]]
+  y.var <- effect.sizes.nauti$std.var.surv[na.idx[i,1]]
+  
+  na.power[na.idx[i,1], na.idx[i,2]] <- determine_power(simef[na.idx[i,2]], m, n, x.var, y.var)
+  
+  setTxtProgressBar(pbar, i)
+}
+
+# Convert to dataframe
+na.power.df <- data.frame(na.power)
+colnames(na.power.df) <- simef
+na.power.df <- cbind(data.frame(variable = effect.sizes.nauti$variable), na.power.df)
+
+# Save power dataframe
+write.csv(na.power.df, '../results/comparing_hypotheses/nautilids_power.csv',
+          row.names = FALSE)
+
+
+###################  Plotting heatmap ################### 
+
+# Plot a heatmap of power vs effect size for all variables of interest
+
+# Ammonoids
+am.power.df.plt <- melt(am.power.df)
+colnames(am.power.df.plt) <- c('variable', 'eff.size', 'power')
+
+am.power.df.plt$variable <- fct_rev(factor(am.power.df.plt$variable, 
   levels = effect.sizes.ammon$variable))
 
 # Reframe effect sizes so that they are all > 0.5 
@@ -174,11 +215,12 @@ plot.ef.ammon <- effect.sizes.ammon %>%
   mutate(rel.eff.size = if_else(eff.size < 0.5, 1 - eff.size, eff.size))
 # rounded for plotting
 plot.ef.ammon$eff.size <- 
-  as.factor(round(effect.sizes.ammon$rel.eff.size, digits = 1))
+  as.factor(round(plot.ef.ammon$rel.eff.size, digits = 1))
 
-p <- ggplot(power.df.plt, aes(x = eff.size, y = variable)) +
+p <- ggplot(am.power.df.plt, aes(x = eff.size, y = variable)) +
   geom_tile(aes(fill = power)) +
-  scale_fill_distiller(name = 'Power', palette = 'Reds', direction = 1) +
+  scale_fill_distiller(name = 'Power', palette = 'Reds', direction = 1,
+    limits = c(0,1)) +
   geom_point(data = plot.ef.ammon, aes(x = eff.size, y = variable)) +
   labs(x = 'Effect size', y = '') +
   theme_minimal() +
@@ -193,4 +235,38 @@ p <- ggplot(power.df.plt, aes(x = eff.size, y = variable)) +
   )
 ggsave(
   '../results/comparing_hypotheses/Power_analysis_ammonoids.png',
+  width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
+
+# Nautilids
+na.power.df.plt <- melt(na.power.df)
+colnames(na.power.df.plt) <- c('variable', 'eff.size', 'power')
+
+na.power.df.plt$variable <- fct_rev(factor(na.power.df.plt$variable, 
+  levels = effect.sizes.nauti$variable))
+
+# Reframe effect sizes so that they are all > 0.5 
+plot.ef.nauti <- effect.sizes.nauti %>%
+  mutate(rel.eff.size = if_else(eff.size < 0.5, 1 - eff.size, eff.size))
+# rounded for plotting
+plot.ef.nauti$eff.size <- 
+  as.factor(round(plot.ef.nauti$rel.eff.size, digits = 1))
+
+p <- ggplot(na.power.df.plt, aes(x = eff.size, y = variable)) +
+  geom_tile(aes(fill = power)) +
+  scale_fill_distiller(name = 'Power', palette = 'Reds', direction = 1, 
+    limits = c(0, 1)) +
+  geom_point(data = plot.ef.nauti, aes(x = eff.size, y = variable)) +
+  labs(x = 'Effect size', y = '') +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(size = fsize, colour = 'black', family = font),
+    axis.text.y = element_text(size = fsize, colour = 'black', family = font),
+    axis.title.x = element_text(size = fsize, colour = 'black', family = font),
+    legend.title = element_text(size = fsize, colour = 'black', family = font),
+    legend.text = element_text(size = fsize, colour = 'black', family = font),
+    axis.line.y = element_blank(),
+    axis.ticks.y = element_blank(),
+  )
+ggsave(
+  '../results/comparing_hypotheses/Power_analysis_nautilids.png',
   width = 12, height = 6, units = 'cm', dpi = 600, plot = p)

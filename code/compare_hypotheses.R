@@ -285,6 +285,54 @@ effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (jackknife, 
 # effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (jackknife, species)', 2:4] <- 
 #   wilmanwhit.effect.size(jack_nauti_species, 'jack.median.area')
 
+# Fill in number of extinct taxa ... nautilids
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Hatching size (genus)', 5] <-
+  sum(hatch_nauti$survival == FALSE)
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Body size (genus)', 5] <- 
+  sum(bodyvol_nauti$survival == FALSE)
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (genus)', 5] <- 
+  sum(geo_nauti_genus$survival == FALSE)
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (bootstrap, genus)', 5] <- 
+  sum(boot_nauti_genus$survival == FALSE)
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (jackknife, genus)', 5] <- 
+  sum(jack_nauti_genus$survival == FALSE)
+
+# Fill in number of surviving taxa ... nautilids
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Hatching size (genus)', 6] <-
+  sum(hatch_nauti$survival == TRUE)
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Body size (genus)', 6] <- 
+  sum(bodyvol_nauti$survival == TRUE)
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (genus)', 6] <- 
+  sum(geo_nauti_genus$survival == TRUE)
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (bootstrap, genus)', 6] <- 
+  sum(boot_nauti_genus$survival == TRUE)
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (jackknife, genus)', 6] <- 
+  sum(jack_nauti_genus$survival == TRUE)
+
+# Fill in variance for extinct taxa ... nautilids
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Hatching size (genus)', 7] <-
+  var(hatch_nauti[hatch_nauti$survival == FALSE, 'med.hatching.size'])
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Body size (genus)', 7] <- 
+  var(bodyvol_nauti[bodyvol_nauti$survival == FALSE, 'logvol'])
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (genus)', 7] <- 
+  var(geo_nauti_genus[geo_nauti_genus$survival == FALSE, 'PALEOMAP.area.km2'])
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (bootstrap, genus)', 7] <- 
+  var(boot_nauti_genus[boot_nauti_genus$survival == FALSE, 'boot.median.area'])
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (jackknife, genus)', 7] <- 
+  var(jack_nauti_genus[jack_nauti_genus$survival == FALSE, 'jack.median.area'])
+
+# Fill in variance for surviving taxa ... nautilids
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Hatching size (genus)', 8] <-
+  var(hatch_nauti[hatch_nauti$survival == TRUE, 'med.hatching.size'])
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Body size (genus)', 8] <- 
+  var(bodyvol_nauti[bodyvol_nauti$survival == TRUE, 'logvol'])
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (genus)', 8] <- 
+  var(geo_nauti_genus[geo_nauti_genus$survival == TRUE, 'PALEOMAP.area.km2'])
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (bootstrap, genus)', 8] <- 
+  var(boot_nauti_genus[boot_nauti_genus$survival == TRUE, 'boot.median.area'])
+effect.sizes.nauti[effect.sizes.nauti$variable == 'Geographic range (jackknife, genus)', 8] <- 
+  var(jack_nauti_genus[jack_nauti_genus$survival == TRUE, 'jack.median.area'])
+
 # Remove missing rows from nautilid effect sizes
 effect.sizes.nauti <- effect.sizes.nauti %>%
   filter(eff.size != 0)
@@ -293,6 +341,10 @@ effect.sizes.nauti <- effect.sizes.nauti %>%
 
 write.csv(effect.sizes.ammon, 
   '../results/comparing_hypotheses/ammonoids_effect_sizes.csv', 
+  row.names = FALSE)
+
+write.csv(effect.sizes.nauti, 
+  '../results/comparing_hypotheses/nautilids_effect_sizes.csv', 
   row.names = FALSE)
 
 ################### Plotting effect sizes ################### 

@@ -65,8 +65,7 @@ cornu <- cornu_split %>% mutate(
 # Restrict datasets to columns actually needed
 # use same columns as Flannery-Sutherland et al. (2024). Remove region and 
 # globe. I don't need them for this analysis. Also remove palaeo-positions. 
-# I will rotate again & can use those to check
-
+# I will rotate again 
 ammon <- select(ammon, 
   -c(region, globe, p_lng, p_lat))
 cornu <- select(cornu, 
@@ -85,8 +84,8 @@ cornu <- cornu %>% mutate(occurrence_no = paste('PB', occurrence_no, sep=''),
 cornu <- cornu %>% filter(!occurrence_no %in% ammon$occurrence_no)
 
 # TO DO: Ammonite dataset contains occurrences with order "NA" inquire/remove
-# Why are there specimen with unknown order?
-ammon <- ammon %>% filter(!is.na(order)) 
+# Why are there specimen with unknown order? From Flannery-Sutherland
+# ammon <- ammon %>% filter(!is.na(order)) 
 
 # Merge datasets
 cepha <- bind_rows(ammon, cornu)
@@ -118,7 +117,7 @@ for (i in 1:nrow(synonyms)){
 genus_taxon <- cepha %>%
   select(c('order', 'suborder', 'superfamily', 'family', 'genus')) %>%
   distinct() %>%
-  arrange(genus)
+  arrange(order, genus)
 
 genus_taxon_ambiguous <- genus_taxon %>%
   count(genus) %>%
