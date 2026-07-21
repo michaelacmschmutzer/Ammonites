@@ -28,8 +28,9 @@ Rscript analyse_abundance.R &>/dev/null
 Rscript analyse_abundance_species.R &>/dev/null
 Rscript analyse_area.R &>/dev/null
 Rscript analyse_area_species.R &>/dev/null
-Rscript analyse_subsampling.R 'ammonoids' &>/dev/null
-Rscript analyse_subsampling.R 'nautilids' &>/dev/null
-RScript compare_hypotheses.R &>/dev/null
+#Rscript analyse_subsampling.R 'ammonoids' &>/dev/null
+#Rscript analyse_subsampling.R 'nautilids' &>/dev/null
+Rscript compare_hypotheses.R &>/dev/null
+Rscript power_analysis.R &>/dev/null
 
 # Finale. Figure plotting

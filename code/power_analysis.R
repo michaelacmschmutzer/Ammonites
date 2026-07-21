@@ -77,7 +77,7 @@ determine_power <- function(theta, m, n, x.var, y.var, n.samples = 10000,
   #   n.samples = Number of sampling replicates
   #   ci.method = Confidence interval method from auRoc. Must be one of 
   #               "newcombe", "pepe", "delong", "jackknife", "bootstrapP",
-  #               "bootstrapBCa"
+  #               "bootstrapBCa", or "DL.corr"
   #   alpha     = Alpha level. Default 0.05
   #   nboot     = Number of bootstrap repetitions for auRoc function
   # Value:
@@ -100,6 +100,7 @@ determine_power <- function(theta, m, n, x.var, y.var, n.samples = 10000,
   # Is a significant difference detected or not?
   detected <- c()
   effsize <- c()
+  out <- matrix(nrow=n.samples, ncol = 3)
   
   for (i in 1:n.samples) {
     # Calculate effect size and confidence intervals
@@ -116,6 +117,7 @@ determine_power <- function(theta, m, n, x.var, y.var, n.samples = 10000,
       detected <- append(detected, FALSE)
     }
     effsize <- append(effsize, e.size[1]) # Sanity check! Effect sizes == theta
+    out[i, ] <- e.size
   }
   # Power is 1 - rate of false negatives
   power <- sum(detected) / n.samples
@@ -184,7 +186,8 @@ for (i in 1:nrow(na.idx)) {
   x.var <- effect.sizes.nauti$std.var.ext[na.idx[i,1]]
   y.var <- effect.sizes.nauti$std.var.surv[na.idx[i,1]]
   
-  na.power[na.idx[i,1], na.idx[i,2]] <- determine_power(simef[na.idx[i,2]], m, n, x.var, y.var)
+  na.power[na.idx[i,1], na.idx[i,2]] <- 
+    determine_power(simef[na.idx[i,2]], m, n, x.var, y.var)
   
   setTxtProgressBar(pbar, i)
 }
