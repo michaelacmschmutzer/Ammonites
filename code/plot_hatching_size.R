@@ -5,6 +5,7 @@ library(dplyr)
 library(ggplot2)
 library(ggtext)
 library(forcats)
+library(gridExtra)
 
 # Specify plotting aesthetics
 darkblue  <- '#12255A'
@@ -15,10 +16,11 @@ fsize <- 9
 
 ###################  Read in data  ################### 
 
-# Read in data on hatching size and survival
+# Read in data on hatching size, survival, and taxonomy
 ammon_hatch <- read.csv('../data/ammonoids_embryonic_shell_size.csv')
 ammon_surv_genus <- read.csv('../data/ammonoids_extinction_genus.csv')
 ammon_surv_spp <- read.csv('../data/ammonoids_extinction_species.csv')
+cepha <- read.csv('../data/cephalopods.csv')
 
 nauti_hatch <- read.csv('../data/nautilids_embryonic_shell_size.csv')
 nauti_surv_genus <- read.csv('../data/nautilids_extinction_genus.csv')
@@ -65,7 +67,22 @@ ammon_hatch_spp <- ammon_hatch %>%
   filter(species %in% extant)
 
 # Merge with survival
-ammon_hatch_surv_spp <- merge(ammon_hatch_spp, ammon_surv_spp)
+ammon_hatch_surv_spp <- merge(ammon_hatch_spp, ammon_surv_spp) 
+
+###################  Sort ammonoids by suborder  ################### 
+
+unique_genus <- unique(ammon_hatch_surv_genus$genus)
+ammon_taxon <- cepha %>%
+  filter(genus %in% unique_genus) %>%
+  filter(is.na(suborder) == FALSE) %>%
+  filter(is.na(family) == FALSE) %>%
+  group_by(genus) %>%
+  summarise(suborder = unique(suborder),
+            family = unique(family))
+
+ammon_hatch <- merge(ammon_hatch, ammon_taxon)
+# add in genus-level survival
+ammon_hatch <- merge(ammon_hatch, ammon_surv_genus)
 
 ###################  Plotting and analysis genus  ################### 
 
@@ -111,44 +128,39 @@ ggsave('../results/hatching_size/Genus_hatching_survival.png',
 
 wilcox.test(median.size ~ survival, data = ammon_hatch_surv_genus)
 wilcox.test(median.size ~ survival, data = nauti_hatch_surv_genus)
-# 
-# 
-# # Extinct at end-Cretaceous
-# extinct <- survival[survival$survival==FALSE, 'genus'] 
-# # Extinct before end of Maastrichtian
-# already <- survival[is.na(survival$survival), 'genus']
-# 
-# # Use numerical for plotting
-# survival[is.na(survival$survival), 'survival'] <- 3
-# survival[survival$survival == TRUE, 'survival'] <- 2
-# survival[survival$survival == FALSE, 'survival'] <- 1
-# hatch <- merge(hatch, survival, by = 'genus')
-# 
-# # Need different genus name rotation for ammonoids/nautiloids
-# if (cephas == 'ammonoids') {
-#   rot <- 45
-# } else {
-#   rot <- 15
-# }
-# 
-# p <- hatch %>%
-#   mutate(genus = fct_reorder(genus, survival)) %>%
-#   ggplot(aes(x = genus, y = hatching.size..mm.)) +
-#   geom_jitter(position = position_jitter(0.05), cex = 3, shape = 1) +
-#   labs(x = 'Genus', y = 'Hatching size (mm)') +
-#   scale_x_discrete(labels = ~ if_else(
-#     .x %in% extinct, paste0("<span style='color: red3'>", .x, "</span>"), 
-#     if_else(
-#       .x %in% already, paste0("<span style='color: blue4'>", .x, "</span>"), .x)
-#   )) +
-#   theme_classic() +
-#   theme(
-#     axis.text.x = element_markdown(size = 8, face = 'italic',  colour = 'black',
-#                                    angle = rot, hjust = 0.9),
-#     axis.text.y = element_text(size = 8, colour = 'black'),
-#     axis.title = element_text(size = 8)
-#     )
-# 
+
+###################  Plotting individual hatching sizes  ################### 
+
+# Need different genus name rotation for ammonoids/nautiloids
+if (cephas == 'ammonoids') {
+  rot <- 45
+} else {
+  rot <- 15
+}
+
+ammon_hatch <- ammon_hatch %>%
+  arrange(survival, suborder, family) %>%
+  mutate(genus = factor(genus, levels = unique(genus))) 
+
+  ggplot(data = ammon_hatch, aes(x = hatching.size..mm., y = genus, 
+    color = survival)) +
+  geom_jitter(position = position_jitter(0.05), cex = 3, shape = 1) +
+  labs(x = 'Hatching size (mm)', y = 'Genus') 
+  
+  
+  scale_x_discrete(labels = ~ if_else(
+    .x %in% extinct, paste0("<span style='color: red3'>", .x, "</span>"),
+    if_else(
+      .x %in% already, paste0("<span style='color: blue4'>", .x, "</span>"), .x)
+  )) +
+  theme_classic() +
+  theme(
+    axis.text.x = element_markdown(size = 8, face = 'italic',  colour = 'black',
+                                   angle = rot, hjust = 0.9),
+    axis.text.y = element_text(size = 8, colour = 'black'),
+    axis.title = element_text(size = 8)
+    )
+
 # plotfile <- paste(cephas, '_hatching_sizes.pdf', sep = '')
 # ggsave(paste('../results/hatching_size/', plotfile, sep = ''),
 #        width = 12, height = 8, units = 'cm', plot = p)
