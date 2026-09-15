@@ -61,7 +61,7 @@ find_mean_shift <- function(theta, x.mean, x.var, y.var) {
 }
 
 
-determine_power <- function(theta, m, n, x.var, y.var, n.samples = 10000,
+determine_power <- function(theta, n, m, x.var, y.var, n.samples = 10000,
   ci.method = 'DL.corr', alpha.level = 0.05, nboot = 1000) {
   # Simulate two distributions that are shifted relatively to one another, so 
   # that distribution Y has a probability of superiority of theta over
@@ -70,8 +70,8 @@ determine_power <- function(theta, m, n, x.var, y.var, n.samples = 10000,
   # respectively.
   # Variables:
   #   theta     = Common language effect size / probability of superiority
-  #   m         = Number of samples taken from distribution X
-  #   n         = Number of samples taken from distribution Y
+  #   n         = Number of samples taken from distribution X
+  #   m         = Number of samples taken from distribution Y
   #   x.var     = Variation of non-shifting distribution X
   #   y.var     = Variation of shifting distribution Y
   #   n.samples = Number of sampling replicates
@@ -91,8 +91,8 @@ determine_power <- function(theta, m, n, x.var, y.var, n.samples = 10000,
 
   
   # Sample 10,000 trials with sizes m & n from the distributions
-  x.samples <- rnorm(m*n.samples, x.mean, sqrt(x.var))
-  y.samples <- rnorm(n*n.samples, y.mean, sqrt(y.var))
+  x.samples <- rnorm(n*n.samples, x.mean, sqrt(x.var))
+  y.samples <- rnorm(m*n.samples, y.mean, sqrt(y.var))
   # Reshape
   x.trials <- matrix(x.samples, nrow = n.samples, byrow = TRUE)
   y.trials <- matrix(y.samples, nrow = n.samples, byrow = TRUE)
@@ -157,12 +157,12 @@ pbar <- txtProgressBar(min = 0, max = nrow(am.idx))
 
 for (i in 1:nrow(am.idx)) {
   
-  m     <- effect.sizes.ammon$num.ext[am.idx[i,1]]
-  n     <- effect.sizes.ammon$num.surv[am.idx[i,1]]
+  n     <- effect.sizes.ammon$num.ext[am.idx[i,1]]
+  m     <- effect.sizes.ammon$num.surv[am.idx[i,1]]
   x.var <- effect.sizes.ammon$std.var.ext[am.idx[i,1]]
   y.var <- effect.sizes.ammon$std.var.surv[am.idx[i,1]]
   
-  am.power[am.idx[i,1], am.idx[i,2]] <- determine_power(simef[am.idx[i,2]], m, n, x.var, y.var)
+  am.power[am.idx[i,1], am.idx[i,2]] <- determine_power(simef[am.idx[i,2]], n, m, x.var, y.var)
   
   setTxtProgressBar(pbar, i)
 }

@@ -6,6 +6,8 @@ library(ggplot2)
 library(ggtext)
 library(forcats)
 library(gridExtra)
+library(ggdendro)
+library(pBrackets) # <----------- TRY THIS OUT!
 
 # Specify plotting aesthetics
 darkblue  <- '#12255A'
@@ -131,39 +133,57 @@ wilcox.test(median.size ~ survival, data = nauti_hatch_surv_genus)
 
 ###################  Plotting individual hatching sizes  ################### 
 
-# Need different genus name rotation for ammonoids/nautiloids
-if (cephas == 'ammonoids') {
-  rot <- 45
-} else {
-  rot <- 15
-}
+# amsuborders <- sort(unique(ammon_hatch$suborder))
+# amfamily <- sort(unique(ammon_hatch$family))
+# ammon_hatch <- ammon_hatch %>%
+#   mutate(
+#     suborders_idx = match(suborder, amsuborders),
+#     family_idx = match(family, amfamily),
+#     class_idx = as.numeric(paste(suborders_idx, family_idx, sep = ''))
+#          )
+# famdist <- dist(ammon_hatch$suborders_idx)
+# hc <- hclust(famdist)
+# hcdata <- dendro_data(hc, type = 'rectangle')
+# 
+# ggplot() +
+#   geom_segment(data = segment(hcdata), 
+#                aes(x = x, y = y, xend = xend, yend = yend)
+#   ) 
+#   # geom_text(data = label(hcdata), 
+#   #           aes(x = x, y = y, label = label, hjust = 0), 
+#   #           size = 3
+#   # ) +
 
 ammon_hatch <- ammon_hatch %>%
   arrange(survival, suborder, family) %>%
   mutate(genus = factor(genus, levels = unique(genus))) 
 
-  ggplot(data = ammon_hatch, aes(x = hatching.size..mm., y = genus, 
+p <- ggplot(data = ammon_hatch, aes(x = hatching.size..mm., y = genus, 
     color = survival)) +
-  geom_jitter(position = position_jitter(0.05), cex = 3, shape = 1) +
-  labs(x = 'Hatching size (mm)', y = 'Genus') 
-  
-  
-  scale_x_discrete(labels = ~ if_else(
-    .x %in% extinct, paste0("<span style='color: red3'>", .x, "</span>"),
-    if_else(
-      .x %in% already, paste0("<span style='color: blue4'>", .x, "</span>"), .x)
-  )) +
+#  geom_jitter(position = position_jitter(0.05), cex = 3, shape = 1) +
+  geom_point(cex = 3, shape = 1) +
+  labs(x = 'Hatching size (mm)', y = '') +
+  scale_colour_manual(name = 'Genus-level survival', labels = c('Extinct', 'Survived'), values =
+    c('black', errbarcol)) +
+  # scale_x_discrete(labels = ~ if_else(
+  #   .x %in% extinct, paste0("<span style='color: red3'>", .x, "</span>"),
+  #   if_else(
+  #     .x %in% already, paste0("<span style='color: blue4'>", .x, "</span>"), .x)
+  # )) +
   theme_classic() +
   theme(
-    axis.text.x = element_markdown(size = 8, face = 'italic',  colour = 'black',
-                                   angle = rot, hjust = 0.9),
-    axis.text.y = element_text(size = 8, colour = 'black'),
-    axis.title = element_text(size = 8)
+    axis.text.x = element_text(size = fsize, colour = 'black', family = font),
+    axis.text.y = element_text(size = fsize, colour = 'black', family = font,
+      face = 'italic'),
+    axis.title.y = element_text(size = fsize, family = font),
+    axis.title.x = element_text(size = fsize, family = font),
+    legend.title = element_text(size = fsize, colour = 'black', family = font),
+    legend.text = element_text(size = fsize, colour = 'black', family = font),
+    legend.position = 'inside',
+    legend.position.inside = c(0.85, 0.85)
     )
-
-# plotfile <- paste(cephas, '_hatching_sizes.pdf', sep = '')
-# ggsave(paste('../results/hatching_size/', plotfile, sep = ''),
-#        width = 12, height = 8, units = 'cm', plot = p)
+ggsave('../results/hatching_size/Ammonoid_hatching_sizes.png',
+  width = 12, height = 12, units = 'cm', plot = p, dpi = 600)
 # 
 # 
 # wilcox.test(hatching.size..mm. ~ survival, data = hatch)

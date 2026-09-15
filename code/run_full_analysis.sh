@@ -32,5 +32,6 @@ Rscript analyse_area_species.R &>/dev/null
 #Rscript analyse_subsampling.R 'nautilids' &>/dev/null
 Rscript compare_hypotheses.R &>/dev/null
 Rscript power_analysis.R &>/dev/null
+Rscript plot_publication_figures.R
 
 # Finale. Figure plotting

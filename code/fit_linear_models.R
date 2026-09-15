@@ -99,6 +99,21 @@ genus_data$sqrt.abun <- sqrt(genus_data$n)
 genus_data$log.area <- log10(genus_data$PALEOMAP.area.km2)
 genus_data$log.boot <- log10(genus_data$boot.median.area)
 
+################### Standardize predictor variables ###################
+
+# From all predictors, subtract mean and divide by standard deviation
+# (Z-score normalization)
+
+genus_data$log.area.zscore <- zscore(genus_data$log.area)
+genus_data$log.boot.zscore <- zscore(genus_data$log.boot)
+genus_data$logvol.zscore <- zscore(genus_data$logvol)
+genus_data$sqrt.abun.zscore <- zscore(genus_data$sqrt.abun)
+genus_data$log.hatching.size.zscore <- zscore(genus_data$log.hatching.size)
+
+# Convert boolean factors to numeric
+genus_data$survival <- as.numeric(genus_data$survival)
+genus_data$is.nautilid <- as.numeric(genus_data$is.nautilid)
+
 ################### Get to know dataset
 
 # DataExplorer
@@ -133,19 +148,27 @@ plot_qq(qq_data_log)
 
 # Correlation plot
 corrM <- cor(na.omit(genus_data[genus_data$is.nautilid == FALSE,
-                                c('log.area', 'log.boot', 'logvol', 'log.hatching.size', 'sqrt.abun', 
-                                  'survival')]), method = 'spearman')
+   c('log.area', 'log.boot', 'logvol', 'log.hatching.size', 'sqrt.abun', 
+  'survival')]), method = 'spearman')
 amcorr <- corrplot(corrM, order = 'original', type = 'lower', diag = FALSE)
 
 corrM <- cor(na.omit(genus_data[genus_data$is.nautilid == TRUE,
-                                c('log.area', 'log.boot', 'logvol', 'log.hatching.size', 'sqrt.abun',
-                                  'survival')]), method = 'spearman')
+  c('log.area', 'log.boot', 'logvol', 'log.hatching.size', 'sqrt.abun',
+  'survival')]), method = 'spearman')
 naucorr <- corrplot(corrM, order = 'original', type = 'lower', diag = FALSE)
 
 corrM <- cor(na.omit(genus_data[ ,
-                                 c('log.area', 'log.boot', 'logvol', 'log.hatching.size', 'sqrt.abun',
-                                   'survival', 'is.nautilid')]), method = 'spearman')
+  c('log.area', 'log.boot', 'logvol', 'log.hatching.size', 'sqrt.abun',
+  'survival', 'is.nautilid')]), method = 'spearman')
 allcorr <- corrplot(corrM, order = 'original', type = 'lower', diag = FALSE)
+
+corrM.zscore <- cor(na.omit(genus_data[ ,
+  c('log.area.zscore', 'log.boot.zscore', 'logvol.zscore', 
+  'log.hatching.size.zscore',
+  'survival', 'is.nautilid')]), method = 'pearson')
+allcorr.zscore <- corrplot(corrM.zscore, order = 'original', type = 'lower',
+  diag = FALSE)
+
 
 ################### Correlation abundance and area ###################
 
@@ -212,20 +235,38 @@ p <- grid.arrange(ammaa, nauaa, ncol = 2)
 ggsave('../results/comparing_hypotheses/AreaBoot_abundance_genus.png',
        width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
-################### Standardize predictor variables ###################
+################### Logistic regression ammonoid vs nautilids ###################
 
-# From all predictors, subtract mean and divide by standard deviation
-# (Z-score normalization)
+genus_data_redux <- genus_data %>%
+  filter(!is.na(logvol) & !is.na(log.hatching.size)) %>%
+  # Let's note all ammonoids as extinct for this analysis
+  mutate(survival = if_else(is.nautilid == FALSE, FALSE, survival))
 
-genus_data$log.area.zscore <- zscore(genus_data$log.area)
-genus_data$log.boot.zscore <- zscore(genus_data$log.boot)
-genus_data$logvol.zscore <- zscore(genus_data$logvol)
-genus_data$sqrt.abun.zscore <- zscore(genus_data$sqrt.abun)
-genus_data$log.hatching.size.zscore <- zscore(genus_data$log.hatching.size)
+regr_all <- glm(survival ~ log.area.zscore + log.hatching.size.zscore + 
+  logvol.zscore, data = genus_data_redux)
 
-# Convert boolean factors to numeric
-genus_data$survival <- as.numeric(genus_data$survival)
-genus_data$is.nautilid <- as.numeric(genus_data$is.nautilid)
+regr_area_hatch <- glm(survival ~ log.area.zscore + log.hatching.size.zscore,
+  data = genus_data_redux)
+
+regr_area_vol <- glm(survival ~ log.area.zscore + logvol.zscore,
+  data = genus_data_redux)
+
+regr_hatch_vol <- glm(survival ~ log.hatching.size.zscore + logvol.zscore,
+  data = genus_data_redux)
+
+regr_area <- glm(survival ~ log.area.zscore, data = genus_data_redux)
+
+regr_hatch <- glm(survival ~ log.hatching.size.zscore, data = genus_data_redux)
+
+regr_vol <- glm(survival ~ logvol.zscore, data = genus_data_redux)
+
+summary(regr_all)
+summary(regr_area_hatch)
+summary(regr_area_vol)
+summary(regr_hatch_vol)
+summary(regr_area)
+summary(regr_hatch)
+summary(regr_vol)
 
 ################### Fit GLMs for both nautilids and ammonoids ###################
 
