@@ -1,0 +1,62 @@
+\documentclass[a4paper]{article}
+
+\usepackage{setspace}
+\usepackage[math-style=ISO, bold-style=ISO]{unicode-math}
+\setmainfont{EB Garamond}
+\setmathfont{Garamond-Math.otf}[StylisticSet={7,9}]
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{csvsimple}
+\usepackage[super]{nth}
+\usepackage{microtype}
+
+\usepackage[backend=biber,
+			style=apa]{biblatex}
+
+\hypersetup{colorlinks=false,
+			breaklinks=true}
+\graphicspath{ {/home/michael-schmutzer/Documents/Projects/Ammonites/results/} }
+\addbibresource{../Ammonites.bib}
+
+\title{Supplement to: Ammonoid Extinction and Nautilid Survival at the End-Cretaceous: What does Hatching Size have to do with it?}
+\date{\today}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\makeatletter
+\renewcommand \thesection{S\@arabic\c@section}
+\renewcommand\thetable{S\@arabic\c@table}
+\renewcommand \thefigure{S\@arabic\c@figure}
+\makeatother
+
+
+\section*{Table of synonymies}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+Original taxon  & Replaced with	& References	 \\
+\hline
+\textit{Acanthoscaphites schmidi} & \textit{Hoploscaphites schmidi} & \cite{machalskiLateMaastrichtianEarliest2005}\\
+\textit{Didymoceras attenuatum} & \textit{Nostoceras attenuatum} & \cite{kuchlerUpperCampanianMaastrichtianAmmonites2001}\\
+\textit{Discoscaphites abyssinus} & \textit{Hoploscaphites comprimus} & \cite{landmanScaphitidAmmonitesUpper1993}\\
+\textit{Eubaculites lyelli} & \textit{Eubaculites carinatus} & \cite{wardMaastrichtianAmmonitesBiscay1993}\\
+\textit{Eutrephoceras bellerophon} & \textit{Eutrephoceras dekayi} & \cite{malchykLateCretaceousEarly}\\ 
+\textit{Hoploscaphites spedoni} & \textit{Hoploscaphites spedeni} & Data-entry typo\\
+\textit{Jeletzkytes} & \textit{Hoploscaphites} & \cite{landmanScaphitesNodosusGroup2010}\\
+\textit{Pseudokossmaticeras dureri} & \textit{Pseudokossmaticeras duereri} & Data-entry typo\\
+\textit{Sphenodiscus beecheri} & \textit{Sphenodiscus lobatus} & \cite{kennedy1997new}\\
+\hline \\
+\end{tabular}
+\caption{Synonyms and their replacements during data cleaning. All occurrences listed under an outdated taxon were reassigned. If only a genus name is given, all species listed under that genus were reassigned. This list also included cases we believe to have arisen from data entry mistakes, and which we disambiguated accordingly.}
+\label{tab_synonymies}
+\end{table}
+
+\end{document}
