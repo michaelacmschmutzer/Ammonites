@@ -153,6 +153,21 @@ for (genus in genus_taxon_ambiguous$genus) {
   }
 }
 
+# There are still taxonomic conflicts for Anagaudryceras, Gaudriceras, 
+# Pseudophyllites, Saghalinites, Tetragonites, Zelandites. Resolve these manually
+# Default to Hoffmann (2015) Treatise Online. Part L, Revised, Volume 3B, 
+# Chapter 3; Lytoceratidea
+
+# All of these have the same classification till family level
+revised_ammonoids <- c('Anagaudryceras', 'Gaudryceras', 'Pseudophyllites', 
+  'Saghalinites', 'Tetragonites', 'Zelandites')
+for (i in 1:length(revised_ammonoids)) {
+  cepha[cepha$genus == revised_ammonoids[i], 'order'] <- 'Ammonitida'
+  cepha[cepha$genus == revised_ammonoids[i], 'suborder'] <- 'Ammonitina'
+  cepha[cepha$genus == revised_ammonoids[i], 'superfamily'] <- 'Lytoceratoidea'
+  cepha[cepha$genus == revised_ammonoids[i], 'family'] <- 'Tetragonitidae'
+}
+
 # TODO: To avoid being dependent on conflicting taxonomy, which I don't want to 
 # resolve right now, make a column is.nautilid TRUE/FALSE to bypass the issue 
 cepha <- cepha %>%
