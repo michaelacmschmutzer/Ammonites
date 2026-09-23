@@ -6,8 +6,10 @@ library(DataExplorer)
 library(corrplot)
 library(ggplot2)
 library(gridExtra)
+library(performance)
 library(latex2exp)
 library(lme4)
+library(MuMIn)
 #library(lmerPerm)
 
 # Specify plotting aesthetics
@@ -236,11 +238,16 @@ ggsave('../results/comparing_hypotheses/AreaBoot_abundance_genus.png',
        width = 12, height = 6, units = 'cm', dpi = 600, plot = p)
 
 ################### Logistic regression ammonoid vs nautilids ###################
+# To do: Create a dataframe with VIF, AIC, AICc etc to summarize model selection
+# put in supplement
 
 genus_data_redux <- genus_data %>%
   filter(!is.na(logvol) & !is.na(log.hatching.size)) %>%
   # Let's note all ammonoids as extinct for this analysis
   mutate(survival = if_else(is.nautilid == FALSE, FALSE, survival))
+
+pairs(genus_data_redux[, c('survival', 'log.area.zscore', 
+  'log.hatching.size.zscore', 'logvol.zscore')])
 
 regr_all <- glm(survival ~ log.area.zscore + log.hatching.size.zscore + 
   logvol.zscore, data = genus_data_redux)
@@ -267,6 +274,28 @@ summary(regr_hatch_vol)
 summary(regr_area)
 summary(regr_hatch)
 summary(regr_vol)
+
+AICc(regr_all)
+AICc(regr_area_hatch)
+AICc(regr_area_vol)
+AICc(regr_hatch_vol)
+AICc(regr_area)
+AICc(regr_hatch)
+AICc(regr_vol)
+
+
+res_regr_all <- residuals(regr_all)
+hist(res_regr_all) # Not normally distributed
+pred_regr_all <- predict(regr_all)
+plot(pred_regr_all, res_regr_all) # This looks weird :(
+
+res_regr_hatch <- residuals(regr_hatch)
+hist(res_regr_hatch)# Not normally distributed
+pred_regr_hatch <- predict(regr_hatch)
+plot(pred_regr_hatch, res_regr_hatch)
+
+vif_regr_all <- check_collinearity(regr_all)
+
 
 ################### Fit GLMs for both nautilids and ammonoids ###################
 
@@ -320,8 +349,8 @@ abline(0, 0, lty = 2)
 # Having area in the model causes singularity, except if only area is included
 # in the model, in which case the AIC is at 56.7, while otherwise it is at 30. 
 genus_model <- glmer(
-  survival ~ log.area.zscore + logvol.zscore + (1 | is.nautilid),
-  data = genus_data,
+  survival ~ log.area.zscore + logvol.zscore + log.hatching.size.zscore + (1 | is.nautilid),
+  data = genus_data_redux,
   family = binomial())
 
 summary(genus_model)
@@ -361,6 +390,15 @@ glm.test.area <- glmer(
 
 summary(glm.test.area)
 
+glm.test.hatch <- glmer(
+  survival ~ 
+    log.hatching.size.zscore + (1 | is.nautilid),
+  data = genus_data,
+  family = binomial(link = 'logit')
+)
+
+summary(glm.test.area)
+
 ################### Fit GLMs for ammonoids only ###################
 
 nautilid_data <- genus_data[genus_data$is.nautilid == TRUE, ]
@@ -377,7 +415,7 @@ summary(glm.test.area)
 
 glm.test.hatch <- glm(
   survival ~ 
-    log.hatching.size.zscore,
+    log.hatching.size.zscore + (1|is.nautild),
   data = ammonoid_data,
   family = binomial(link = 'logit')
 )
