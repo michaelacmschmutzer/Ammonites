@@ -10,6 +10,7 @@ library(performance)
 library(latex2exp)
 library(lme4)
 library(MuMIn)
+library(glmpermu)
 #library(lmerPerm)
 
 # Specify plotting aesthetics
@@ -29,7 +30,7 @@ zscore <- function(x, na.rm = TRUE) {
 
 ################### Compile hypothesis testing data set ################### 
 
-# Read in all required data
+# Read in all required data for genera
 cepha <- read.csv('../data/cephalopods.csv')
 body_sizes <- read.csv(
   '../data/doi_10_5061_dryad_zpc866t5b__v20210211/genus.sizes.ranges.rev.csv')
@@ -50,6 +51,20 @@ hatch_ammon <- read.csv('../data/ammonoids_embryonic_shell_size.csv')
 surv_nauti <- read.csv('../data/nautilids_extinction_genus.csv')
 surv_ammon <- read.csv('../data/ammonoids_extinction_genus.csv')
 
+# And for species
+geo_nauti_spp <- read.csv(
+  '../results/species/geographic_distributions/nautilids_distributions_species.csv')
+geo_ammon_spp <- read.csv(
+  '../results/species/geographic_distributions/ammonoids_distributions_species.csv')
+surv_nauti_spp <- read.csv('../data/nautilids_extinction_species.csv')
+surv_ammon_spp <- read.csv('../data/ammonoids_extinction_species.csv')
+
+# Place genus and species name in single column
+surv_nauti_spp <- surv_nauti_spp %>%
+  mutate(species = paste(genus, species))
+surv_ammon_spp <- surv_ammon_spp %>%
+  mutate(species = paste(genus, species))
+
 # Simplify data, take median of species to get at genus level
 hatch_nauti_genus <- hatch_nauti %>%
   group_by(genus) %>%
@@ -60,6 +75,9 @@ hatch_ammon_genus <- hatch_ammon %>%
 body_sizes <- dplyr::select(body_sizes, c('genus', 'logvol'))
 surv_nauti <- dplyr::select(surv_nauti, c('genus', 'survival'))
 surv_ammon <- dplyr::select(surv_ammon, c('genus', 'survival'))
+surv_nauti_spp <- dplyr::select(surv_nauti_spp, c('species', 'survival'))
+surv_ammon_spp <- dplyr::select(surv_ammon_spp, c('species', 'survival'))
+
 
 # Simplify sub-sampling results
 # Use PALEOMAP for now
@@ -78,8 +96,11 @@ boot <- rbind(boot_ammon, boot_nauti)
 hatch <- rbind(hatch_ammon_genus, hatch_nauti_genus)
 abun <- rbind(abun_ammon, abun_nauti)
 surv <- rbind(surv_ammon, surv_nauti)
+# and for species too
+geo_spp <- rbind(geo_ammon_spp, geo_nauti_spp)
+surv_spp <- rbind(surv_ammon_spp, surv_nauti_spp)
 
-# Assemble the following data frame:
+# GENERA: Assemble the following data frame:
 # Order Subord Supfam Fam Genus Geo.range Body.vol Hatch.size Abundance Survival
 
 genus_data <- cepha %>%
@@ -95,11 +116,20 @@ genus_data <- left_join(genus_data, hatch, by = 'genus')
 genus_data <- left_join(genus_data, abun, by = 'genus')
 genus_data <- left_join(genus_data, surv, by = 'genus')
 
-# Try logging the median hatching sizes and abundances
+# Try logging the median hatching sizes and sqrt abundances
 genus_data$log.hatching.size <- log10(genus_data$med.hatching.size)
 genus_data$sqrt.abun <- sqrt(genus_data$n)
 genus_data$log.area <- log10(genus_data$PALEOMAP.area.km2)
 genus_data$log.boot <- log10(genus_data$boot.median.area)
+
+# SPECIES: Assemble the following data frame
+# GENERA: Assemble the following data frame:
+# Species Geo.range Survival
+
+species_data <- geo_spp
+species_data <- left_join(species_data, surv_spp, by = 'species')
+# and log too
+species_data$log.area <- log10(species_data$PALEOMAP.area.km2)
 
 ################### Standardize predictor variables ###################
 
@@ -112,9 +142,13 @@ genus_data$logvol.zscore <- zscore(genus_data$logvol)
 genus_data$sqrt.abun.zscore <- zscore(genus_data$sqrt.abun)
 genus_data$log.hatching.size.zscore <- zscore(genus_data$log.hatching.size)
 
+species_data$log.area.zscore <- zscore(species_data$log.area)
+
 # Convert boolean factors to numeric
 genus_data$survival <- as.numeric(genus_data$survival)
 genus_data$is.nautilid <- as.numeric(genus_data$is.nautilid)
+
+species_data$survival <- as.numeric(species_data$survival)
 
 ################### Get to know dataset
 
@@ -249,23 +283,32 @@ genus_data_redux <- genus_data %>%
 pairs(genus_data_redux[, c('survival', 'log.area.zscore', 
   'log.hatching.size.zscore', 'logvol.zscore')])
 
+pairs(genus_data_redux[, c('log.area.zscore', 
+  'log.hatching.size.zscore', 'logvol.zscore')])
+
+cor(genus_data_redux[ , c('log.area.zscore', 'log.hatching.size.zscore',
+  'logvol.zscore')], method = 'pearson')
+
 regr_all <- glm(survival ~ log.area.zscore + log.hatching.size.zscore + 
-  logvol.zscore, data = genus_data_redux)
+  logvol.zscore, data = genus_data_redux, family = binomial)
 
 regr_area_hatch <- glm(survival ~ log.area.zscore + log.hatching.size.zscore,
-  data = genus_data_redux)
+  data = genus_data_redux, family = binomial)
 
 regr_area_vol <- glm(survival ~ log.area.zscore + logvol.zscore,
-  data = genus_data_redux)
+  data = genus_data_redux, family = binomial)
 
 regr_hatch_vol <- glm(survival ~ log.hatching.size.zscore + logvol.zscore,
-  data = genus_data_redux)
+  data = genus_data_redux, family = binomial)
 
-regr_area <- glm(survival ~ log.area.zscore, data = genus_data_redux)
+regr_area <- glm(survival ~ log.area.zscore, data = genus_data_redux,
+  family = binomial)
 
-regr_hatch <- glm(survival ~ log.hatching.size.zscore, data = genus_data_redux)
+regr_hatch <- glm(survival ~ log.hatching.size.zscore, data = genus_data_redux,
+  family = binomial)
 
-regr_vol <- glm(survival ~ logvol.zscore, data = genus_data_redux)
+regr_vol <- glm(survival ~ logvol.zscore, data = genus_data_redux,
+  family = binomial)
 
 summary(regr_all)
 summary(regr_area_hatch)
@@ -283,6 +326,17 @@ AICc(regr_area)
 AICc(regr_hatch)
 AICc(regr_vol)
 
+# Calculate the dispersion statistic
+E2 <- resid(regr_all)
+n <- nrow(genus_data_redux)
+p <- length(coef(regr_all)) + 1
+sum(E2 ^ 2) / (n-p) # 0.6067922. Substantially under-dispersed
+
+E2 <- resid(regr_hatch)
+n <- nrow(genus_data_redux)
+p <- length(coef(regr_hatch)) + 1
+sum(E2 ^ 2) / (n-p) # 0.5361204. Substantially under-dispersed
+
 
 res_regr_all <- residuals(regr_all)
 hist(res_regr_all) # Not normally distributed
@@ -296,6 +350,43 @@ plot(pred_regr_hatch, res_regr_hatch)
 
 vif_regr_all <- check_collinearity(regr_all)
 
+# Use permutation testing to get at more reliable p-values, given that data is 
+# far from normality even when log- & z-transformed
+# split to fit permu function
+y <- genus_data_redux$survival
+x <- genus_data_redux[, c('log.area.zscore', 'logvol.zscore', 
+  'log.hatching.size.zscore')]
+
+perm_regr_all <- glm.permu(y, x, family = binomial)
+
+perm_regr_hatch <- glm.permu(y, x['log.hatching.size.zscore'], family = binomial)
+
+# Regression excluding body size data only for all available species
+genus_data_hatch <- genus_data %>%
+  filter(!is.na(log.hatching.size)) %>%
+  # Let's note all ammonoids as extinct for this analysis
+  mutate(survival = if_else(is.nautilid == FALSE, FALSE, survival))
+regr_hatch_full <- glm(survival ~ log.area.zscore + log.hatching.size.zscore, 
+  data = genus_data_hatch, family = binomial)
+summary(regr_hatch_full)
+regr_hatch_geo <- glm(survival ~ log.area.zscore, 
+  data = genus_data_hatch, family = binomial)
+summary(regr_hatch_geo)
+regr_hatch_only <- glm(survival ~ log.hatching.size.zscore, 
+  data = genus_data_hatch, family = binomial)
+summary(regr_hatch_only)
+
+# Species only results to see effect geographic range
+hist(species_data$log.area.zscore)
+pairs(species_datalog.area.zscorepairs(species_data[, c('survival', 'log.area.zscore')]))
+regr_spp_geo <- glm(survival ~ log.area.zscore, data = species_data, family = 
+  binomial)
+summary(regr_spp_geo)
+
+res_spp_geo <- residuals(regr_spp_geo)
+hist(res_spp_geo) # Not normally distributed
+pred_regr_spp <- predict(regr_spp_geo)
+plot(pred_regr_spp, res_spp_geo) # This looks weird :(
 
 ################### Fit GLMs for both nautilids and ammonoids ###################
 

@@ -52,3 +52,11 @@ test_that(
     expect_equal(round(power, digits = 7), 0.92)
   }
 )
+
+test_that(
+  'Kernel densities are fitted correctly', {
+    set.seed(1)
+    obs <- rnorm(20)
+    fit.kernel.density
+  }
+)
