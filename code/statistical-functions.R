@@ -54,67 +54,103 @@ wilmanwhit.effect.size <- function(data.fr, x_col, y_col = 'survival',
   return(e.size)
 }
 
+# example.data <- na.omit(genus_data[, c('log.area.zscore', 'logvol.zscore', 'log.hatching.size.zscore')])
 # Function to fit a kernel density approximation to data, and then sample from
 # the approximation
-get.random.sample <- function(data.col, n) {
+make.three.random.samples <- function(data.fr, n) {
   
+  # Function to extract N observations from kernel density approximations
+  # This function assumes a data structure with three variables of interest
+  
+  # Empirical covariance matrix of predictor variables
+  cov.emp <- cor(data.fr, method = 'pearson')
+  
+  # Sample from data with replacements, and smooth out with a random 
+  # Gaussian error with default bandwidth 'bw'
+  den1 <- density(data.fr[ , 1])
+  den2 <- density(data.fr[ , 2])
+  den3 <- density(data.fr[ , 3])
+  
+  # Generate multivariate Gaussian distribution with desired correlation structure
+  mult.norm <- mvrnorm(n, c(0, 0, 0), cov.emp)
+  # Transform to multivariate Uniform distribution with corrs
+  mult.unif <- pnorm(mult.norm, mean = 0, sd = 1)
+  
+  # Transform from uniform to empirically observed distributions using the 
+  # quantile function of the fitted kernel density estimates. These should retain
+  # the covariance structure of the empirical data
+  X1 <- quantile(den1, probs = mult.unif[ , 1])
+  X2 <- quantile(den2, probs = mult.unif[ , 2])
+  X3 <- quantile(den3, probs = mult.unif[ , 3])
+  return(list(X1, X2, X3))
 }
 
-# Empirical covariance matrix of predictor variables
-cov.emp <- cor(genus_data_redux[ , c('log.area.zscore', 'log.hatching.size.zscore',
-  'logvol.zscore')], method = 'pearson')
-
 # Empirical coefficient estimates
-b0 <- regr_all$coefficients[[1]]
-b1 <- regr_all$coefficients[[2]]
-b2 <- regr_all$coefficients[[3]]
-b3 <- regr_all$coefficients[[4]]
+# b0 <- regr_all$coefficients[[1]]
+# b1 <- regr_all$coefficients[[2]]
+# b2 <- regr_all$coefficients[[3]]
+# b3 <- regr_all$coefficients[[4]]
 
-n <- 100
+fit.logistic.regression <- function(coeffs, samples, alpha = 0.05) {
+  # For the logistic regression, I have three explanatory variables:
+  # X1 == Geographic range sizes
+  # X2 == Hatching sizes
+  # X3 == Body sizes
+  # These have a certain correlative structure and are related to the response
+  # variable Y via a logit-link function. The correlation between the three 
+  # variables and Y is the effect size of interest (B1, B2, B3)
+  
+  # Get out the random samples
+  X1 <- samples[[1]]
+  X2 <- samples[[2]]
+  X3 <- samples[[3]]
+  
+  # Get out the coefficients
+  b0 <- coeffs[1]
+  b1 <- coeffs[2]
+  b2 <- coeffs[3]
+  b3 <- coeffs[4]
+  
+  # Structure of logistic regression model. p is the vector of probabilities of 
+  # the response variable Y, which in this case is extinction/survival
+  p <- plogis(b0 + 
+              b1 * X1 +
+              b2 * X2 +
+              b3 * X3)
+  Y <- rbinom(n = length(X1), size = 1, prob = p)
+  # Function to fit logistic regression to simulated data X times. Extract power.
+  sim_data <- data.frame(y = Y, x1 = X1, x2 = X2, x3 = X3)
+  regr_sim <- glm(y ~ x1 + x2 + x3, data = sim_data, family = binomial)
+  
+  # Check if coefficients are significant or not
+  outcome <- c(NA, NA, NA)
+  outcome[1] <- summary(regr_sim)$coefficients[2,4] < alpha
+  outcome[2] <- summary(regr_sim)$coefficients[3,4] < alpha
+  outcome[3] <- summary(regr_sim)$coefficients[4,4] < alpha
+  
+  return(outcome)
+}
 
-# For the logistic regression, I have three explanatory variables:
-# X1 == Geographic range sizes
-# X2 == Hatching sizes
-# X3 == Body sizes
-# These have a certain correlative structure and are related to the response
-# variable Y via a logit-link function. The correlation between the three 
-# variables and Y is the effect size of interest (B1, B2, B3)
-
-
-# Function to extract N observations from kernel density approximations
-# Sample from data with replacements, and smooth out with a random 
-# Gaussian error with bandwith 'bw'
-den1 <- density(genus_data_redux$log.area.zscore)
-den2 <- density(genus_data_redux$log.hatching.size.zscore)
-den3 <- density(genus_data_redux$logvol.zscore)
-#sample(x = den$x, n, prob = den$y, replace = TRUE) + rnorm(n = n, mean = 0, sd = den$bw)
-
-# Generate multivariate Gaussian distribution with desired correlation structure
-mult.norm <- mvrnorm(n, c(0, 0, 0), cov.emp)
-# Transform to multivariate Uniform distribution with corrs
-mult.unif <- pnorm(mult.norm, mean = 0, sd = 1)
-# Transform from uniform to empirically observed distributions using the 
-# quantile function of the fitted kernel density estimates. These should retain
-# the covariance structure of the empirical data
-X1 <- quantile(den1, probs = mult.unif[ , 1])
-X2 <- quantile(den2, probs = mult.unif[ , 2])
-X3 <- quantile(den3, probs = mult.unif[ , 3])
-
-# Structure of logistic regression model. p is the vector of probabilities of 
-# the response variable Y, which in this case is extinction/survival
-p <- plogis(b0 + 
-            b1 * X1 +
-            b2 * X2 +
-            b3 * X3)
-Y <- rbinom(n = n, size = 1, prob = p)
-# Function to fit logistic regression to simulated data X times. Extract power.
-sim_data <- data.frame(y = Y, x1 = X1, x2 = X2, x3 = X3)
-regr_sim <- glm(y ~ x1 + x2 + x3, data = sim_data, family = binomial)
-
-# Check if coefficients are significant or not
-summary(regr_sim)$coefficients[2,4] < 0.05
-summary(regr_sim)$coefficients[3,4] < 0.05
-summary(regr_sim)$coefficients[4,4] < 0.05
+power.logistic.regression <- function(coeff.range, nsteps, data.fr, n, 
+  nrepl = 100, alpha = 0.05) {
+  # Function to perform power analysis for logistic regression with three
+  # variables of interest
+  # Variables:
+  #  coeff.range  = Range of hypothetical coefficients to explore
+  #  nsteps       = Number of intervals between hypothetical cofficients
+  #  data.fr      = Empirical data to parameterise kernel density probabilities
+  #  n            = Number of data points to simulate
+  #  nrepl        = Number of replicates per set of coefficient values
+  #  alpha        = Alpha level to test for
+  # Value
+  #  power        = Power at each set of coefficient values
+  
+  # define coefficient space
+  
+  # iterate over coefficient space. Perform nrepl replicates per coefficient set
+  samples <- make.three.random.samples(data.fr = data.fr, n = n)
+  outcome <- fit.logistic.regression(coeffs, samples, alpha = alpha)
+}
 
 
 

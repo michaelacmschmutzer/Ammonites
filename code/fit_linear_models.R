@@ -277,7 +277,7 @@ ggsave('../results/comparing_hypotheses/AreaBoot_abundance_genus.png',
 
 genus_data_redux <- genus_data %>%
   filter(!is.na(logvol) & !is.na(log.hatching.size)) %>%
-  # Let's note all ammonoids as extinct for this analysis
+  # Let's denote all ammonoids as extinct for this analysis
   mutate(survival = if_else(is.nautilid == FALSE, FALSE, survival))
 
 pairs(genus_data_redux[, c('survival', 'log.area.zscore', 
